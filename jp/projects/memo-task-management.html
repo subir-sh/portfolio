@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkFlow | イ・スンヒョン</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header class="project-header">
+    <div class="container">
+      <div class="header-top-row">
+        <div class="lang-switch" aria-label="言語切替">
+          <a href="../../projects/memo-task-management.html">英</a>
+          <a href="./memo-task-management.html" class="is-active">日</a>
+        </div>
+      </div>
+      <a class="back-link" href="../index.html">← 一覧へ戻る</a>
+      <h1>ThinkFlow</h1>
+      <p>メモ、タスク、振り返り記録を一つの流れとしてつなぐ、フルスタックの生産性アプリです。</p>
+    </div>
+  </header>
+
+  <main class="container project-main">
+    <section class="project-section">
+      <div class="card">
+        <p><strong>授業プロジェクト</strong> · <em>AI活用フロントエンド開発（2025年秋学期）</em></p>
+        <p><strong>担当</strong> · フルスタック開発、プロダクト構成設計、ワークフロー設計</p>
+        <p><strong>使用技術</strong> · React, TypeScript, Express, Prisma, PostgreSQL, Docker, Gemini</p>
+        <p><strong>関連リンク</strong> · <a href="https://github.com/boostcampwm-snu-2025/thinkflow-subir-sh" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/boostcampwm-snu-2025/thinkflow-subir-sh/wiki/%EA%B8%B0%ED%9A%8D%EC%84%9C" target="_blank" rel="noopener noreferrer">企画Wiki</a></p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>概要</h2>
+      <div class="card">
+        <p>ThinkFlow は、メモ、タスク、振り返り記録を一つの連続した仕組みとして扱うフルスタックの生産性アプリです。思いつき、実行、振り返りを別々の道具として切り離すのではなく、アイデアから行動、そして振り返りまでの流れを保つことを重視しました。</p>
+        <p>私はプロダクト構造と実装の両方を担当し、孤立したCRUD画面を並べるのではなく、共通の項目構造と遷移フローを中心に設計しました。その結果、メモや投稿をタスクへ昇格させ、完了したタスクを振り返り記録へつなげる、一貫した文書型ワークフローを実現しました。</p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>担当内容</h2>
+      <div class="card">
+        <ul>
+          <li>メモ、投稿、タスクを統合的に扱うフルスタックのウェブアプリを構築しました。</li>
+          <li>基本的なCRUD、検索、並び替え、ページネーション、タグによる絞り込みを実装しました。</li>
+          <li>文脈を保ったまま型を移行できるよう、メモ・投稿からタスクへの昇格フローを設計・実装しました。</li>
+          <li>タスクから振り返り記録へつなぐ流れと、モーダルを用いた下書き生成の導線を実装しました。</li>
+          <li>実装前に frontend・backend・shared の分割構成と user story、feature spec を整理し、プロダクト全体を定義しました。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>設計上の課題</h2>
+      <div class="card">
+        <p>難しかったのは、メモ、タスク、投稿を別々に作ることではなく、それらを一つの一貫した流れとしてつなぐことでした。素早い記録、タスク管理、タグ付け、振り返り記述を同じプロダクトの中で支える必要があったため、どこまでを共通化し、どこからを型固有の情報として分けるかの判断が重要でした。</p>
+        <p>私は共通の項目モデルの上にタスク固有の情報を重ねる形で構造化しつつ、メモ・投稿からタスクへ、タスクから振り返りへと移る際のUIフローを揃えました。これにより、各機能を別アプリのように分断せず、自然につながりながら拡張しやすい構成にできました。</p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>画面例</h2>
+      <div class="card image-row">
+        <img src="../../assets/images/thinkflow-image-1.png" alt="ThinkFlow 画面例 1" class="project-image" />
+        <img src="../../assets/images/thinkflow-image-2.png" alt="ThinkFlow 画面例 2" class="project-image" />
+      </div>
+      <div class="card">
+        <p>メモ・投稿画面とタスク管理画面です。別々の小さなアプリとして分けるのではなく、一つのワークフローとして自然につながるよう設計しました。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

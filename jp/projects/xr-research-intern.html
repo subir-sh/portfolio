@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XR研究インターンプロジェクト | イ・スンヒョン</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header class="project-header">
+    <div class="container">
+      <div class="header-top-row">
+        <div class="lang-switch" aria-label="言語切替">
+          <a href="../../projects/xr-research-intern.html">英</a>
+          <a href="./xr-research-intern.html" class="is-active">日</a>
+        </div>
+      </div>
+      <a class="back-link" href="../index.html">← 一覧へ戻る</a>
+      <h1>XR研究インターンプロジェクト</h1>
+      <p>
+        オブジェクトに基づくXRオーバーレイ、空間位置合わせ、出力評価に取り組んだ研究インターンシップです。
+      </p>
+    </div>
+  </header>
+
+  <main class="container project-main">
+    <section class="project-section">
+      <div class="card">
+        <p><strong>研究インターン</strong> · <em>HCS Lab</em></p>
+        <p><strong>担当</strong> · 2D–3Dグラウンディング、XRオーバーレイ実装、生成品質評価</p>
+        <p><strong>使用技術</strong> · Unity, OpenXR, Gemini</p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>補足</h2>
+      <div class="card">
+        <p>
+          一部のプロジェクト固有情報は、意図的に省略しています。
+          本取り組みは匿名性への配慮が必要な学術プロジェクトに関わるため、元のプロジェクト名、直接リンク、プロジェクト固有の背景情報など、特定につながる情報を削除しています。
+        </p>
+        <p>
+          このページでは、私自身の技術的な貢献に絞って記載しています。
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>担当内容</h2>
+      <div class="card">
+        <ul>
+          <li>画像ベースの参照対象検出を、物体に紐づくXRオーバーレイへ接続するための2D–3Dグラウンディングに取り組みました。</li>
+          <li>検出された参照対象を安定したワールドアンカー付きの可視ターゲットへ対応づける、クライアント側のXRオーバーレイ実装を担当しました。</li>
+          <li>物体に基づく視覚提示のために、画像空間での検出、カメラ投影、ワールド空間配置のあいだの空間位置合わせを扱いました。</li>
+          <li>生成されたマルチモーダル出力について、妥当性、文脈適合性、意図された応答内容との整合性を評価しました。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>設計上の課題</h2>
+      <div class="card">
+        <p>
+          難しかったのは、一人称画像上の2D参照対象検出を、実世界の意図した対象に重なる安定したXRオーバーレイへ変換することでした。
+          視覚キューは単なる画面注釈ではなく、実際の物体に接地され、ユーザーの移動に追従し、モデル出力のタイミングとも一致していなければなりません。
+        </p>
+        <p>
+          そのためには、画像ベースの検出、カメラ射影、ワールド座標アンカリングという複数の座標系をクライアント側で橋渡しする必要がありました。
+          私は特に対応付けとオーバーレイ側を担当し、シーンに即した正確な物体連動配置が必要な部分に注力しました。
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>画面例</h2>
+      <div class="card">
+        <img src="" alt="XR研究インターンプロジェクト説明資料" class="project-image" />
+      </div>
+      <div class="card">
+        <p>
+          匿名性への配慮のため省略しています。
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

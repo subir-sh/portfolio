@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkFlow | Seunghyeon Lee</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="project-header">
+    <div class="container">
+      <div class="header-top-row">
+        <div class="lang-switch" aria-label="Language switcher">
+          <a href="./memo-task-management.html" class="is-active">EN</a>
+          <a href="../jp/projects/memo-task-management.html">JP</a>
+        </div>
+      </div>
+      <a class="back-link" href="../index.html">← Back to Main</a>
+      <h1>ThinkFlow</h1>
+      <p>
+        Full-stack productivity app that connects memos, tasks, and retrospective posts in one workflow.
+      </p>
+    </div>
+  </header>
+
+  <main class="container project-main">
+    <section class="project-section">
+      <div class="card">
+        <p><strong>Course Project</strong> · <em>Frontend Development Using AI (Fall 2025)</em></p>
+        <p><strong>Role</strong> · Full-stack Development, Product Structuring, Workflow Design</p>
+        <p><strong>Tech</strong> · React, TypeScript, Express, Prisma, PostgreSQL, Docker, Gemini</p>
+        <p>
+          <strong>Links</strong> ·
+          <a href="https://github.com/boostcampwm-snu-2025/thinkflow-subir-sh" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+          <a href="https://github.com/boostcampwm-snu-2025/thinkflow-subir-sh/wiki/%EA%B8%B0%ED%9A%8D%EC%84%9C" target="_blank" rel="noopener noreferrer">Planning Wiki</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Project Overview</h2>
+      <div class="card">
+        <p>
+          ThinkFlow is a full-stack productivity app designed to manage memos, tasks, and retrospective posts in one connected system.
+          Instead of treating quick thoughts, actionable work, and reflection as separate tools, the project focused on preserving a continuous flow from idea to action to retrospective writing.
+        </p>
+        <p>
+          I worked on both product structure and implementation, building the app around shared item types and transition flows rather than isolated CRUD pages.
+          The result was a document-style workflow where memos or posts could be promoted into tasks, and completed tasks could lead into retrospective posts.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>What I Did</h2>
+      <div class="card">
+        <ul>
+          <li>Built a full-stack web app for managing memos, posts, and tasks within a unified workflow.</li>
+          <li>Implemented core CRUD flows, search, sorting, pagination, and tag-based filtering across item types.</li>
+          <li>Designed and implemented the memo/post → task promotion flow to preserve user context during type transitions.</li>
+          <li>Worked on the task → retrospective post flow, including the modal-based draft generation path.</li>
+          <li>Structured the project with a frontend/backend/shared split and defined the product through user stories and feature specs before implementation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Design Challenge</h2>
+      <div class="card">
+        <p>
+          The main challenge was not just building separate memo, task, and post features, but connecting them through one coherent item lifecycle.
+          Since the same product had to support quick capture, task management, tagging, and retrospective writing, the harder part was deciding what should stay shared and what should become type-specific.
+        </p>
+        <p>
+          I approached this by structuring the product around a common item model with task-specific detail layered on top, while keeping the UI flows aligned with transitions such as memo/post → task and task → retrospect.
+          This made the app easier to extend without treating each feature as a disconnected screen.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Preview</h2>
+      <div class="card image-row">
+        <img src="../assets/images/thinkflow-image-1.png" alt="ThinkFlow preview 1" class="project-image" />
+        <img src="../assets/images/thinkflow-image-2.png" alt="ThinkFlow preview 2" class="project-image" />
+      </div>
+      <div class="card">
+        <p>
+          Screens showing the memo/post view and task management view, designed as connected parts of a single workflow rather than separate mini-apps.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AreUComing | Seunghyeon Lee</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="project-header">
+    <div class="container">
+      <div class="header-top-row">
+        <div class="lang-switch" aria-label="Language switcher">
+          <a href="./location-sharing-service.html" class="is-active">EN</a>
+          <a href="../jp/projects/location-sharing-service.html">JP</a>
+        </div>
+      </div>
+      <a class="back-link" href="../index.html">← Back to Main</a>
+      <h1>AreUComing</h1>
+      <p>
+        Session-based real-time location sharing service that records the journey toward meeting, not just the destination.
+      </p>
+    </div>
+  </header>
+
+  <main class="container project-main">
+    <section class="project-section">
+      <div class="card">
+        <p><strong>Hackathon Project</strong> · <em>WaffleStudio Wackathon 2026</em></p>
+        <p><strong>Role</strong> · Backend Development, WebSocket Flow, Session Modeling</p>
+        <p><strong>Tech</strong> · Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p>
+        <p>
+          <strong>Links</strong> ·
+          <a href="https://github.com/subir-sh/wackathon-server" target="_blank" rel="noopener noreferrer">Backend</a> ·
+          <a href="https://github.com/h-seo-n/wackathon-front" target="_blank" rel="noopener noreferrer">Frontend</a> ·
+          <a href="https://www.figma.com/design/5Ju4gzpAp2AszAcIQcpdh0/%EC%98%A4%EA%B3%A0%EC%9E%88%EB%8B%88?node-id=20-23&p=f&t=3WY7uAepXL7NOeHA-0" target="_blank" rel="noopener noreferrer">Figma</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Project Overview</h2>
+      <div class="card">
+        <p>
+          AreUComing is a mobile web service for couples that shares routes in real time while they are on the way to meet.
+          Instead of treating location sharing as passive tracking, the service was designed around the journey itself and the moment of meeting as a shared experience.
+        </p>
+        <p>
+          Developed during WaffleStudio's 2026 Wackathon, the project won 3rd place.
+          I mainly worked on backend-side session modeling and real-time flow, focusing on how live location updates, session history, and authenticated access could work together reliably.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>What I Did</h2>
+      <div class="card">
+        <ul>
+          <li>Modeled the database schema for session-based location sharing, including sessions and session point history.</li>
+          <li>Implemented backend and frontend WebSocket flow for real-time session updates.</li>
+          <li>Connected JWT authentication to the WebSocket handshake and added session membership validation.</li>
+          <li>Combined HTTP-based history loading with live socket updates so the map could recover state after refresh and continue streaming afterward.</li>
+          <li>Handled automatic socket start on session creation and acceptance, along with session completion flow.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Design Challenge</h2>
+      <div class="card">
+        <p>
+          The main challenge was designing real-time location sharing around an application-level session lifecycle rather than around the socket connection itself.
+          In this service, a WebSocket was only one transport layer inside a larger flow that also included authenticated session entry, history loading, live point streaming, and session completion.
+        </p>
+        <p>
+          I worked on structuring that flow so that past session data could be loaded through HTTP, new updates could stream through WebSocket, and both would remain consistent across refreshes and reconnects.
+          This made the backend closer to a session-oriented real-time system than a simple live socket demo.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Preview</h2>
+      <div class="card">
+        <img src="../assets/images/areucoming-image-1.png" alt="AreUComing preview 1" class="project-image" />
+      </div>
+      <div class="card">
+        <p>
+          Mobile-first interface for live route sharing and meeting-oriented session tracking, designed as a PWA web app.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
