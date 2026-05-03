@@ -1,96 +1,80 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>오고있니 | Seunghyeon Lee</title>
-  <link rel="stylesheet" href="../../assets/css/style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>오고있니 | Seunghyeon Lee</title>
+<link href="../../assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="언어 전환">
-          <a href="../../projects/location-sharing-service.html">EN</a>
-          <a href="../../jp/projects/location-sharing-service.html">JP</a>
-          <a href="./location-sharing-service.html" class="is-active">KR</a>
-        </div>
-      </div>
-      <a class="back-link" href="../index.html">← 메인으로 돌아가기</a>
-      <h1>오고있니</h1>
-      <p>
+<header class="project-header">
+<div class="container">
+<div class="header-top-row">
+<div aria-label="언어 전환" class="lang-switch">
+<a href="../../projects/location-sharing-service.html">EN</a>
+<a href="../../jp/projects/location-sharing-service.html">JP</a>
+<a class="is-active" href="./location-sharing-service.html">KR</a>
+</div>
+</div>
+<a class="back-link" href="../index.html">← 메인으로 돌아가기</a>
+<h1>오고있니</h1>
+<p>
         도착 지점만이 아니라 만나러 가는 과정을 기록하는 세션 기반 실시간 위치 공유 서비스입니다.
       </p>
-    </div>
-  </header>
-
-  <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>해커톤 프로젝트</strong> · <em>와플스튜디오 와커톤 2026</em></p>
-        <p><strong>역할</strong> · 백엔드 개발, WebSocket 흐름, 세션 모델링</p>
-        <p><strong>기술</strong> · Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p>
-        <p>
-          <strong>링크</strong> ·
-          <a href="https://github.com/subir-sh/wackathon-server" target="_blank" rel="noopener noreferrer">백엔드</a> ·
-          <a href="https://github.com/h-seo-n/wackathon-front" target="_blank" rel="noopener noreferrer">프론트엔드</a> ·
-          <a href="https://www.figma.com/design/5Ju4gzpAp2AszAcIQcpdh0/%EC%98%A4%EA%B3%A0%EC%9E%88%EB%8B%88?node-id=20-23&p=f&t=3WY7uAepXL7NOeHA-0" target="_blank" rel="noopener noreferrer">Figma</a>
+</div>
+</header>
+<main class="container project-main">
+<section class="project-section">
+<div class="card">
+<p><strong>해커톤 프로젝트</strong> / <em>와플스튜디오 와커톤 2026</em></p>
+<p><strong>역할</strong> / 백엔드 개발, WebSocket 흐름, 세션 모델링</p>
+<p><strong>기술</strong> / Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p>
+<p>
+<strong>링크</strong> /
+          <a href="https://github.com/subir-sh/wackathon-server" rel="noopener noreferrer" target="_blank">백엔드</a> /
+          <a href="https://github.com/h-seo-n/wackathon-front" rel="noopener noreferrer" target="_blank">프론트엔드</a> /
+          <a href="https://www.figma.com/design/5Ju4gzpAp2AszAcIQcpdh0/%EC%98%A4%EA%B3%A0%EC%9E%88%EB%8B%88?node-id=20-23&amp;p=f&amp;t=3WY7uAepXL7NOeHA-0" rel="noopener noreferrer" target="_blank">Figma</a>
+</p>
+</div>
+</section>
+<section class="project-section">
+<h2>프로젝트 개요</h2>
+<div class="card">
+<p>오고있니는 커플이 서로 만나러 가는 동안 위치와 이동 경로를 실시간으로 공유하는 모바일 웹 서비스입니다. 단순 위치 추적보다, 만나러 가는 과정 자체를 함께 볼 수 있는 경험에 초점을 맞췄습니다.</p>
+<p>와플스튜디오 주최 해커톤 2026에서 개발해 3위를 수상했습니다. 저는 백엔드 세션 모델링과 실시간 통신 흐름을 맡아, 위치 업데이트, 세션 기록, 인증 기반 접근 제어가 안정적으로 동작하도록 구현했습니다.</p>
+</div>
+</section>
+<section class="project-section">
+<h2>담당 내용</h2>
+<div class="card">
+<ul>
+<li>세션과 위치 포인트 이력을 저장하는 DB 스키마를 설계했습니다.</li>
+<li>실시간 세션 업데이트를 위한 백엔드/프론트엔드 WebSocket 흐름을 구현했습니다.</li>
+<li>WebSocket 핸드셰이크에 JWT 인증을 연결하고, 세션 참여자 검증을 추가했습니다.</li>
+<li>HTTP로 기존 이력을 불러오고 WebSocket으로 새 좌표를 받아, 새로고침 후에도 지도 상태가 복원되도록 구현했습니다.</li>
+<li>세션 생성/수락 시 소켓이 자동으로 시작되고, 세션 종료까지 이어지는 흐름을 구현했습니다.</li>
+</ul>
+</div>
+</section>
+<section class="project-section">
+<h2>설계상 과제</h2>
+<div class="card">
+<p>핵심은 WebSocket 연결 자체가 아니라, 세션의 시작부터 종료까지 이어지는 흐름을 안정적으로 설계하는 것이었습니다. 이 서비스에서 WebSocket은 인증, 세션 입장, 이력 로딩, 실시간 좌표 업데이트, 세션 종료와 함께 동작해야 했습니다.</p>
+<p>기존 위치 이력은 HTTP로 불러오고, 이후 좌표 업데이트는 WebSocket으로 받도록 나눴습니다. 덕분에 새로고침이나 재연결 상황에서도 같은 세션 상태를 이어갈 수 있었습니다.</p>
+</div>
+</section>
+<section class="project-section">
+<h2>미리보기</h2>
+<div class="card">
+<img alt="오고있니 미리보기 1" class="project-image" src="../../assets/images/areucoming-image-1.png"/>
+</div>
+<div class="card">
+<p>
+          모바일 환경에서 실시간 경로와 세션 상태를 확인할 수 있도록 만든 화면입니다.
         </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>프로젝트 개요</h2>
-      <div class="card">
-        <p>
-          오고있니는 커플이 만나러 가는 동안 경로를 실시간으로 공유할 수 있는 모바일 웹 서비스입니다.
-          단순 위치 추적이 아니라, 이동 과정과 만나는 순간 자체를 함께 경험하도록 서비스 흐름을 설계했습니다.
-        </p>
-        <p>
-          와플스튜디오 주최 해커톤 2026에서 개발했으며, 3위를 수상했습니다.
-          백엔드 세션 모델링과 실시간 흐름을 주로 담당했으며, 실시간 위치 업데이트·세션 기록·인증 접근이 안정적으로 동작하도록 구현했습니다.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>담당 내용</h2>
-      <div class="card">
-        <ul>
-          <li>세션 및 세션 포인트 이력을 포함한 세션 기반 위치 공유 DB 스키마를 설계했습니다.</li>
-          <li>실시간 세션 업데이트를 위한 백엔드/프론트엔드 WebSocket 흐름을 구현했습니다.</li>
-          <li>WebSocket 핸드셰이크에 JWT 인증을 연결하고 세션 참여자 검증을 추가했습니다.</li>
-          <li>HTTP 이력 로딩과 실시간 소켓 업데이트를 결합해 새로고침 후에도 지도가 상태를 복원하고 스트리밍을 이어가도록 구현했습니다.</li>
-          <li>세션 생성/수락 시 소켓 자동 시작과 세션 종료 흐름을 구현했습니다.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>설계상 과제</h2>
-      <div class="card">
-        <p>
-          핵심 과제는 소켓 연결 자체가 아니라 애플리케이션 수준의 세션 생명주기를 중심으로 실시간 위치 공유를 설계하는 것이었습니다.
-          이 서비스에서 WebSocket은 인증 기반 세션 입장, 이력 로딩, 실시간 좌표 스트리밍, 세션 종료를 포함한 더 큰 흐름의 일부였습니다.
-        </p>
-        <p>
-          과거 데이터는 HTTP로 불러오고 신규 업데이트는 WebSocket으로 흘려보내며, 새로고침/재연결 상황에서도 일관성을 유지하도록 흐름을 설계했습니다.
-          이를 통해 단순 실시간 소켓 데모가 아니라 세션 중심의 실시간 시스템에 가까운 백엔드를 구성했습니다.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>미리보기</h2>
-      <div class="card">
-        <img src="../../assets/images/areucoming-image-1.png" alt="오고있니 미리보기 1" class="project-image" />
-      </div>
-      <div class="card">
-        <p>
-          만남 중심 세션 추적과 실시간 경로 공유를 위한 모바일 우선 PWA 웹 앱 화면입니다.
-        </p>
-      </div>
-    </section>
-  </main>
+</div>
+</section>
+</main>
 </body>
 </html>
