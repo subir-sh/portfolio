@@ -1,80 +1,120 @@
 <!DOCTYPE html>
 
 <html lang="ko">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>오고있니 | Seunghyeon Lee</title>
-<link href="../../assets/css/style.css" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>오고있니 | 이승현</title>
+  <link href="../../assets/css/style.css" rel="stylesheet" />
 </head>
+
 <body>
-<header class="project-header">
-<div class="container">
-<div class="header-top-row">
-<div aria-label="언어 전환" class="lang-switch">
-<a href="../../projects/location-sharing-service.html">EN</a>
-<a href="../../jp/projects/location-sharing-service.html">JP</a>
-<a class="is-active" href="./location-sharing-service.html">KR</a>
-</div>
-</div>
-<a class="back-link" href="../index.html">← 메인으로 돌아가기</a>
-<h1>오고있니</h1>
-<p>
-        도착 지점만이 아니라 만나러 가는 과정을 기록하는 세션 기반 실시간 위치 공유 서비스입니다.
+  <header class="project-header">
+    <div class="container">
+      <div class="header-top-row">
+        <div aria-label="언어 전환" class="lang-switch">
+          <a href="../../projects/location-sharing-service.html">EN</a>
+          <a href="../../jp/projects/location-sharing-service.html">JP</a>
+          <a class="is-active" href="./location-sharing-service.html">KR</a>
+        </div>
+      </div>
+      <a class="back-link" href="../index.html">← 메인으로 돌아가기</a>
+      <h1>오고있니</h1>
+      <p>
+        연인/파트너가 만나러 가는 동안의 위치와 기록을 공유하고, 만남 이후에는 그 과정을 다시 볼 수 있게 만든 위치 기반 웹앱입니다.
       </p>
-</div>
-</header>
-<main class="container project-main">
-<section class="project-section">
-<div class="card">
-<p><strong>해커톤 프로젝트</strong> / <em>와플스튜디오 와커톤 2026</em></p>
-<p><strong>역할</strong> / 백엔드 개발, WebSocket 흐름, 세션 모델링</p>
-<p><strong>기술</strong> / Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p>
-<p>
-<strong>링크</strong> /
+    </div>
+  </header>
+  <main class="container project-main">
+    <section class="project-section">
+      <div class="card">
+        <p><strong>해커톤 프로젝트</strong> / <em>와플스튜디오 와커톤 2026</em></p>
+        <p><strong>역할</strong> / 백엔드 개발, 세션 도메인 설계, REST API, 실시간 위치 기록 흐름</p>
+        <p><strong>기술</strong> / Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p>
+        <p>
+          <strong>링크</strong> /
           <a href="https://github.com/subir-sh/wackathon-server" rel="noopener noreferrer" target="_blank">백엔드</a> /
           <a href="https://github.com/h-seo-n/wackathon-front" rel="noopener noreferrer" target="_blank">프론트엔드</a> /
-          <a href="https://www.figma.com/design/5Ju4gzpAp2AszAcIQcpdh0/%EC%98%A4%EA%B3%A0%EC%9E%88%EB%8B%88?node-id=20-23&amp;p=f&amp;t=3WY7uAepXL7NOeHA-0" rel="noopener noreferrer" target="_blank">Figma</a>
-</p>
-</div>
-</section>
-<section class="project-section">
-<h2>프로젝트 개요</h2>
-<div class="card">
-<p>오고있니는 커플이 서로 만나러 가는 동안 위치와 이동 경로를 실시간으로 공유하는 모바일 웹 서비스입니다. 단순 위치 추적보다, 만나러 가는 과정 자체를 함께 볼 수 있는 경험에 초점을 맞췄습니다.</p>
-<p>와플스튜디오 주최 해커톤 2026에서 개발해 3위를 수상했습니다. 저는 백엔드 세션 모델링과 실시간 통신 흐름을 맡아, 위치 업데이트, 세션 기록, 인증 기반 접근 제어가 안정적으로 동작하도록 구현했습니다.</p>
-</div>
-</section>
-<section class="project-section">
-<h2>담당 내용</h2>
-<div class="card">
-<ul>
-<li>세션과 위치 포인트 이력을 저장하는 DB 스키마를 설계했습니다.</li>
-<li>실시간 세션 업데이트를 위한 백엔드/프론트엔드 WebSocket 흐름을 구현했습니다.</li>
-<li>WebSocket 핸드셰이크에 JWT 인증을 연결하고, 세션 참여자 검증을 추가했습니다.</li>
-<li>HTTP로 기존 이력을 불러오고 WebSocket으로 새 좌표를 받아, 새로고침 후에도 지도 상태가 복원되도록 구현했습니다.</li>
-<li>세션 생성/수락 시 소켓이 자동으로 시작되고, 세션 종료까지 이어지는 흐름을 구현했습니다.</li>
-</ul>
-</div>
-</section>
-<section class="project-section">
-<h2>설계상 과제</h2>
-<div class="card">
-<p>핵심은 WebSocket 연결 자체가 아니라, 세션의 시작부터 종료까지 이어지는 흐름을 안정적으로 설계하는 것이었습니다. 이 서비스에서 WebSocket은 인증, 세션 입장, 이력 로딩, 실시간 좌표 업데이트, 세션 종료와 함께 동작해야 했습니다.</p>
-<p>기존 위치 이력은 HTTP로 불러오고, 이후 좌표 업데이트는 WebSocket으로 받도록 나눴습니다. 덕분에 새로고침이나 재연결 상황에서도 같은 세션 상태를 이어갈 수 있었습니다.</p>
-</div>
-</section>
-<section class="project-section">
-<h2>미리보기</h2>
-<div class="card">
-<img alt="오고있니 미리보기 1" class="project-image" src="../../assets/images/areucoming-image-1.png"/>
-</div>
-<div class="card">
-<p>
+          <a href="https://www.figma.com/design/5Ju4gzpAp2AszAcIQcpdh0/%EC%98%A4%EA%B3%A0%EC%9E%88%EB%8B%88?node-id=20-23&amp;p=f&amp;t=3WY7uAepXL7NOeHA-0"
+            rel="noopener noreferrer" target="_blank">Figma</a>
+        </p>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>프로젝트 개요</h2>
+      <div class="card">
+        <p>
+          오고있니는 연인/파트너가 약속 장소에서 만나기까지의 이동 과정을 공유하고,
+          만남 이후에는 그 과정을 기록으로 남길 수 있는 위치 기반 웹앱입니다.
+        </p>
+        <p>
+          위치 공유 요청, 수락, 진행, 종료로 이어지는 세션 도메인을 설계하고,
+          세션 API, 위치 기록 히스토리 모델, 백엔드/프론트엔드 Websocket 통신을 구현했습니다.
+          좌표, 메모, 사진, 만남 완료 이벤트를 하나의 히스토리 모델로 저장해,
+          실시간 지도 표시와 세션 종료 후 기록 조회에서 같은 데이터를 사용할 수 있도록 했습니다.
+        </p>
+        <p>와플스튜디오 주최 해커톤 2026에서 개발해 3위를 수상했습니다.</p>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>담당 내용</h2>
+      <div class="card">
+        <ul>
+          <li>세션과 위치 포인트 이력을 포함하여, 전반적인 DB 스키마를 설계했습니다.</li>
+          <li>위치 공유 요청을 PENDING / ACTIVE / DONE 상태를 갖는 세션으로 모델링했습니다.</li>
+          <li>
+            세션 생성, 현재 세션 조회, 상태 조회, 수락, 종료, 사진 업로드,
+            히스토리 조회를 위한 REST API를 구현했습니다.
+          </li>
+          <li>
+            백엔드 WebSocket handler를 구현해 클라이언트가 전송한 위치 좌표, 메모,
+            만남 확정 이벤트를 세션 상태와 사용자 권한에 맞게 처리했습니다.
+          </li>
+          <li>
+            프론트엔드에서 WebSocket 연결, 주기적인 위치 전송, 상대방 위치 수신,
+            지도 마커와 경로 갱신 흐름을 구현했습니다.
+          </li>
+          <li>HTTP로 기존 이력을 불러오고 WebSocket으로 새 좌표를 받아, 새로고침 후에도 지도 상태가 복원되도록 구현했습니다.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>설계상 과제</h2>
+      <div class="card">
+        <p>
+          이 프로젝트에서 가장 먼저 정리해야 했던 것은 위치 공유를 실시간 좌표 전송에 더해서
+          상태를 가진 세션으로 모델링하는 일이었습니다. 사용자가 위치 공유를 요청하면
+          세션은 PENDING 상태가 되고, 상대방이 수락하면 ACTIVE 상태로 바뀌며, 만남 완료나 취소
+          이후에는 DONE 상태로 종료되도록 흐름을 정의했습니다.
+        </p>
+
+        <p>
+          세션은 개인이 아니라 커플 단위로 공유되는 리소스였기 때문에, 접근 제어도 함께
+          고려해야 했습니다. 현재 사용자의 커플 정보와 세션의 coupleId를 비교해 세션 접근을
+          제한했고, 한 커플에 동시에 여러 PENDING/ACTIVE 세션이 생기지 않도록 기존 세션을
+          반환하는 방식으로 중복 생성을 막았습니다.
+        </p>
+
+        <p>
+          또한 위치 공유 과정에서 발생하는 좌표, 메모, 사진, 만남 완료 이벤트를 각각 따로
+          관리하지 않고, SessionPoint라는 공통 히스토리 모델로 통합했습니다. 덕분에 실시간
+          지도 표시와 세션 종료 후 기록 조회에서 같은 데이터를 재사용할 수 있었습니다.
+        </p>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>미리보기</h2>
+      <div class="card">
+        <img alt="오고있니 미리보기 1" class="project-image" src="../../assets/images/areucoming-image-1.png" />
+      </div>
+      <div class="card">
+        <p>
           모바일 환경에서 실시간 경로와 세션 상태를 확인할 수 있도록 만든 화면입니다.
         </p>
-</div>
-</section>
-</main>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>

@@ -1,88 +1,142 @@
 <!DOCTYPE html>
 
 <html lang="ko">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Chronos | Seunghyeon Lee</title>
-<link href="../../assets/css/style.css" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Chronos | 이승현</title>
+  <link href="../../assets/css/style.css" rel="stylesheet" />
 </head>
+
 <body>
-<header class="project-header">
-<div class="container">
-<div class="header-top-row">
-<div aria-label="언어 전환" class="lang-switch">
-<a href="../../projects/turn-based-puzzle-game.html">EN</a>
-<a href="../../jp/projects/turn-based-puzzle-game.html">JP</a>
-<a class="is-active" href="./turn-based-puzzle-game.html">KR</a>
-</div>
-</div>
-<a class="back-link" href="../index.html">← 메인으로 돌아가기</a>
-<h1>Chronos</h1>
-<p>
+  <header class="project-header">
+    <div class="container">
+      <div class="header-top-row">
+        <div aria-label="언어 전환" class="lang-switch">
+          <a href="../../projects/turn-based-puzzle-game.html">EN</a>
+          <a href="../../jp/projects/turn-based-puzzle-game.html">JP</a>
+          <a class="is-active" href="./turn-based-puzzle-game.html">KR</a>
+        </div>
+      </div>
+      <a class="back-link" href="../index.html">← 메인으로 돌아가기</a>
+      <h1>Chronos</h1>
+      <p>
         시간 되감기와 분신 기믹을 중심으로 제작한 Unity 기반 턴제 3D 퍼즐 게임입니다.
       </p>
-</div>
-</header>
-<main class="container project-main">
-<section class="project-section">
-<div class="card">
-<p><strong>수업 프로젝트</strong> / <em>소프트웨어 개발의 원리와 실습 (2024년 2학기)</em></p>
-<p><strong>역할</strong> / 게임플레이 시스템, 턴 흐름, 오브젝트 상호작용, 상태 로직 리팩토링</p>
-<p><strong>기술</strong> / Unity, C#, WebGL, GitHub, GitHub Wiki, Slack, Scrum</p>
-<p>
-<strong>링크</strong> /
-          <a href="https://2024fall-swpp.github.io/team-project-for-2024-fall-swpp-team-12/" rel="noopener noreferrer" target="_blank">데모</a> /
-          <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12" rel="noopener noreferrer" target="_blank">GitHub</a> /
-          <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12/wiki/%EC%8A%A4%ED%81%AC%EB%9F%BC" rel="noopener noreferrer" target="_blank">스크럼 로그</a> /
-          <a href="https://www.youtube.com/playlist?list=PLyip1lR-pqZOz7Fb8o9VwufTkeqWq2EMe" rel="noopener noreferrer" target="_blank">영상</a>
-</p>
-</div>
-</section>
-<section class="project-section">
-<h2>프로젝트 개요</h2>
-<div class="card">
-<p>Chronos는 턴 기반 진행과 되감기 후 생성되는 분신 기믹을 중심으로 만든 Unity 3D 퍼즐 게임입니다. 수업 팀 프로젝트로 개발했고, 짧지만 완결된 퍼즐 플레이 경험을 목표로 했습니다.</p>
-<p>저는 턴 흐름, 오브젝트 상호작용, 게임 상태 로직 등 핵심 게임플레이 시스템을 주로 맡았습니다. 기능을 추가하는 것뿐 아니라, 상호작용 규칙이 복잡해져도 퍼즐이 일관되게 동작하도록 구조를 정리했습니다.</p>
-</div>
-</section>
-<section class="project-section">
-<h2>담당 내용</h2>
-<div class="card">
-<ul>
-<li>턴 진행 로직과 플레이어-오브젝트 상호작용 시스템을 구현했습니다.</li>
-<li>세이브/로드, 씬 전환, 맵 흐름 등 주변 시스템을 구현했습니다.</li>
-<li>턴 실행과 오브젝트 반응을 추적하고 수정하기 쉽도록 상태 기반 게임플레이 로직을 리팩토링했습니다.</li>
-<li>GitHub, 위키 문서, Slack을 활용해 스프린트 기반으로 협업했습니다.</li>
-<li>5인 팀 익명 동료평가에서 22% 기여도를 받았습니다.</li>
-</ul>
-</div>
-</section>
-<section class="project-section">
-<h2>설계상 과제</h2>
-<div class="card">
-<p>Chronos에서 가장 어려웠던 점은 여러 상호작용 오브젝트를 매 턴 같은 순서로 안정적으로 처리하는 일이었습니다. 하나의 입력이 플레이어 이동뿐 아니라 분신 재생, 박스 이동, 레버 트리거, 낙하 판정, 되감기 로그까지 동시에 영향을 줄 수 있었습니다.</p>
-<p>업데이트 순서에 민감한 구조였기 때문에, 작은 변경도 이동 판정이나 상태 복원에 영향을 줄 수 있었습니다. 그래서 오브젝트 상호작용을 유지하면서도 턴 실행과 상태 업데이트 흐름을 추적하기 쉽게 정리하는 데 집중했습니다.</p>
-</div>
-</section>
-<section class="project-section">
-<h2>게임플레이 미리보기</h2>
-<div class="card image-row">
-<img alt="Chronos 게임플레이 화면" class="project-image" src="../../assets/images/chronos-main-1.png"/>
-<img alt="Chronos 게임플레이 화면" class="project-image" src="../../assets/images/chronos-main-2.png"/>
-</div>
-<div class="card">
-<p>
-          턴제 퍼즐 환경과 분신 기반 되감기 기믹이 실제로 동작하는 장면입니다.
+    </div>
+  </header>
+  <main class="container project-main">
+    <section class="project-section">
+      <div class="card">
+        <p><strong>수업 프로젝트</strong> / <em>소프트웨어 개발의 원리와 실습 (2024년 2학기)</em></p>
+        <p><strong>역할</strong> / 핵심 게임플레이 시스템, 턴 관리, 시간 되감기, 팬텀 재생, 오브젝트 상호작용, 씬 전환</p>
+        <p><strong>기술</strong> / Unity, C#, WebGL, GitHub, GitHub Wiki, Slack, Scrum</p>
+        <p>
+          <strong>링크</strong> /
+          <a href="https://2024fall-swpp.github.io/team-project-for-2024-fall-swpp-team-12/" rel="noopener noreferrer"
+            target="_blank">데모</a> /
+          <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12" rel="noopener noreferrer"
+            target="_blank">GitHub</a> /
+          <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12/wiki/%EC%8A%A4%ED%81%AC%EB%9F%BC"
+            rel="noopener noreferrer" target="_blank">스크럼 로그</a> /
+          <a href="https://www.youtube.com/playlist?list=PLyip1lR-pqZOz7Fb8o9VwufTkeqWq2EMe" rel="noopener noreferrer"
+            target="_blank">영상</a>
         </p>
-</div>
-</section>
-<section class="project-section">
-<h2>게임 매뉴얼 (한국어)</h2>
-<div class="card">
-<img alt="Chronos 매뉴얼 개요" class="project-image" src="../../assets/images/chronos-manual.png"/>
-</div>
-</section>
-</main>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>프로젝트 개요</h2>
+      <div class="card">
+        <p>
+          Chronos는 시간 되돌리기와 분신 재생을 핵심 기믹으로 하는 턴 기반 3D 퍼즐 게임입니다.
+          플레이어가 과거의 특정 턴으로 되돌아가면, 이전 행동이 분신으로 재생되고
+          현재 플레이어의 행동과 함께 퍼즐 오브젝트에 영향을 주는 구조입니다.
+        </p>
+        <p>
+          플레이어 입력을 턴 단위로 처리하는 전역 턴 루프와,
+          시간 되돌리기 / 분신 재생 / 오브젝트 상태 복원에 필요한 상태 로그 시스템을 기획하고 구현했습니다.
+          플레이어, 분신, 박스, 버튼, 레버, 이동 장애물이 같은 턴 흐름 안에서 동작하도록
+          게임플레이 시스템을 정리했습니다. 
+        </p>
+        <p>
+          최종 발표 후 5인 팀 내부 상호 익명 동료평가에서 22% 기여도로 평가받고, 수업 전체적으로 상위 20%의 성적을 달성했습니다.
+        </p>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>담당 내용</h2>
+      <div class="card">
+        <ul>
+          <li>
+            플레이어 입력 1회가 플레이어 이동, 분신 재생, 오브젝트 반응으로 이어지는
+            턴 기반 진행 구조를 구현했습니다.
+          </li>
+          <li>
+            TurnManager를 중심으로 각 오브젝트의 이동과 상태 변경이 끝난 뒤에만
+            다음 턴으로 넘어가도록 제어했습니다.
+          </li>
+          <li>
+            플레이어 입력과 위치/상태 로그를 저장해, 시간 되돌리기와 분신 재생이 가능하도록 구현했습니다.
+          </li>
+          <li>
+            플레이어, 박스, 레버, 버튼, 이동 장애물의 상태를 턴별로 저장하고,
+            되돌리기 시점에 맞게 복원되도록 처리했습니다.
+          </li>
+          <li>
+            박스, 버튼, 레버, 레이저, 이동 장애물 등 퍼즐 오브젝트의 상호작용과 충돌 처리를 구현했습니다.
+          </li>
+          <li>
+            레벨별 씬을 분리하고 additive load 방식으로 연결해,
+            스테이지 전환과 카메라 이동이 자연스럽게 이어지도록 구현했습니다.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>설계상 과제</h2>
+      <div class="card">
+        <p>
+          이 프로젝트의 가장 큰 어려움은 턴 기반 게임플레이와 팀 단위 구현을 함께 맞추는 일이었습니다.
+          플레이어 입력 한 번이 이동, 분신 재생, 박스 이동, 레버 상태 변화, 낙하 판정,
+          시간 되돌리기 로그 갱신까지 이어지는 구조였기 때문에,
+          처리 순서와 상태 반영 순서가 조금만 어긋나도 쉽게 버그가 발생했습니다.
+        </p>
+
+        <p>
+          초반에는 플레이어 이동, 오브젝트, 맵 등을 각자 나누어 구현했지만,
+          통합 과정에서 기능별 입출력 방식과 상태 변경 기준이 조금씩 달라 문제가 생겼습니다.
+          비슷한 역할의 함수가 중복되거나, 한 기능에서 예상한 상태와 다른 기능이 실제로 넘겨주는 상태가 달라
+          전체 동작이 불안정해지는 경우가 있었습니다.
+        </p>
+
+        <p>
+          이를 해결하기 위해 먼저 각 기능의 역할과 입출력 기준, 턴 진행 순서를 정리했습니다.
+          이후 TurnManager를 중심으로 플레이어, 팬텀, 오브젝트의 동작이 같은 턴 흐름 안에서 처리되도록
+          구조를 정리하고, 플레이어 입력과 위치/상태 로그를 이용해 시간 되돌리기와 분신 재생이
+          일관되게 동작하도록 구현했습니다.
+        </p>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>게임플레이 미리보기</h2>
+      <div class="card image-row">
+        <img alt="Chronos 게임플레이 화면" class="project-image" src="../../assets/images/chronos-main-1.png" />
+        <img alt="Chronos 게임플레이 화면" class="project-image" src="../../assets/images/chronos-main-2.png" />
+      </div>
+      <div class="card">
+        <p>
+          턴제 퍼즐 환경과 분신 기반 되돌리기 기믹이 실제로 동작하는 장면입니다.
+        </p>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>게임 매뉴얼 (한국어)</h2>
+      <div class="card">
+        <img alt="Chronos 매뉴얼 개요" class="project-image" src="../../assets/images/chronos-manual.png" />
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
