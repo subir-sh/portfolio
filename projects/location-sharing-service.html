@@ -1,96 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AreUComing | Seunghyeon Lee</title>
-  <link rel="stylesheet" href="../assets/css/style.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>AreUComing | Seunghyeon Lee</title><link rel="stylesheet" href="../assets/css/style.css" /></head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="Language switcher">
-          <a href="./location-sharing-service.html" class="is-active">EN</a>
-          <a href="../jp/projects/location-sharing-service.html">JP</a>
-          <a href="../ko/projects/location-sharing-service.html">KR</a>
-        </div>
-      </div>
-      <a class="back-link" href="../index.html">← Back to Main</a>
-      <h1>AreUComing</h1>
-      <p>
-        Session-based real-time location sharing service that records the journey toward meeting, not just the destination.
-      </p>
-    </div>
-  </header>
-
+  <header class="project-header"><div class="container"><div class="header-top-row"><div class="lang-switch" aria-label="Language switcher"><a href="./location-sharing-service.html" class="is-active">EN</a><a href="../jp/projects/location-sharing-service.html">JP</a><a href="../ko/projects/location-sharing-service.html">KR</a></div></div><a class="back-link" href="../index.html">← Back to Main</a><h1>AreUComing</h1><p>A location-based web app for sharing a partner's route while they are coming to meet, and looking back on the record afterward.</p></div></header>
   <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>Hackathon Project</strong> · <em>WaffleStudio Wackathon 2026</em></p>
-        <p><strong>Role</strong> · Backend Development, WebSocket Flow, Session Modeling</p>
-        <p><strong>Tech</strong> · Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p>
-        <p>
-          <strong>Links</strong> ·
-          <a href="https://github.com/subir-sh/wackathon-server" target="_blank" rel="noopener noreferrer">Backend</a> ·
-          <a href="https://github.com/h-seo-n/wackathon-front" target="_blank" rel="noopener noreferrer">Frontend</a> ·
-          <a href="https://www.figma.com/design/5Ju4gzpAp2AszAcIQcpdh0/%EC%98%A4%EA%B3%A0%EC%9E%88%EB%8B%88?node-id=20-23&p=f&t=3WY7uAepXL7NOeHA-0" target="_blank" rel="noopener noreferrer">Figma</a>
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Project Overview</h2>
-      <div class="card">
-        <p>
-          AreUComing is a mobile web service for couples that shares routes in real time while they are on the way to meet.
-          Instead of treating location sharing as passive tracking, the service was designed around the journey itself and the moment of meeting as a shared experience.
-        </p>
-        <p>
-          Developed during WaffleStudio's 2026 Wackathon, the project won 3rd place.
-          I mainly worked on backend-side session modeling and real-time flow, focusing on how live location updates, session history, and authenticated access could work together reliably.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>What I Did</h2>
-      <div class="card">
-        <ul>
-          <li>Modeled the database schema for session-based location sharing, including sessions and session point history.</li>
-          <li>Implemented backend and frontend WebSocket flow for real-time session updates.</li>
-          <li>Connected JWT authentication to the WebSocket handshake and added session membership validation.</li>
-          <li>Combined HTTP-based history loading with live socket updates so the map could recover state after refresh and continue streaming afterward.</li>
-          <li>Handled automatic socket start on session creation and acceptance, along with session completion flow.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Design Challenge</h2>
-      <div class="card">
-        <p>
-          The main challenge was designing real-time location sharing around an application-level session lifecycle rather than around the socket connection itself.
-          In this service, a WebSocket was only one transport layer inside a larger flow that also included authenticated session entry, history loading, live point streaming, and session completion.
-        </p>
-        <p>
-          I worked on structuring that flow so that past session data could be loaded through HTTP, new updates could stream through WebSocket, and both would remain consistent across refreshes and reconnects.
-          This made the backend closer to a session-oriented real-time system than a simple live socket demo.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Preview</h2>
-      <div class="card">
-        <img src="../assets/images/areucoming-image-1.png" alt="AreUComing preview 1" class="project-image" />
-      </div>
-      <div class="card">
-        <p>
-          Mobile-first interface for live route sharing and meeting-oriented session tracking, designed as a PWA web app.
-        </p>
-      </div>
-    </section>
+    <section class="project-section"><div class="card"><p><strong>Hackathon Project</strong> / <em>WaffleStudio Wackathon 2026</em></p><p><strong>Role</strong> / Backend development, session domain design, REST API, real-time location history flow</p><p><strong>Tech</strong> / Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p><p><strong>Links</strong> / <a href="https://github.com/wafflestudio/wackathon-2026-team1-server" target="_blank" rel="noopener noreferrer">Backend</a> / <a href="https://github.com/wafflestudio/wackathon-2026-team1-web" target="_blank" rel="noopener noreferrer">Frontend</a> / <a href="https://www.figma.com/design/zzkAu6av9KPDY4aY9xR0sm/%EC%99%80%EC%BB%A4%ED%86%A4-1%ED%8C%80?node-id=0-1&p=f&t=9E8FgpsXZvf1uTEw-0" target="_blank" rel="noopener noreferrer">Figma</a></p></div></section>
+    <section class="project-section"><h2>Project Overview</h2><div class="card"><p>AreUComing is a location-based mobile web app where partners can share the process of moving toward a meeting place, and keep that process as a record after they meet.</p><p>I designed the session domain from location-sharing request, acceptance, progress, to completion, and implemented REST APIs and backend/frontend WebSocket communication. Coordinates, memos, photos, and meeting-complete events created during the trip are stored in one history model, so they can be used both for real-time map display and later history lookup.</p><p>The project was built at WaffleStudio Wackathon 2026 and won 3rd place.</p></div></section>
+    <section class="project-section"><h2>What I Did</h2><div class="card"><ul><li>Designed the overall DB schema, including sessions and location point history.</li><li>Modeled a location-sharing request as a session with PENDING / ACTIVE / DONE states.</li><li>Implemented REST APIs for session creation, current session lookup, status lookup, acceptance, completion, photo upload, and history lookup.</li><li>Implemented the backend WebSocket handler, processing location coordinates, memos, and meeting-confirmation events based on session state and user permission.</li><li>Implemented the frontend flow for WebSocket connection, periodic location sending, receiving the partner's location, and updating map markers and routes.</li><li>Loaded existing history through HTTP and received new coordinates through WebSocket, so the map state could be restored even after refresh.</li></ul></div></section>
+    <section class="project-section"><h2>Design Challenge</h2><div class="card"><p>The first thing I had to organize was treating location sharing not as simple coordinate transfer, but as a stateful session. When a user requests location sharing, the session becomes PENDING. When the partner accepts it, it becomes ACTIVE. After meeting completion or cancellation, it ends as DONE.</p><p>The session was shared by a couple, not by a single user, so access control was also necessary. I compared the current user's couple information with the session's coupleId, and blocked access when they did not match. To prevent multiple PENDING/ACTIVE sessions for the same couple, the server returned the existing session instead of creating a duplicate.</p><p>I also did not manage coordinates, memos, photos, and meeting-complete events as separate pieces. I integrated them into a common history model called SessionPoint. With one storage structure, real-time map display, refresh recovery, and post-session history lookup could run on the same data flow.</p></div></section>
+    <section class="project-section"><h2>Preview</h2><div class="card image-row"><img src="../assets/images/areucoming-image-1.png" alt="AreUComing preview 1" class="project-image" /></div><div class="card"><p>Mobile screens for checking real-time routes and session state.</p></div></section>
   </main>
 </body>
 </html>

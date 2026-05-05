@@ -1,88 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XR Research Internship Project | Seunghyeon Lee</title>
-  <link rel="stylesheet" href="../assets/css/style.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>XR Research Internship | Seunghyeon Lee</title><link rel="stylesheet" href="../assets/css/style.css" /></head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="Language switcher">
-          <a href="./xr-research-intern.html" class="is-active">EN</a>
-          <a href="../jp/projects/xr-research-intern.html">JP</a>
-          <a href="../ko/projects/xr-research-intern.html">KR</a>
-        </div>
-      </div>
-      <a class="back-link" href="../index.html">← Back to Main</a>
-      <h1>XR Research Internship Project</h1>
-      <p>
-        Research internship focused on object-grounded XR overlays, spatial alignment, and output evaluation.
-      </p>
-    </div>
-  </header>
-
+  <header class="project-header"><div class="container"><div class="header-top-row"><div class="lang-switch" aria-label="Language switcher"><a href="./xr-research-intern.html" class="is-active">EN</a><a href="../jp/projects/xr-research-intern.html">JP</a><a href="../ko/projects/xr-research-intern.html">KR</a></div></div><a class="back-link" href="../index.html">← Back to Main</a><h1>XR Research Internship</h1><p>An undergraduate research internship about object-based XR overlays, spatial alignment, and evaluation of AI-generated outputs.</p></div></header>
   <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>Research Internship</strong> · <em>HCS Lab</em></p>
-        <p><strong>Role</strong> · 2D–3D Grounding, XR Overlay Implementation, Generation Quality Evaluation</p>
-        <p><strong>Tech</strong> · Unity, OpenXR, Gemini</p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Note</h2>
-      <div class="card">
-        <p>
-          Some project-specific details are intentionally omitted here.
-          Since this work is tied to an academic project with anonymity considerations, identifiable information such as the original project name, direct links, and project-specific background has been removed.
-        </p>
-        <p>
-          This page focuses on my technical contributions only.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>What I Did</h2>
-      <div class="card">
-        <ul>
-          <li>Worked on 2D–3D grounding to connect image-based referent detection with object-linked XR overlays.</li>
-          <li>Implemented client-side XR overlay components that mapped detected referents to stable world-anchored visual targets.</li>
-          <li>Handled spatial alignment across image-space detection, camera projection, and world-space placement for object-grounded visual delivery.</li>
-          <li>Evaluated generated multimodal outputs for validity, contextual appropriateness, and alignment with intended response content.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Design Challenge</h2>
-      <div class="card">
-        <p>
-          A key challenge was turning 2D referent detection from egocentric images into stable XR overlays that appeared on the intended real-world target.
-          The visual cues were not generic screen-space annotations: they had to be grounded to physical referents, updated as the user moved, and remain consistent with model output timing.
-        </p>
-        <p>
-          This required bridging multiple coordinate spaces between image-based detection, camera projection, and world-space anchoring on the client side.
-          I focused on the grounding and overlay side of that pipeline, especially where accurate object-linked placement was necessary for scene-aware visual delivery and evaluation.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Preview</h2>
-      <div class="card">
-        <img src="" alt="XR research project preview" class="project-image" />
-      </div>
-      <div class="card">
-        <p>
-          Preview image omitted for anonymity.
-        </p>
-      </div>
-    </section>
+    <section class="project-section"><div class="card"><p><strong>Undergraduate Research Intern</strong> / <em>HCS Lab</em></p><p><strong>Role</strong> / 2D-3D grounding, XR overlay implementation, AI-generated output evaluation</p><p><strong>Tech</strong> / Unity, OpenXR, Gemini</p></div></section>
+    <section class="project-section"><h2>Project Overview</h2><div class="card"><p>I joined a research project that studied how users can better understand responses generated by an XR agent. I worked on object-based overlays in the XR client and evaluation of AI-generated outputs.</p><p>The project deals with where, in what form, and when visual cues connected to the real scene should be shown. Because of paper submission and anonymity concerns, I intentionally omit the specific system name, experiment results, and detailed structure.</p></div></section>
+    <section class="project-section"><h2>What I Did</h2><div class="card"><ul><li>Understood and implemented the XR client flow connecting gaze input, the real scene, and UI overlays in a Unity/OpenXR environment.</li><li>Worked on 2D-3D grounding that connects image-based referent detection results to object-linked XR overlays.</li><li>Analyzed alignment issues between screen coordinates, camera projection, and world-space placement for object-based visual presentation.</li><li>Evaluated whether AI-generated outputs matched the scene context, the intended referent, and the purpose of the response.</li></ul></div></section>
+    <section class="project-section"><h2>Design Challenge</h2><div class="card"><p>The key challenge was not just showing an AI-generated explanation as voice or text, but connecting it to the real scene the user was looking at so it could be understood more easily.</p><p>For this, the XR client had to handle coordinate systems and overlay placement so visual cues shown over the real scene would not drift away from the target. Screen coordinates, camera input, and Unity world space all use different references, so simply displaying object detection results on the UI was not enough. A conversion process was needed.</p><p>Also, multimodal outputs generated by AI could not be treated as always correct. I had to check whether a visual cue pointed to the right target in the real scene, whether it was the right kind of cue for the explanation, and whether it fit the whole response flow. I reviewed generated outputs and evaluated them based on the scene context and intended response.</p></div></section>
+    <section class="project-section"><h2>Preview</h2><div class="card image-row"><img src="" alt="XR research project preview" class="project-image" /></div><div class="card"><p>Preview image omitted for anonymity.</p></div></section>
   </main>
 </body>
 </html>

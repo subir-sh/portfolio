@@ -9,86 +9,46 @@
 <body>
   <header class="project-header">
     <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="Language switcher">
-          <a href="./campus-event-calendar.html" class="is-active">EN</a>
-          <a href="../jp/projects/campus-event-calendar.html">JP</a>
-          <a href="../ko/projects/campus-event-calendar.html">KR</a>
-        </div>
-      </div>
+      <div class="header-top-row"><div class="lang-switch" aria-label="Language switcher"><a href="./campus-event-calendar.html" class="is-active">EN</a><a href="../jp/projects/campus-event-calendar.html">JP</a><a href="../ko/projects/campus-event-calendar.html">KR</a></div></div>
       <a class="back-link" href="../index.html">← Back to Main</a>
       <h1>Hangsha</h1>
-      <p>
-        Campus event calendar service built to make extracurricular event information at Seoul National University more accessible and usable.
-      </p>
+      <p>A campus event calendar service built to make SNU extracurricular event information easier to find and use.</p>
     </div>
   </header>
 
   <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>Club Team Project</strong> · <em>WaffleStudio</em></p>
-        <p><strong>Role</strong> · Backend Development, Data Scraping, API Design</p>
-        <p><strong>Tech</strong> · Kotlin, Spring Boot, MySQL, Flyway, Docker, AWS S3, Nginx, OkHttp, Playwright, GitHub Actions</p>
-        <p>
-          <strong>Links</strong> ·
-          <a href="https://github.com/wafflestudio/hangsha-server" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-          <a href="https://hangsha.site/main" target="_blank" rel="noopener noreferrer">Service</a>
-        </p>
-      </div>
-    </section>
+    <section class="project-section"><div class="card">
+      <p><strong>Club Team Project</strong> / <em>WaffleStudio</em></p>
+      <p><strong>Role</strong> / Backend development, crawling/batch pipeline, data sync, image storage</p>
+      <p><strong>Tech</strong> / Kotlin, Spring Boot, MySQL, Flyway, Docker, AWS S3, Nginx, OkHttp, Playwright, GitHub Actions</p>
+      <p><strong>Links</strong> / <a href="https://github.com/wafflestudio/hangsha-server" target="_blank" rel="noopener noreferrer">GitHub</a> / <a href="https://hangsha.site/main" target="_blank" rel="noopener noreferrer">Service</a></p>
+    </div></section>
 
-    <section class="project-section">
-      <h2>Project Overview</h2>
-      <div class="card">
-        <p>
-          Hangsha is a campus event calendar service built to improve access to extracurricular event information at Seoul National University.
-          The project started from the poor usability of the university's existing extracurricular platform and aimed to provide a more intuitive and personalized experience through calendar views, filtering, bookmarks, timetable support, and memo features.
-        </p>
-        <p>
-          I mainly worked on backend development and data scraping, focusing on how event data could be collected from an unstable external source, normalized, and served in a product-ready form for frontend features and personalization.
-        </p>
-      </div>
-    </section>
+    <section class="project-section"><h2>Project Overview</h2><div class="card">
+      <p>Hangsha is a calendar service for finding and managing extracurricular events at Seoul National University. We started from the problem that the existing platform made event information hard to browse, and added calendar views, filtering, bookmarks, timetable integration, and memo features.</p>
+      <p>I implemented the backend flow that collects and normalizes event data, then serves it through monthly calendar, daily list, search, and detail APIs. I also reflected user interest categories and excluded keywords in the results, and separated the crawler into a batch job so the data could be updated regularly.</p>
+    </div></section>
 
-    <section class="project-section">
-      <h2>What I Did</h2>
-      <div class="card">
-        <ul>
-          <li>Built backend flows for collecting, normalizing, and serving campus event data.</li>
-          <li>Implemented event-related APIs including calendar views, search, event detail, and category/group lookup.</li>
-          <li>Worked on personalizing backend features such as bookmarks, excluded keywords, memos, and tags.</li>
-          <li>Handled source-specific collection logic for both list pages and detail pages using a mixed strategy with OkHttp and Playwright.</li>
-        </ul>
-      </div>
-    </section>
+    <section class="project-section"><h2>What I Did</h2><div class="card"><ul>
+      <li>Designed and maintained the overall DB schema, and documented the crawling logic and APIs for team collaboration.</li>
+      <li>Implemented event APIs such as monthly calendar, daily event list, event search, and event detail lookup.</li>
+      <li>Implemented sorting and filtering logic based on user interest categories and excluded keywords.</li>
+      <li>Analyzed list/detail pages on the SNU extracurricular site and parsed event information and individual sessions.</li>
+      <li>Stored event images and images inside detail HTML in OCI Object Storage, then replaced the image paths inside the saved HTML.</li>
+      <li>Separated the crawler into a batch module and adjusted it for a Docker/Kubernetes CronJob based recurring execution structure.</li>
+      <li>Handled issues such as duplicated events, missing-session events, SQL lookup errors, and parsing before the detail page finished loading.</li>
+    </ul></div></section>
 
-    <section class="project-section">
-      <h2>Design Challenge</h2>
-      <div class="card">
-        <p>
-          The core challenge in Hangsha was not just collecting event data, but building a backend that could serve stable product features on top of an unstable external source.
-          Since the original platform mixed static pages, browser-dependent flows, and inconsistent access patterns, the backend had to absorb that variability before the data could be used reliably in calendar, search, and personalization features.
-        </p>
-        <p>
-          I approached this by separating data acquisition from product-facing delivery: using different collection strategies where needed, normalizing the results into a consistent event model, and exposing them through APIs designed for filtering, calendar views, and user-specific responses.
-          This made the system closer to a service-oriented data pipeline than a simple crawler plus CRUD backend.
-        </p>
-      </div>
-    </section>
+    <section class="project-section"><h2>Design Challenge</h2><div class="card">
+      <p>The first thing to solve was turning event data from an external site into a shape that matched our service's query flow. After collecting data from list and detail pages, I normalized event periods, application periods, session information, recruitment status, and organizer data to fit the DB schema. I also organized query conditions so the same rules could be used across monthly calendar, daily list, search, and detail APIs.</p>
+      <p>I also made event sorting and filtering change based on user interest categories and excluded keywords. The earlier query logic mainly looked at event activity dates, so I added application-period conditions too, reducing cases where events were missing from the calendar or list.</p>
+      <p>In the operating environment, we could not just reset the DB and crawl everything again whenever the schema changed. So I separated seed data that should be managed by migrations from event data that keeps changing with the external site. For matching old and new data, I avoided depending on auto-increment IDs and used more stable values such as application links, event periods, and session information.</p>
+    </div></section>
 
-    <section class="project-section">
-      <h2>Preview</h2>
-      <div class="card image-row">
-        <img src="../assets/images/hangsha-image-1.png" alt="Hangsha preview 1" class="project-image" />
-        <img src="../assets/images/hangsha-image-2.png" alt="Hangsha preview 2" class="project-image" />
-      </div>
-      <div class="card">
-        <p>
-          Screens from the calendar-based event browsing experience, designed to make event discovery, filtering, and personalized access easier than the original university platform.
-        </p>
-      </div>
-    </section>
+    <section class="project-section"><h2>Preview</h2><div class="card image-row">
+      <img src="../assets/images/hangsha-image-1.png" alt="Hangsha preview 1" class="project-image" />
+      <img src="../assets/images/hangsha-image-2.png" alt="Hangsha preview 2" class="project-image" />
+    </div><div class="card"><p>Calendar-centered screens for event browsing, filtering, and personalized use.</p></div></section>
   </main>
 </body>
 </html>

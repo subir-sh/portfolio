@@ -1,79 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chronos | イ・スンヒョン</title>
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Chronos | イ・スンヒョン</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="言語切替">
-          <a href="../../projects/turn-based-puzzle-game.html">英</a>
-          <a href="./turn-based-puzzle-game.html" class="is-active">日</a>
-          <a href="../../ko/projects/turn-based-puzzle-game.html">韓</a>
-        </div>
-      </div>
-      <a class="back-link" href="../index.html">← 一覧へ戻る</a>
-      <h1>Chronos</h1>
-      <p>時間逆行とクローン生成を中核に設計した、Unityベースのターン制3Dパズルゲームです。</p>
-    </div>
-  </header>
-
+  <header class="project-header"><div class="container"><div class="header-top-row"><div class="lang-switch" aria-label="言語切替"><a href="../../projects/turn-based-puzzle-game.html">英</a><a href="./turn-based-puzzle-game.html" class="is-active">日</a><a href="../../ko/projects/turn-based-puzzle-game.html">韓</a></div></div><a class="back-link" href="../index.html">← 一覧へ戻る</a><h1>Chronos</h1><p>時間逆行とクローンギミックを中心に制作した、Unityベースのターン制3Dパズルゲームです。</p></div></header>
   <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>授業プロジェクト</strong> · <em>ソフトウェア開発の原理と実習（2024年秋学期）</em></p>
-        <p><strong>担当</strong> · ゲームプレイシステム実装、ターン進行設計、オブジェクト相互作用実装、状態ロジック改善</p>
-        <p><strong>使用技術</strong> · Unity, C#, WebGL, GitHub, GitHub Wiki, Slack, Scrum</p>
-        <p><strong>関連リンク</strong> · <a href="https://2024fall-swpp.github.io/team-project-for-2024-fall-swpp-team-12/" target="_blank" rel="noopener noreferrer">デモ</a> · <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12/wiki/%EC%8A%A4%ED%81%AC%EB%9F%BC" target="_blank" rel="noopener noreferrer">Scrum記録</a> · <a href="https://www.youtube.com/playlist?list=PLyip1lR-pqZOz7Fb8o9VwufTkeqWq2EMe" target="_blank" rel="noopener noreferrer">動画</a></p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>概要</h2>
-      <div class="card">
-        <p>Chronos は、ターン制の進行と時間逆行によるクローン生成を中核とした、Unityベースの3Dパズルゲームです。大学のチームプロジェクトとして、短時間でも完成度の高いパズル体験を成立させることを目標に開発しました。</p>
-        <p>私は主にゲームプレイ側のシステム、特にターン進行、オブジェクト相互作用、状態ロジックの改善を担当しました。単に機能を追加するだけでなく、ルールが複雑になっても挙動が破綻しないよう、内部構造を整えることに力を入れました。</p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>担当内容</h2>
-      <div class="card">
-        <ul>
-          <li>ターン進行とプレイヤー・オブジェクト相互作用の仕組みを実装しました。</li>
-          <li>セーブ・ロード、シーン遷移、マップ進行など、ゲームプレイ周辺の機能も構築しました。</li>
-          <li>ターン実行やオブジェクトの応答を追いやすくするため、状態関連ロジックを整理・改善しました。</li>
-          <li>GitHub、Wiki、Slack を用いたスプリント形式のチーム開発で進行しました。</li>
-          <li>5人チームの匿名相互評価で、22%の貢献度評価を受けました。</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>設計上の課題</h2>
-      <div class="card">
-        <p>Chronos で難しかったのは、複数の相互作用オブジェクトをまたぐ各ターンの解決順序を一貫して保つことでした。1回の入力が、プレイヤーだけでなく、クローンの再生、箱の移動、レバーによる状態変化、落下判定、時間逆行ログにまで影響します。</p>
-        <p>これらの更新は順序に強く依存していたため、小さな仕様変更でも移動解決や状態復元に副作用が生じやすい構造でした。私はオブジェクト相互作用を壊さずに、ターン実行と状態更新を追いやすく、調整しやすい形へ整えることを重視しました。</p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>画面例</h2>
-      <div class="card image-row">
-        <img src="../../assets/images/chronos-main-1.png" alt="Chronos 画面例 1" class="project-image" />
-        <img src="../../assets/images/chronos-main-2.png" alt="Chronos 画面例 2" class="project-image" />
-      </div>
-      <div class="card">
-        <img src="../../assets/images/chronos-manual.png" alt="Chronos 説明資料" class="project-image" />
-      </div>
-      <div class="card">
-        <p>ターン制パズル環境、時間逆行によるクローンギミック、そしてプロジェクト内で使用した説明資料の画面です。</p>
-      </div>
-    </section>
+    <section class="project-section"><div class="card"><p><strong>授業プロジェクト</strong> / <em>ソフトウェア開発の原理と実習（2024年秋学期）</em></p><p><strong>担当</strong> / 中心ゲームプレイシステム、ターン管理、時間逆行、クローン再生、オブジェクト相互作用、シーン遷移</p><p><strong>使用技術</strong> / Unity, C#, WebGL, GitHub, GitHub Wiki, Slack, Scrum</p><p><strong>関連リンク</strong> / <a href="https://2024fall-swpp.github.io/team-project-for-2024-fall-swpp-team-12/" target="_blank" rel="noopener noreferrer">デモ</a> / <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12" target="_blank" rel="noopener noreferrer">GitHub</a> / <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12/wiki/%EC%8A%A4%ED%81%AC%EB%9F%BC" target="_blank" rel="noopener noreferrer">スクラム記録</a> / <a href="https://www.youtube.com/playlist?list=PLyip1lR-pqZOz7Fb8o9VwufTkeqWq2EMe" target="_blank" rel="noopener noreferrer">動画</a></p></div></section>
+    <section class="project-section"><h2>概要</h2><div class="card"><p>Chronos は、時間逆行とクローン再生を中心ギミックとするターン制3Dパズルゲームです。プレイヤーが過去の特定ターンへ戻ると、以前の行動がクローンとして再生され、現在のプレイヤーの行動と一緒にパズルオブジェクトへ影響する構造です。</p><p>プレイヤー入力をターン単位で処理する全体ターンループと、時間逆行・クローン再生・オブジェクト状態復元に必要な状態ログシステムを設計・実装しました。プレイヤー、クローン、箱、ボタン、レバー、移動障害物が同じターンの流れで動くように、ゲームプレイシステムを整理しました。</p><p>最終発表後、5人チーム内の匿名相互評価で22%の貢献度評価を受け、授業全体では上位20%の成績を達成しました。</p></div></section>
+    <section class="project-section"><h2>担当内容</h2><div class="card"><ul><li>1回のプレイヤー入力が、プレイヤー移動、クローン再生、オブジェクト反応へつながるターン制進行構造を実装しました。</li><li>TurnManagerを中心に、各オブジェクトの移動と状態変更が終わってから次のターンへ進むように制御しました。</li><li>プレイヤー入力とオブジェクトごとの位置・状態ログをターンごとに保存し、時間逆行とクローン再生のタイミングに合わせて復元できるようにしました。</li><li>箱、ボタン、レバー、レーザー、移動障害物など、パズルオブジェクトの相互作用と衝突処理を実装しました。</li><li>レベルごとにシーンを分け、additive load方式でつないで、ステージ遷移とカメラ移動が自然につながるようにしました。</li></ul></div></section>
+    <section class="project-section"><h2>設計上の課題</h2><div class="card"><p>このプロジェクトで一番難しかったのは、ターン制ゲームプレイとチーム単位の実装を同時に合わせることでした。プレイヤー入力1回が、移動、クローン再生、箱の移動、レバー状態変化、落下判定、時間逆行ログ更新まで続く構造だったため、処理順序や状態反映順序が少しずれるだけでバグが出やすい状態でした。</p><p>序盤はプレイヤー移動、オブジェクト、マップなどを分けて実装しましたが、統合の段階で機能ごとの入出力方式や状態変更の基準が少しずつ違い、問題が起きました。似た役割の関数が重複したり、ある機能が想定した状態と別の機能が実際に渡す状態が違ったりして、全体の動きが不安定になることがありました。</p><p>これを解決するために、まず各機能の役割、入出力基準、ターン進行順序を整理しました。そのうえでTurnManagerを中心に、プレイヤー、クローン、オブジェクトの動作が同じターンフローの中で処理されるように構造を整え、プレイヤー入力と位置・状態ログを使って、時間逆行とクローン再生が一貫して動くように実装しました。</p></div></section>
+    <section class="project-section"><h2>ゲームプレイ画面</h2><div class="card image-row"><img src="../../assets/images/chronos-main-1.png" alt="Chronos ゲームプレイ画面" class="project-image" /><img src="../../assets/images/chronos-main-2.png" alt="Chronos ゲームプレイ画面" class="project-image" /></div><div class="card"><p>ターン制パズル環境とクローンを使った巻き戻しギミックが実際に動作している画面です。</p></div></section>
+    <section class="project-section"><h2>ゲームマニュアル（韓国語）</h2><div class="card image-row"><img src="../../assets/images/chronos-manual.png" alt="Chronos マニュアル概要" class="project-image" /></div></section>
   </main>
 </body>
 </html>

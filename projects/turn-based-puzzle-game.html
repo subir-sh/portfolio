@@ -1,105 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chronos | Seunghyeon Lee</title>
-  <link rel="stylesheet" href="../assets/css/style.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Chronos | Seunghyeon Lee</title><link rel="stylesheet" href="../assets/css/style.css" /></head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="Language switcher">
-          <a href="./turn-based-puzzle-game.html" class="is-active">EN</a>
-          <a href="../jp/projects/turn-based-puzzle-game.html">JP</a>
-          <a href="../ko/projects/turn-based-puzzle-game.html">KR</a>
-        </div>
-      </div>
-      <a class="back-link" href="../index.html">← Back to Main</a>
-      <h1>Chronos</h1>
-      <p>
-        Turn-based 3D puzzle game built in Unity, centered on time rewind mechanics and clone based puzzle solving.
-      </p>
-    </div>
-  </header>
-
+  <header class="project-header"><div class="container"><div class="header-top-row"><div class="lang-switch" aria-label="Language switcher"><a href="./turn-based-puzzle-game.html" class="is-active">EN</a><a href="../jp/projects/turn-based-puzzle-game.html">JP</a><a href="../ko/projects/turn-based-puzzle-game.html">KR</a></div></div><a class="back-link" href="../index.html">← Back to Main</a><h1>Chronos</h1><p>A Unity-based turn-based 3D puzzle game built around time rewind and clone mechanics.</p></div></header>
   <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>Course Project</strong> · <em>Principles and Practices of Software Development (Fall 2024)</em></p>
-        <p><strong>Role</strong> · Gameplay Systems, Turn Flow, Object Interaction, State Logic Refactoring</p>
-        <p><strong>Tech</strong> · Unity, C#, WebGL, GitHub, GitHub Wiki, Slack, Scrum</p>
-        <p>
-          <strong>Links</strong> ·
-          <a href="https://2024fall-swpp.github.io/team-project-for-2024-fall-swpp-team-12/" target="_blank" rel="noopener noreferrer">Demo</a> ·
-          <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-          <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12/wiki/%EC%8A%A4%ED%81%AC%EB%9F%BC" target="_blank" rel="noopener noreferrer">Scrum Log</a> ·
-          <a href="https://www.youtube.com/playlist?list=PLyip1lR-pqZOz7Fb8o9VwufTkeqWq2EMe" target="_blank" rel="noopener noreferrer">Video</a>
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Project Overview</h2>
-      <div class="card">
-        <p>
-          Chronos is a Unity-based 3D puzzle game designed around turn-based progression and a rewind mechanic that creates clones.
-          The project was developed as a university team project with the goal of delivering a short but complete puzzle gameplay experience.
-        </p>
-        <p>
-          I focused on gameplay-side systems: turn flow, object interaction, and game state related refactoring.
-          Rather than only adding features, I worked on keeping puzzle behavior consistent as interaction rules grew more complex.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>What I Did</h2>
-      <div class="card">
-        <ul>
-          <li>Implemented turn progression and player-object interaction systems.</li>
-          <li>Built gameplay-adjacent systems including save/load, scene transitions, and map flow.</li>
-          <li>Refactored state related gameplay logic to make turn execution and object responses easier to track and modify.</li>
-          <li>Worked in a sprint-based team workflow using GitHub, Wiki documentation, and Slack.</li>
-          <li>Received a 22% contribution score in anonymous peer evaluation within a five-member team.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Design Challenge</h2>
-      <div class="card">
-        <p>
-          The main challenge in Chronos was resolving each turn in a consistent order across multiple interacting objects.
-          A single input could affect not only the player, but also clone replay, box movement, lever-triggered changes, falling checks, and rewind logs.
-        </p>
-        <p>
-          Because these updates were order sensitive, small gameplay changes could easily introduce side effects in movement resolution or state restoration.
-          I focused on making turn execution and state updates easier to follow and adjust without breaking object interactions.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Gameplay Preview</h2>
-      <div class="card image-row">
-        <img src="../assets/images/chronos-main-1.png" alt="Chronos gameplay screenshot" class="project-image" />
-        <img src="../assets/images/chronos-main-2.png" alt="Chronos gameplay screenshot" class="project-image" />
-      </div>
-      <div class="card">
-        <p>
-          Gameplay scenes showing the turn-based puzzle environment and the clone based rewind mechanic used throughout the game.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Game Manual (Korean)</h2>
-      <div class="card">
-        <img src="../assets/images/chronos-manual.png" alt="Chronos manual overview" class="project-image" />
-      </div>
-    </section>
+    <section class="project-section"><div class="card"><p><strong>Course Project</strong> / <em>Principles and Practices of Software Development (Fall 2024)</em></p><p><strong>Role</strong> / Core gameplay systems, turn control, time rewind, clone replay, object interaction, scene transition</p><p><strong>Tech</strong> / Unity, C#, WebGL, GitHub, GitHub Wiki, Slack, Scrum</p><p><strong>Links</strong> / <a href="https://2024fall-swpp.github.io/team-project-for-2024-fall-swpp-team-12/" target="_blank" rel="noopener noreferrer">Demo</a> / <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12" target="_blank" rel="noopener noreferrer">GitHub</a> / <a href="https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12/wiki/%EC%8A%A4%ED%81%AC%EB%9F%BC" target="_blank" rel="noopener noreferrer">Scrum Log</a> / <a href="https://www.youtube.com/playlist?list=PLyip1lR-pqZOz7Fb8o9VwufTkeqWq2EMe" target="_blank" rel="noopener noreferrer">Video</a></p></div></section>
+    <section class="project-section"><h2>Project Overview</h2><div class="card"><p>Chronos is a turn-based 3D puzzle game where time rewind and clone replay are the main mechanics. When the player rewinds to a previous turn, past actions are replayed by a clone, and those actions affect puzzle objects together with the current player's actions.</p><p>I planned and implemented the global turn loop that processes player input by turns, and the state log system needed for rewind, clone replay, and object state restoration. I organized gameplay systems so the player, clone, boxes, buttons, levers, and moving obstacles could all run inside the same turn flow.</p><p>After the final presentation, I received a 22% contribution score in anonymous peer evaluation within a five-member team, and the team achieved a top 20% grade in the course.</p></div></section>
+    <section class="project-section"><h2>What I Did</h2><div class="card"><ul><li>Implemented a turn-based progression structure where one player input leads to player movement, clone replay, and object reactions.</li><li>Used TurnManager to control the flow so the next turn starts only after each object's movement and state changes are finished.</li><li>Saved player input and object position/state logs by turn, so they could be restored during rewind and clone replay.</li><li>Implemented puzzle object interactions and collision handling for boxes, buttons, levers, lasers, and moving obstacles.</li><li>Separated levels into scenes and connected them with additive loading, so stage transitions and camera movement could continue naturally.</li></ul></div></section>
+    <section class="project-section"><h2>Design Challenge</h2><div class="card"><p>The biggest challenge was making turn-based gameplay work together with team-based implementation. A single player input could trigger movement, clone replay, box movement, lever state changes, falling checks, and rewind log updates. If the processing order or state update order was slightly off, bugs appeared quickly.</p><p>At first, we divided work by player movement, objects, maps, and other parts. But during integration, each feature had slightly different input/output assumptions and state-change rules. There were duplicated functions with similar roles, and some features passed states that other features did not expect, which made the whole behavior unstable.</p><p>To fix this, I first organized each feature's role, input/output rules, and turn order. Then I restructured the flow around TurnManager so the player, clone, and objects were handled in the same turn system. I also used player input logs and position/state logs to make rewind and clone replay behave consistently.</p></div></section>
+    <section class="project-section"><h2>Gameplay Preview</h2><div class="card image-row"><img src="../assets/images/chronos-main-1.png" alt="Chronos gameplay screen" class="project-image" /><img src="../assets/images/chronos-main-2.png" alt="Chronos gameplay screen" class="project-image" /></div><div class="card"><p>Scenes where the turn-based puzzle environment and clone-based rewind mechanic are actually running.</p></div></section>
+    <section class="project-section"><h2>Game Manual (Korean)</h2><div class="card image-row"><img src="../assets/images/chronos-manual.png" alt="Chronos manual overview" class="project-image" /></div></section>
   </main>
 </body>
 </html>

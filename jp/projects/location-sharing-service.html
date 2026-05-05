@@ -1,73 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AreUComing | イ・スンヒョン</title>
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>AreUComing | イ・スンヒョン</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="言語切替">
-          <a href="../../projects/location-sharing-service.html">英</a>
-          <a href="./location-sharing-service.html" class="is-active">日</a>
-          <a href="../../ko/projects/location-sharing-service.html">韓</a>
-        </div>
-      </div>
-      <a class="back-link" href="../index.html">← 一覧へ戻る</a>
-      <h1>AreUComing</h1>
-      <p>目的地そのものだけでなく、会うまでの移動過程も共有できる、セッション型のリアルタイム位置共有サービスです。</p>
-    </div>
-  </header>
-
+  <header class="project-header"><div class="container"><div class="header-top-row"><div class="lang-switch" aria-label="言語切替"><a href="../../projects/location-sharing-service.html">英</a><a href="./location-sharing-service.html" class="is-active">日</a><a href="../../ko/projects/location-sharing-service.html">韓</a></div></div><a class="back-link" href="../index.html">← 一覧へ戻る</a><h1>AreUComing</h1><p>恋人・パートナーが会いに来るまでの位置と記録を共有し、会ったあとにはその過程を振り返れるようにした位置情報ウェブアプリです。</p></div></header>
   <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>ハッカソン作品</strong> · <em>WaffleStudio Wackathon 2026</em></p>
-        <p><strong>担当</strong> · バックエンド開発、WebSocket通信フロー実装、セッション設計</p>
-        <p><strong>使用技術</strong> · Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p>
-        <p><strong>関連リンク</strong> · <a href="https://github.com/subir-sh/wackathon-server" target="_blank" rel="noopener noreferrer">バックエンド</a> · <a href="https://github.com/h-seo-n/wackathon-front" target="_blank" rel="noopener noreferrer">フロントエンド</a> · <a href="https://www.figma.com/design/5Ju4gzpAp2AszAcIQcpdh0/%EC%98%A4%EA%B3%A0%EC%9E%88%EB%8B%88?node-id=20-23&p=f&t=3WY7uAepXL7NOeHA-0" target="_blank" rel="noopener noreferrer">Figma</a></p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>概要</h2>
-      <div class="card">
-        <p>AreUComing は、会うまでの移動ルートをリアルタイムで共有する、カップル向けのモバイルウェブサービスです。位置共有を単なる追跡として扱うのではなく、移動そのものと出会う瞬間を共有体験として捉え、サービスとして設計しました。</p>
-        <p>WaffleStudio の 2026 年 Wackathon で制作され、銅賞を受賞しました。私は主にバックエンド側のセッション設計とリアルタイム処理を担当し、位置更新、履歴管理、認証付きアクセスをどのように一貫して動かすかに取り組みました。</p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>担当内容</h2>
-      <div class="card">
-        <ul>
-          <li>セッション型位置共有のためのデータベーススキーマを設計し、sessions と session_points を中心としたデータモデルを構築しました。</li>
-          <li>リアルタイム更新のための WebSocket フローを、バックエンドとフロントエンドの両方で実装しました。</li>
-          <li>JWT 認証を WebSocket の接続処理に組み込み、セッション参加者の検証を追加しました。</li>
-          <li>HTTP による履歴取得とソケット更新を組み合わせ、再読み込み後も地図の状態を復元しながら継続利用できるようにしました。</li>
-          <li>セッション作成・受諾時の自動接続開始と、完了までの流れも実装しました。</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>設計上の課題</h2>
-      <div class="card">
-        <p>難しかったのは、リアルタイム位置共有を単なるソケット通信としてではなく、アプリケーション全体のセッションライフサイクルとして設計することでした。このサービスでは WebSocket は単なる通信手段の一つであり、その周囲に認証付き参加、履歴取得、位置ストリーミング、セッション完了といった流れが存在します。</p>
-        <p>私はその全体の流れを整理し、過去データは HTTP で取得し、新しい更新は WebSocket で配信しながら、再読み込みや再接続後も両者が自然につながるように構成しました。単なるリアルタイム通信の実験ではなく、セッション指向のリアルタイムシステムとして成立することを意識した実装です。</p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>画面例</h2>
-      <div class="card"><img src="../../assets/images/areucoming-image-1.png" alt="AreUComing 画面例 1" class="project-image" /></div>
-      <div class="card">
-        <p>PWA 形式で設計した、リアルタイム位置共有と待ち合わせ体験を中心とするセッショントラッキング画面です。</p>
-      </div>
-    </section>
+    <section class="project-section"><div class="card"><p><strong>ハッカソン作品</strong> / <em>WaffleStudio Wackathon 2026</em></p><p><strong>担当</strong> / バックエンド開発、セッションドメイン設計、REST API、リアルタイム位置記録フロー</p><p><strong>使用技術</strong> / Java, Spring Boot, React, WebSocket, Docker, MySQL, GitHub</p><p><strong>関連リンク</strong> / <a href="https://github.com/wafflestudio/wackathon-2026-team1-server" target="_blank" rel="noopener noreferrer">バックエンド</a> / <a href="https://github.com/wafflestudio/wackathon-2026-team1-web" target="_blank" rel="noopener noreferrer">フロントエンド</a> / <a href="https://www.figma.com/design/zzkAu6av9KPDY4aY9xR0sm/%EC%99%80%EC%BB%A4%ED%86%A4-1%ED%8C%80?node-id=0-1&p=f&t=9E8FgpsXZvf1uTEw-0" target="_blank" rel="noopener noreferrer">Figma</a></p></div></section>
+    <section class="project-section"><h2>概要</h2><div class="card"><p>AreUComing は、恋人・パートナーが待ち合わせ場所に向かうまでの移動過程を共有し、会ったあとにはその過程を記録として残せる位置情報ウェブアプリです。</p><p>位置共有のリクエスト、承認、進行、終了へ続くセッションドメインを設計し、REST APIとバックエンド・フロントエンド間のWebSocket通信を実装しました。移動中に発生する座標、メモ、写真、合流完了イベントは一つの履歴モデルに保存し、リアルタイム地図表示と記録照会の両方で使えるようにしました。</p><p>WaffleStudio主催のWackathon 2026で開発し、3位を受賞しました。</p></div></section>
+    <section class="project-section"><h2>担当内容</h2><div class="card"><ul><li>セッションと位置ポイント履歴を含む全体DBスキーマを設計しました。</li><li>位置共有リクエストを、PENDING / ACTIVE / DONE 状態を持つセッションとしてモデル化しました。</li><li>セッション作成、現在セッション照会、状態照会、承認、終了、写真アップロード、履歴照会のREST APIを実装しました。</li><li>バックエンドのWebSocket handlerを実装し、クライアントが送った位置座標、メモ、合流確定イベントを、セッション状態とユーザー権限に合わせて処理しました。</li><li>フロントエンドでWebSocket接続、定期的な位置送信、相手の位置受信、地図マーカーと経路更新の流れを実装しました。</li><li>HTTPで既存履歴を読み込み、WebSocketで新しい座標を受け取ることで、再読み込み後も地図状態を復元できるようにしました。</li></ul></div></section>
+    <section class="project-section"><h2>設計上の課題</h2><div class="card"><p>このプロジェクトで最初に整理する必要があったのは、位置共有を単なる座標送信ではなく、状態を持つセッションとしてモデル化することでした。ユーザーが位置共有をリクエストするとセッションはPENDINGになり、相手が承認するとACTIVEになり、合流完了またはキャンセル後にはDONEとして終了する流れにしました。</p><p>セッションは個人ではなくカップル単位で共有されるリソースだったため、アクセス制御も必要でした。現在ユーザーのカップル情報とセッションのcoupleIdを比較してアクセスを制限し、同じカップルに複数のPENDING/ACTIVEセッションが同時に作られないよう、既存セッションを返す形で重複生成を防ぎました。</p><p>また、位置共有中に発生する座標、メモ、写真、合流完了イベントを別々に管理せず、SessionPointという共通の履歴モデルにまとめました。保存構造を一つにしたことで、リアルタイム地図表示、再読み込み後の復元、セッション終了後の履歴照会を同じデータフロー上で動かせました。</p></div></section>
+    <section class="project-section"><h2>画面例</h2><div class="card image-row"><img src="../../assets/images/areucoming-image-1.png" alt="AreUComing 画面例 1" class="project-image" /></div><div class="card"><p>モバイル環境でリアルタイム経路とセッション状態を確認できるようにした画面です。</p></div></section>
   </main>
 </body>
 </html>

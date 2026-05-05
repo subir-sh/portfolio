@@ -1,77 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hangsha | イ・スンヒョン</title>
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Hangsha | イ・スンヒョン</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <div class="header-top-row">
-        <div class="lang-switch" aria-label="言語切替">
-          <a href="../../projects/campus-event-calendar.html">英</a>
-          <a href="./campus-event-calendar.html" class="is-active">日</a>
-          <a href="../../ko/projects/campus-event-calendar.html">韓</a>
-        </div>
-      </div>
-      <a class="back-link" href="../index.html">← 一覧へ戻る</a>
-      <h1>Hangsha</h1>
-      <p>
-        ソウル大学の課外活動プログラム情報を、より見やすく使いやすい形で届けるために制作した学内イベントカレンダーサービスです。
-      </p>
-    </div>
-  </header>
-
+  <header class="project-header"><div class="container"><div class="header-top-row"><div class="lang-switch" aria-label="言語切替"><a href="../../projects/campus-event-calendar.html">英</a><a href="./campus-event-calendar.html" class="is-active">日</a><a href="../../ko/projects/campus-event-calendar.html">韓</a></div></div><a class="back-link" href="../index.html">← 一覧へ戻る</a><h1>Hangsha</h1><p>ソウル大学の課外活動イベント情報を、より探しやすく使いやすくするために作った学内イベントカレンダーサービスです。</p></div></header>
   <main class="container project-main">
-    <section class="project-section">
-      <div class="card">
-        <p><strong>チーム開発</strong> · <em>WaffleStudio</em></p>
-        <p><strong>担当</strong> · バックエンド開発、データ収集、API設計</p>
-        <p><strong>使用技術</strong> · Kotlin, Spring Boot, MySQL, Flyway, Docker, AWS S3, Nginx, OkHttp, Playwright, GitHub Actions</p>
-        <p><strong>関連リンク</strong> · <a href="https://github.com/wafflestudio/hangsha-server" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://hangsha.site/main" target="_blank" rel="noopener noreferrer">サービス</a></p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>概要</h2>
-      <div class="card">
-        <p>Hangsha は、ソウル大学の課外活動プログラム情報へのアクセスを改善するために制作した学内イベントカレンダーサービスです。既存プラットフォームの使いにくさを出発点に、カレンダー表示、絞り込み、ブックマーク、時間割連携、メモ機能を通じて、より直感的で個人に合った利用体験を目指しました。</p>
-        <p>私は主にバックエンド開発とデータ収集基盤を担当し、不安定な外部ソースからイベントデータをどのように取得し、正規化し、フロントエンド機能や個人化に活用できる形で提供するかに取り組みました。</p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>担当内容</h2>
-      <div class="card">
-        <ul>
-          <li>学内イベントデータを収集・正規化・提供するバックエンド処理を実装しました。</li>
-          <li>カレンダー表示、検索、イベント詳細、カテゴリ・グループ参照などのAPIを実装しました。</li>
-          <li>ブックマーク、除外キーワード、メモ、タグなど、パーソナライズ機能に対応しました。</li>
-          <li>一覧ページと詳細ページで取得方法を分け、OkHttp と Playwright を組み合わせた収集ロジックを構築しました。</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>設計上の課題</h2>
-      <div class="card">
-        <p>Hangsha の本質的な難しさは、単にイベントを集めることではなく、不安定な外部ソースの上で安定した機能を成立させるバックエンドを作ることにありました。元のプラットフォームは静的ページ、ブラウザ依存の処理、不統一なアクセスパターンが混在しており、その揺らぎを吸収しなければ、検索、カレンダー表示、個人化機能に使えるデータになりませんでした。</p>
-        <p>そのため、データ取得とサービス向けの提供を分離し、必要に応じて取得戦略を切り替えながら、結果を一貫したイベントモデルへ正規化し、絞り込み、カレンダー表示、ユーザー別レスポンスに使えるAPIとして公開しました。単純なクローラやCRUDではなく、サービス指向のデータ処理基盤に近い構成です。</p>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>画面例</h2>
-      <div class="card image-row">
-        <img src="../../assets/images/hangsha-image-1.png" alt="Hangsha 画面例 1" class="project-image" />
-        <img src="../../assets/images/hangsha-image-2.png" alt="Hangsha 画面例 2" class="project-image" />
-      </div>
-      <div class="card">
-        <p>カレンダーベースのイベント閲覧画面です。元の大学プラットフォームよりも、発見、絞り込み、個人化されたアクセスをしやすくすることを目指しました。</p>
-      </div>
-    </section>
+    <section class="project-section"><div class="card"><p><strong>サークルチーム開発</strong> / <em>WaffleStudio</em></p><p><strong>担当</strong> / バックエンド開発、クローリング・バッチ処理、データ同期、画像保存</p><p><strong>使用技術</strong> / Kotlin, Spring Boot, MySQL, Flyway, Docker, AWS S3, Nginx, OkHttp, Playwright, GitHub Actions</p><p><strong>関連リンク</strong> / <a href="https://github.com/wafflestudio/hangsha-server" target="_blank" rel="noopener noreferrer">GitHub</a> / <a href="https://hangsha.site/main" target="_blank" rel="noopener noreferrer">サービス</a></p></div></section>
+    <section class="project-section"><h2>概要</h2><div class="card"><p>Hangsha は、ソウル大学の課外活動イベント情報をより簡単に探して管理できるように作ったカレンダーサービスです。既存プラットフォームではイベント情報を探しにくいという問題から、カレンダー表示、絞り込み、ブックマーク、時間割連携、メモ機能を提供しました。</p><p>イベントデータを収集・正規化し、月別カレンダー、日別リスト、検索、詳細照会APIで使えるようにするバックエンドの流れを実装しました。ユーザーの関心カテゴリと除外キーワードを検索結果に反映し、クローラをバッチ処理として分離して、定期的にデータを更新できるようにしました。</p></div></section>
+    <section class="project-section"><h2>担当内容</h2><div class="card"><ul><li>全体のDBスキーマを設計・保守し、クローリングロジックとAPIを文書化してチーム作業を進めやすくしました。</li><li>月別カレンダー、日別イベントリスト、イベント検索、イベント詳細照会などのイベント関連APIを実装しました。</li><li>ユーザーの関心カテゴリと除外キーワードを反映したイベントの並び替え・絞り込み処理を実装しました。</li><li>ソウル大学の課外活動サイトの一覧・詳細ページを分析し、イベント情報と個別回次をパースしました。</li><li>イベント画像と詳細説明内の画像をOCI Object Storageに保存し、HTML内部の画像パスを置き換えました。</li><li>クローラをbatchモジュールに分離し、Docker/Kubernetes CronJobによる定期実行構成に合わせて整理しました。</li><li>イベントの重複生成、セッションのないイベント処理エラー、SQL照会エラー、詳細ページ読み込み前のパース問題などに対応しました。</li></ul></div></section>
+    <section class="project-section"><h2>設計上の課題</h2><div class="card"><p>最初に整理する必要があったのは、外部サイトから取得したイベントデータを、サービスの照会フローに合う形へ変えることでした。一覧・詳細ページからイベント情報を集めたあと、イベント期間、申込期間、回次情報、募集状態、主催機関などをDBスキーマに合わせて正規化し、月別カレンダー、日別リスト、検索、詳細照会APIで同じ基準を使えるようにしました。</p><p>また、ユーザーの関心カテゴリと除外キーワードによって、イベント一覧の並び替えと絞り込みが変わるようにしました。もともとの照会ロジックは活動期間を中心に見ていたため、申込期間の条件も一緒に反映し、カレンダーや一覧から漏れるイベントを減らしました。</p><p>運用環境では、DBを初期化して再クローリングする形ではなく、既存データを維持したままスキーマ変更や機能追加を反映する必要がありました。そのため、マイグレーションで管理する基準データと、外部サイトの状態によって変わり続けるイベントデータを分けました。既存データと新規データの対応付けも、auto increment IDではなく、申込リンク、イベント期間、回次情報のように環境が変わっても残る値を基準にしました。</p></div></section>
+    <section class="project-section"><h2>画面例</h2><div class="card image-row"><img src="../../assets/images/hangsha-image-1.png" alt="Hangsha 画面例 1" class="project-image" /><img src="../../assets/images/hangsha-image-2.png" alt="Hangsha 画面例 2" class="project-image" /></div><div class="card"><p>イベント探索、絞り込み、個人化機能をカレンダー中心に使えるようにした画面です。</p></div></section>
   </main>
 </body>
 </html>
