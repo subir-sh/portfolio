@@ -20,10 +20,10 @@
       </div>
 
       <h1>이승현 (Seunghyeon Lee)</h1>
-      <p class="meta">풀스택 / 인터랙티브 시스템 / HCI</p>
+      <p class="meta">백엔드 / 데이터 / 인터랙티브 시스템</p>
       <p class="subtitle">
-        웹 서비스, 게임, XR 프로젝트를 진행하며<br>
-        복잡한 데이터, 상태, 흐름을 정리하고 사용자의 입력이 화면의 반응으로 이어지는 시스템을 구현해왔습니다.
+        모호한 도메인 규칙을 데이터 구조와 상태 모델로 정리하고,<br>
+        사용자의 입력이 일관된 결과로 이어지는 서비스의 핵심 흐름을 구현해왔습니다.
       </p>
 
       <nav class="nav">
@@ -37,14 +37,23 @@
 
   <main class="container">
     <section id="projects" class="section">
-      <h2>프로젝트</h2>
+      <h2>주요 프로젝트</h2>
       <div class="project-grid">
         <article class="card project-card featured">
           <h3><a href="./projects/campus-event-calendar.html">행샤: 교내 행사 캘린더</a></h3>
           <p class="meta">Spring Boot / MySQL / Docker / React</p>
           <p>
             <em>동아리 팀 프로젝트</em><br>
-            서울대 비교과 행사 데이터 크롤링/정규화, 검색/상세 조회 API 및 사용자 설정 기반 정렬/필터링 로직 구현
+            여러 기관의 비정형 행사 데이터를 정규화하고, 크롤링부터 저장·검색·운영까지 이어지는 서비스 데이터 흐름을 구축
+          </p>
+        </article>
+
+        <article class="card project-card featured">
+          <h3><a href="./projects/word-connection-game.html">연이음: 단어 연결 퍼즐</a></h3>
+          <p class="meta">Unity / C# / Graph / CSV / LLM-assisted Data Curation</p>
+          <p>
+            <em>넥슨 게임잼 팀 프로젝트 / 14팀 중 3위</em><br>
+            단어 관계를 의미 그래프로 모델링하고, 실제 드로우 환경에서 경로가 성립하도록 노드·엣지 데이터와 판정 로직을 설계 및 튜닝
           </p>
         </article>
 
@@ -53,43 +62,16 @@
           <p class="meta">Spring Boot / React / WebSocket / MySQL</p>
           <p>
             <em>해커톤 팀 프로젝트 / 3위</em><br>
-            위치 공유 요청, 수락, 진행, 종료의 세션 모델, 위치 기록/히스토리 조회 백엔드 API 구현
-          </p>
-        </article>
-
-        <article class="card project-card featured">
-          <h3><a href="./projects/xr-research-intern.html">XR 에이전트 시스템 연구</a></h3>
-          <p class="meta">Unity / OpenXR / Gemini</p>
-          <p>
-            <em>학부 연구 인턴</em><br>
-            XR 에이전트 시스템 연구: 2D-3D 정렬, 객체 기반 오버레이 구현, 생성 결과 평가 담당
+            위치 공유 요청부터 종료까지의 세션 생명주기와 실시간 이벤트 흐름, 위치 기록·히스토리 조회 백엔드 API 구현
           </p>
         </article>
 
         <article class="card project-card featured">
           <h3><a href="./projects/turn-based-puzzle-game.html">Chronos: 턴제 3D 퍼즐 게임</a></h3>
-          <p class="meta">Unity / Scrum / GitHub / Slack</p>
+          <p class="meta">Unity / C# / Scrum / GitHub</p>
           <p>
-            <em>팀 프로젝트</em><br>
-            턴 관리, 상태 로그, 시간 되돌리기, 분신 재생, 오브젝트 상호작용 등 핵심 게임플레이 시스템 기획 및 구현
-          </p>
-        </article>
-
-        <article class="card project-card">
-          <h3><a href="./projects/vr-horror-game.html">폐병원 탈출: VR 호러 게임</a></h3>
-          <p class="meta">Unity / XR Interaction Toolkit / Meta Quest 2</p>
-          <p>
-            <em>팀 프로젝트</em><br>
-            VR 환경에 맞춰 UI, 시각 효과, 카메라 전환, 컷신 흐름 등 기획 및 구현
-          </p>
-        </article>
-
-        <article class="card project-card">
-          <h3><a href="./projects/memo-task-management.html">ThinkFlow: 메모 & 태스크 관리 앱</a></h3>
-          <p class="meta">React / Express / Prisma / Docker / PostgreSQL</p>
-          <p>
-            <em>개인 프로젝트</em><br>
-            메모, 태스크, 회고를 하나의 흐름으로 연결하는 풀스택 앱 설계 및 구현
+            <em>5인 팀 프로젝트</em><br>
+            턴 루프와 상태 로그를 중심으로 시간 되돌리기, 분신 재생, 퍼즐 오브젝트가 일관되게 동작하는 핵심 게임플레이 시스템 구현
           </p>
         </article>
       </div>
@@ -99,20 +81,11 @@
       <h2>경험</h2>
       <div class="card-list">
         <article class="card">
-          <h3>공군 공중기동정찰사령부</h3>
-          <p class="meta">정보상황병 / 2022 - 2023</p>
+          <h3>이룰리랩스 소프트웨어 엔지니어 인턴</h3>
+          <p class="meta">Next.js / NestJS / TypeScript / 2026년 여름 - 현재</p>
           <p>
-            교대 근무로 상황 감시 및 보고를 지원하는 정보상황 업무 수행
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>서울대학교 <a href="https://wafflestudio.com" target="_blank" rel="noopener noreferrer">와플스튜디오</a> (웹 개발 동아리)
-          </h3>
-          <p class="meta">프론트엔드 / 백엔드 / 팀 프로젝트 / CI/CD / 2025 - 현재</p>
-          <p>
-            React 프론트엔드와 Spring Boot 백엔드 세미나 트랙 수료 후, 팀 프로젝트로 실제 서비스 개발<br>
-            API 설계, 인증, 상태 관리, 배포까지 웹 서비스 개발 전반 경험
+            교육 AI SaaS의 과제·문서·채점 워크플로우를 개발하고 있습니다.
+            비정형 문서 입력이 신뢰 가능한 데이터와 사용자 피드백으로 이어지는 흐름을 중심으로 온보딩 및 기능 개발을 진행 중입니다.
           </p>
         </article>
 
@@ -120,7 +93,25 @@
           <h3>서울대학교 <a href="https://hcs.snu.ac.kr" target="_blank" rel="noopener noreferrer">HCS Lab</a> 학부 연구 인턴</h3>
           <p class="meta">HCI / XR / AI 응용 / 2025년 겨울</p>
           <p>
-            XR 에이전트 시스템 연구 참여: 2D-3D 정렬, 객체 기반 오버레이 구현, 응답 및 시각 생성 품질 평가 담당
+            XR 에이전트 시스템 연구에 참여해 카메라 입력의 2D-3D 정렬, 객체 기반 오버레이와 생성 결과 평가를 담당했습니다.
+            연구 결과는 비공개 심사 자료를 포함해 공개 범위가 제한되어 있습니다.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>서울대학교 <a href="https://wafflestudio.com" target="_blank" rel="noopener noreferrer">와플스튜디오</a> (웹 개발 동아리)</h3>
+          <p class="meta">프론트엔드 / 백엔드 / 팀 프로젝트 / CI/CD / 2025 - 현재</p>
+          <p>
+            React 프론트엔드와 Spring Boot 백엔드 세미나 트랙 수료 후 팀 프로젝트로 실제 서비스를 개발했습니다.<br>
+            API 설계, 인증, 상태 관리, 데이터베이스와 배포까지 웹 서비스 개발 전반을 경험했습니다.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>공군 공중기동정찰사령부</h3>
+          <p class="meta">정보상황병 / 2022 - 2023</p>
+          <p>
+            24시간 교대 근무 환경에서 상황 감시 및 보고를 지원하는 정보상황 업무를 수행했습니다.
           </p>
         </article>
       </div>
@@ -130,17 +121,17 @@
       <h2>학력</h2>
       <div class="card-list">
         <article class="card">
-          <h3>와세다대학</h3>
-          <p class="meta">교환학생 / 2025년 봄</p>
-          <p>컴퓨터공학 관련 5개를 포함한 8개 수업 일본어로 수강</p>
-          <p>평점: 3.7/4.0 (14학점)</p>
+          <h3>서울대학교</h3>
+          <p class="meta">자유전공학부 / 2020 - 현재 (졸업 예정: 2027년 2월)</p>
+          <p>주전공: 컴퓨터공학, 복수전공: 언어학</p>
+          <p>평점: 4.02/4.3</p>
         </article>
 
         <article class="card">
-          <h3>서울대학교</h3>
-          <p class="meta">자유전공학부 / 2020 - 현재 (졸업 예정: 2027년 2월)</p>
-          <p>주전공: 컴퓨터공학, 언어학</p>
-          <p>평점: 4.02/4.3 (2025년 2학기 기준)</p>
+          <h3>와세다대학</h3>
+          <p class="meta">교환학생 / 2025년 봄</p>
+          <p>컴퓨터공학 관련 5개를 포함한 8개 수업을 일본어로 수강</p>
+          <p>평점: 3.7/4.0 (14학점)</p>
         </article>
 
         <article class="card">
@@ -154,23 +145,20 @@
       <h2>기술</h2>
       <div class="skill-grid">
         <article class="card">
-          <h3>백엔드</h3>
+          <h3>백엔드 / 데이터</h3>
           <ul>
-            <li>Spring Boot</li>
-            <li>Java</li>
-            <li>Kotlin</li>
-            <li>REST API</li>
-            <li>WebSocket</li>
-            <li>SQL</li>
+            <li>Spring Boot, NestJS</li>
+            <li>Java, Kotlin, TypeScript, Python</li>
+            <li>REST API, WebSocket</li>
+            <li>MySQL, PostgreSQL, Redis</li>
           </ul>
         </article>
 
         <article class="card">
           <h3>프론트엔드</h3>
           <ul>
-            <li>React</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
+            <li>React, Next.js</li>
+            <li>JavaScript, TypeScript</li>
             <li>HTML/CSS</li>
           </ul>
         </article>
@@ -178,20 +166,19 @@
         <article class="card">
           <h3>인터랙티브</h3>
           <ul>
-            <li>Unity</li>
-            <li>C#</li>
+            <li>Unity, C#</li>
             <li>XR Interaction Toolkit</li>
             <li>OpenXR</li>
           </ul>
         </article>
 
         <article class="card">
-          <h3>도구</h3>
+          <h3>도구 / 인프라</h3>
           <ul>
-            <li>Git</li>
-            <li>Docker</li>
-            <li>GitHub Actions</li>
-            <li>WSL</li>
+            <li>Git, GitHub Actions</li>
+            <li>Docker, Nginx</li>
+            <li>AWS EC2, OCI</li>
+            <li>Linux, WSL</li>
           </ul>
         </article>
       </div>
@@ -204,7 +191,7 @@
           <ul>
             <li>한국어: 모국어</li>
             <li>영어: 상급 (TOEIC 990)</li>
-            <li>일본어: 상급 (JLPT N1 170/180)</li>
+            <li>일본어: 상급 (JLPT N1 170/180, JPT 910)</li>
             <li>스페인어: 중급 (DELE B1)</li>
           </ul>
         </article>
