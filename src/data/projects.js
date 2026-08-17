@@ -1,3 +1,5 @@
+const imageUrl = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
+
 const projectDetails = {
   "campus-event-calendar": {
     title: "행샤",
@@ -40,8 +42,8 @@ const projectDetails = {
       ],
     ],
     images: [
-      "/assets/images/hangsha-image-1.png",
-      "/assets/images/hangsha-image-2.png",
+      imageUrl("hangsha-image-1.png"),
+      imageUrl("hangsha-image-2.png"),
     ],
   },
   "word-connection-game": {
@@ -115,7 +117,7 @@ const projectDetails = {
         ],
       ],
     ],
-    images: ["/assets/images/areucoming-image-1.png"],
+    images: [imageUrl("areucoming-image-1.png")],
   },
   "turn-based-puzzle-game": {
     title: "Chronos",
@@ -165,9 +167,9 @@ const projectDetails = {
       ],
     ],
     images: [
-      "/assets/images/chronos-main-1.png",
-      "/assets/images/chronos-main-2.png",
-      "/assets/images/chronos-manual.png",
+      imageUrl("chronos-main-1.png"),
+      imageUrl("chronos-main-2.png"),
+      imageUrl("chronos-manual.png"),
     ],
   },
   "vr-horror-game": {
@@ -197,7 +199,7 @@ const projectDetails = {
         ],
       ],
     ],
-    images: ["/assets/images/hospital-image-1.png"],
+    images: [imageUrl("hospital-image-1.png")],
   },
   "memo-task-management": {
     title: "ThinkFlow",
@@ -238,8 +240,8 @@ const projectDetails = {
       ],
     ],
     images: [
-      "/assets/images/thinkflow-image-1.png",
-      "/assets/images/thinkflow-image-2.png",
+      imageUrl("thinkflow-image-1.png"),
+      imageUrl("thinkflow-image-2.png"),
     ],
   },
   "orbital-base": {
@@ -276,7 +278,7 @@ const projectDetails = {
         ],
       ],
     ],
-    images: ["/assets/images/orbital-base-guide.png"],
+    images: [imageUrl("orbital-base-guide.png")],
   },
   "xr-research-intern": {
     title: "XR 학부 연구 인턴",

@@ -18,14 +18,19 @@ a { color: inherit; text-decoration: none; }
 
 /* Intro */
 .profile-header { background: var(--surface); border-bottom: 1px solid var(--line); }
-.profile { padding: clamp(2.25rem, 5vw, 4.25rem) 0 1.65rem; }
+.profile { padding: clamp(2.75rem, 6vw, 5.25rem) 0 clamp(2rem, 4vw, 3rem); }
 .availability, .project-index { display: none; }
 .profile h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: .95; letter-spacing: -.075em; }
 .profile h1 span { display: inline-block; margin-left: .35em; color: var(--muted); font-size: .32em; font-weight: 500; letter-spacing: -.045em; vertical-align: .2em; }
 .meta { margin: 0; color: var(--muted); font-size: .92rem; }
-.profile > .meta { margin-top: .7rem; color: var(--accent); font-weight: 700; }
-.subtitle { max-width: 760px; margin: 1rem 0 0; color: #415149; font-size: clamp(1rem, 1.4vw, 1.1rem); line-height: 1.55; }
-.profile-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.15rem; }
+.profile-role { margin: 1rem 0 0; color: var(--ink); font-size: clamp(1.45rem, 2.4vw, 2rem); font-weight: 780; letter-spacing: -.055em; line-height: 1.15; }
+.profile-company { color: var(--muted); font-size: .64em; font-weight: 500; letter-spacing: -.035em; }
+.profile-company a, .profile-education a { border-bottom: 1px solid #aebdb4; color: inherit; transition: border-color .18s, color .18s; }
+.profile-company a:hover, .profile-education a:hover { border-color: var(--accent); color: var(--accent); }
+.profile-company a:focus-visible, .profile-education a:focus-visible { outline: 3px solid #9acdb0; outline-offset: 3px; }
+.subtitle { max-width: none; margin: .75rem 0 0; color: var(--muted); font-size: clamp(1rem, 1.45vw, 1.15rem); font-weight: 650; line-height: 1.45; letter-spacing: -.035em; }
+.profile-education + .subtitle { margin-top: .28rem; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.25rem; }
 .profile-links a { display: inline-flex; align-items: center; gap: .4rem; padding-bottom: .15rem; border-bottom: 1px solid var(--line); font-weight: 700; transition: color .18s, border-color .18s; }
 .profile-links a:hover { border-color: var(--accent); color: var(--accent); }
 .profile-links img { width: 1rem; height: 1rem; }

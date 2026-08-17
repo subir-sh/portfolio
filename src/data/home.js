@@ -1,9 +1,7 @@
 export const profile = {
   name: "이승현",
   englishName: "Seunghyeon Lee",
-  role: "풀스택 / 데이터 / 인터랙티브 시스템",
-  intro:
-    "데이터와 상태를 설계해, 사용자가 다음 행동을 예측할 수 있는 일관된 흐름을 구현합니다.",
+  intro: "풀스택 / 모바일 / 인터랙티브 시스템",
 };
 
 export const projects = [
@@ -77,7 +75,10 @@ export const otherProjects = [
       "판을 밝혀 가는 대신, 숫자 조건을 만족하도록 판을 만들어 가는 지뢰찾기 변형 게임",
     contribution:
       "게임 규칙과 상태 판정, 화면 UI를 설계하고 난이도별 AI 로직을 개발했습니다.",
-    links: [["GitHub", "https://github.com/subir-sh/minesweeper-game"]],
+    links: [
+      ["GitHub", "https://github.com/subir-sh/minesweeper-game"],
+      ["플레이", "https://minesweeper-game-green.vercel.app/"],
+    ],
   },
 ];
 

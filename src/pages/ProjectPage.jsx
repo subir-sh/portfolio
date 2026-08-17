@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import ProjectLinkIcon from "../components/ProjectLinkIcon";
 
+const imageUrl = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
+
 function DefaultProjectPage({ project }) {
   return (
     <>
@@ -45,13 +47,13 @@ function WordConnectionPage() {
 
   return <div className="yeon-case">
     <header className="yeon-hero">
-      <img className="yeon-hero-media" src="/assets/images/yeonieum-long-path.png" alt="물고기에서 위험까지 단어를 이어가는 연이음 플레이 화면" />
+      <img className="yeon-hero-media" src={imageUrl("yeonieum-long-path.png")} alt="물고기에서 위험까지 단어를 이어가는 연이음 플레이 화면" />
       <div className="yeon-hero-shade" aria-hidden="true" />
       <div className="yeon-hero-inner container">
         <a className="yeon-back" href="#/">← 프로젝트 목록</a>
         <div className="yeon-hero-copy">
           <h1>연이음</h1>
-          <p>'맥락'을 단어 간의 관계로 풀어낸 퍼즐</p>
+          <p>손패로 단어 사이의 '맥락'을 탐색하는 퍼즐 게임</p>
           <div className="yeon-hero-path" aria-label="연결 예시: 물고기, 물, 요리, 불, 위험"><span>(시작) 물고기</span><span>물</span><span>요리</span><span>불</span><span>(끝) 위험</span></div>
           <div className="yeon-hero-meta"><span>넥슨 게임잼 "재밌넥"</span><span>4인 팀</span><span>2박 3일</span><strong>14개 팀 중 3위(우수상)</strong></div>
         </div>
@@ -154,7 +156,7 @@ function WordConnectionPage() {
             </article>
             <div className="yeon-graph-arrow" aria-hidden="true">→</div>
             <figure className="yeon-graph-capture">
-              <img src="/assets/images/yeonieum-final-graph.png" alt="이모지 단어 노드와 관계 간선으로 구성한 연이음의 실제 최종 그래프" />
+              <img src={imageUrl("yeonieum-final-graph.png")} alt="이모지 단어 노드와 관계 간선으로 구성한 연이음의 실제 최종 그래프" />
               <figcaption>
                 <h3>이후</h3>
                 <CaseDescription>최종 <strong>80개</strong> 단어, <strong>620개</strong> 관계<br />최소 차수 9, 평균 차수 15.50</CaseDescription>

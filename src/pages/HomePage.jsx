@@ -26,7 +26,25 @@ export default function HomePage() {
             <h1>
               {profile.name} <span>{profile.englishName}</span>
             </h1>
-            <p className="meta">{profile.role}</p>
+            <p className="profile-role">
+              Product Engineer{" "}
+              <span className="profile-company">
+                @{" "}
+                <a href="https://ai.passdream.app/" target="_blank" rel="noreferrer">
+                  irurilabs
+                </a>
+              </span>
+            </p>
+            <p className="subtitle profile-education">
+              SNU{" "}
+              <a href="https://cse.snu.ac.kr" target="_blank" rel="noreferrer">
+                CSE
+              </a>{" "}
+              &amp;{" "}
+              <a href="https://linguist.snu.ac.kr" target="_blank" rel="noreferrer">
+                Linguistics
+              </a>
+            </p>
             <p className="subtitle">{profile.intro}</p>
             <div className="profile-links">
               <a
