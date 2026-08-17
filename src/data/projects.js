@@ -132,7 +132,11 @@ const projectDetails = {
         "https://github.com/2024FALL-SWPP/team-project-for-2024-fall-swpp-team-12",
       ],
       [
-        "영상",
+        "플레이",
+        "https://2024fall-swpp.github.io/team-project-for-2024-fall-swpp-team-12/",
+      ],
+      [
+        "해설 영상",
         "https://www.youtube.com/playlist?list=PLyip1lR-pqZOz7Fb8o9VwufTkeqWq2EMe",
       ],
     ],

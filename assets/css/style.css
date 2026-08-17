@@ -139,7 +139,7 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
 .yeon-back { align-self: flex-start; border-bottom: 1px solid rgba(255,255,255,.55); font-size: 1.1rem; font-weight: 750; }
 .yeon-back:hover { border-color: #fff; }
 .yeon-hero-copy { width: 100%; min-width: 0; max-width: 920px; margin-top: auto; animation: yeon-hero-copy .9s .12s cubic-bezier(.2,.7,.2,1) both; }
-.yeon-hero h1 { margin: 0; font-size: clamp(5rem, 13vw, 10.5rem); font-weight: 850; line-height: .78; letter-spacing: -.1em; }
+.yeon-hero h1 { margin: 0; font-size: clamp(4.2rem, 10vw, 7.8rem); font-weight: 850; line-height: .84; letter-spacing: -.09em; }
 .yeon-hero-copy > p { max-width: 850px; margin: 2rem 0 0; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 650; line-height: 1.45; letter-spacing: -.035em; }
 .yeon-hero-path { display: flex; flex-wrap: wrap; align-items: center; margin-top: 1.7rem; color: #d6f3e2; font-size: clamp(1.15rem, 1.7vw, 1.4rem); font-weight: 800; }
 .yeon-hero-path span { display: flex; align-items: center; }
@@ -147,22 +147,22 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
 .yeon-hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 0; margin-top: 1.7rem; font-size: 1.1rem; font-weight: 700; }
 .yeon-hero-meta span + span, .yeon-hero-meta strong { margin-left: 1rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,.42); }
 .yeon-hero-meta strong { color: #b8f0cf; font-size: 1.2rem; }
-.yeon-section { padding: clamp(4rem, 7vw, 6.5rem) 0; border-bottom: 1px solid var(--yeon-line); }
+.yeon-section { padding: clamp(3.5rem, 6vw, 5.5rem) 0; border-bottom: 1px solid var(--yeon-line); }
 .yeon-section-head { max-width: none; }
-.yeon-section-head h2 { margin: 0; font-size: clamp(2.8rem, 5vw, 4.6rem); line-height: 1.04; letter-spacing: -.075em; }
-.yeon-section-head > p { max-width: none; margin: 1.25rem 0 0; color: #415249; font-size: clamp(1.08rem, 1.35vw, 1.25rem); line-height: 1.55; letter-spacing: -.025em; white-space: nowrap; }
-.yeon-section-head > p strong { color: var(--yeon-green); }
+.yeon-section-head h2 { margin: 0; font-size: clamp(2.35rem, 3.8vw, 3.5rem); line-height: 1.08; letter-spacing: -.065em; }
+.yeon-description { width: 100%; max-width: none; margin: 1.25rem 0 0; color: #415249; font-size: clamp(1.08rem, 1.35vw, 1.25rem); line-height: 1.55; letter-spacing: -.025em; white-space: nowrap; }
+.yeon-description strong { color: var(--yeon-green); }
 .yeon-row-list { margin-top: clamp(2.5rem, 4vw, 3.75rem); border-top: 2px solid var(--yeon-green); }
 .yeon-row-list article { display: grid; grid-template-columns: minmax(120px, .28fr) minmax(0, 1.72fr); gap: clamp(2rem, 6vw, 6rem); padding: 1.8rem 0; border-bottom: 1px solid var(--yeon-line); }
 .yeon-row-list article > strong { color: var(--yeon-green); font-size: 1.2rem; line-height: 1.45; }
 .yeon-row-list h3 { margin: 0; font-size: clamp(1.5rem, 2.4vw, 1.95rem); line-height: 1.3; letter-spacing: -.045em; }
-.yeon-row-list article > div > p { margin: .55rem 0 0; color: #526158; font-size: 1.12rem; line-height: 1.65; }
+.yeon-row-list article > div > .yeon-description { margin: .55rem 0 0; white-space: normal; }
 .yeon-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(2.5rem, 4vw, 3.75rem); border-top: 2px solid var(--yeon-green); border-left: 1px solid var(--yeon-line); }
 .yeon-feature-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.yeon-feature-grid article { min-height: 160px; padding: clamp(1.25rem, 2vw, 1.8rem); border-right: 1px solid var(--yeon-line); border-bottom: 1px solid var(--yeon-line); background: rgba(255,255,255,.26); transition: background .2s ease; }
+.yeon-feature-grid article { min-height: 132px; padding: clamp(1.15rem, 1.7vw, 1.55rem); border-right: 1px solid var(--yeon-line); border-bottom: 1px solid var(--yeon-line); background: rgba(255,255,255,.26); transition: background .2s ease; }
 .yeon-feature-grid article:hover { background: rgba(255,255,255,.58); }
-.yeon-feature-grid h3 { margin: 0; font-size: clamp(1.5rem, 2.25vw, 1.95rem); line-height: 1.28; letter-spacing: -.05em; }
-.yeon-feature-grid p { margin: .7rem 0 0; color: #526158; font-size: 1.05rem; line-height: 1.55; }
+.yeon-feature-grid h3 { margin: 0; font-size: clamp(1.35rem, 1.9vw, 1.65rem); line-height: 1.3; letter-spacing: -.045em; }
+.yeon-feature-grid .yeon-description { margin: .7rem 0 0; white-space: normal; }
 .yeon-row-detail { margin-top: 1.4rem; }
 .yeon-row-detail p { margin: 0; color: #4b5b52; font-size: 1.12rem; line-height: 1.68; }
 .yeon-row-detail p + p { margin-top: 1.05rem; padding-top: 1.05rem; border-top: 1px solid var(--yeon-line); }
@@ -177,42 +177,42 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
 .yeon-probability-result strong, .yeon-probability-result span { display: block; }
 .yeon-probability-result strong { color: #235f43; font-size: clamp(4.1rem, 7vw, 6.5rem); line-height: .82; letter-spacing: -.09em; }
 .yeon-graph-compare { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; margin-top: clamp(2.5rem, 4vw, 3.75rem); padding: 1.6rem 0; border-top: 2px solid var(--yeon-green); border-bottom: 1px solid var(--yeon-line); }
-.yeon-graph-label { min-height: 96px; }
-.yeon-graph-label h3 { margin: 0; font-size: clamp(1.55rem, 2.4vw, 2rem); letter-spacing: -.05em; }
-.yeon-graph-label p { margin: .55rem 0 0; color: #506057; font-size: 1.12rem; line-height: 1.55; }
-.yeon-graph-label strong { color: var(--yeon-green); }
-.yeon-graph { display: block; width: 100%; height: auto; margin-top: 1.2rem; background: #e6ede8; }
+.yeon-graph-compare > article, .yeon-graph-capture { min-width: 0; }
+.yeon-graph-label { min-height: 82px; }
+.yeon-graph-label h3, .yeon-graph-capture h3 { margin: 0; color: var(--yeon-ink); font-size: clamp(1.45rem, 2.2vw, 1.85rem); letter-spacing: -.05em; }
+.yeon-graph-label .yeon-description, .yeon-graph-capture .yeon-description { margin: .55rem 0 0; color: #506057; white-space: normal; }
+.yeon-graph-visual { display: grid; aspect-ratio: 1.954; background: #e6ede8; }
+.yeon-graph { display: block; width: 100%; height: 100%; }
 .yeon-graph .graph-edges { stroke: #759a86; stroke-width: 2.5; }
 .yeon-graph .graph-edges line { stroke-dasharray: 520; stroke-dashoffset: 520; transition: stroke-dashoffset 1.2s cubic-bezier(.2,.7,.2,1); }
 .yeon-graph-compare.is-visible .graph-edges line { stroke-dashoffset: 0; }
 .yeon-graph .graph-nodes circle { fill: #4c8468; stroke: var(--yeon-paper); stroke-width: 4; transform: scale(.5); transform-box: fill-box; transform-origin: center; transition: transform .55s .3s cubic-bezier(.2,.7,.2,1); }
 .yeon-graph-compare.is-visible .graph-nodes circle { transform: scale(1); }
 .yeon-graph .graph-nodes .is-isolated { fill: #aab9b0; }
-.yeon-graph .graph-nodes .is-hub { fill: #174f35; }
+.yeon-graph-capture { margin: 0; background: #0d1119; overflow: hidden; }
+.yeon-graph-capture img { display: block; width: 100%; aspect-ratio: 1.954; object-fit: contain; }
+.yeon-graph-capture figcaption { padding: 1.25rem 1.5rem 1.4rem; background: var(--yeon-paper); }
 .yeon-graph-arrow { color: var(--yeon-green); font-size: clamp(2.5rem, 4vw, 4rem); }
-.yeon-redesign-note { max-width: 900px; margin: clamp(1.75rem, 3vw, 2.5rem) 0 0; color: #485950; font-size: clamp(1.18rem, 1.7vw, 1.38rem); line-height: 1.7; }
-.yeon-redesign-note strong { color: var(--yeon-green); }
 .yeon-ai-evidence { display: grid; grid-template-columns: 190px 190px minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; margin-top: clamp(2.5rem, 4vw, 3.75rem); padding: 1.6rem 0; border-top: 1px solid var(--yeon-line); border-bottom: 1px solid var(--yeon-line); }
 .yeon-ai-evidence > div strong, .yeon-ai-evidence > div span { display: block; }
 .yeon-ai-evidence > div strong { color: var(--yeon-green); font-size: clamp(3rem, 5vw, 4.6rem); line-height: .9; letter-spacing: -.075em; }
 .yeon-ai-evidence > div span { margin-top: .7rem; color: #526158; font-size: 1.08rem; font-weight: 750; }
-.yeon-ai-evidence p { margin: 0; color: #485950; font-size: 1.12rem; line-height: 1.7; }
-.yeon-result { padding: clamp(6rem, 11vw, 10rem) 0; background: #182b22; color: #f4f7f4; }
-.yeon-result h2 { margin: 0; font-size: clamp(2.8rem, 5vw, 4.6rem); line-height: 1.04; letter-spacing: -.075em; }
+.yeon-ai-evidence .yeon-description { margin: 0; white-space: normal; }
+.yeon-result { padding: clamp(3rem, 4.5vw, 4rem) 0 clamp(4rem, 6vw, 5.5rem); background: #182b22; color: #f4f7f4; }
+.yeon-result h2 { margin: 0; font-size: clamp(2.35rem, 3.8vw, 3.5rem); line-height: 1.08; letter-spacing: -.065em; }
 .yeon-result-copy > p { margin: clamp(2.5rem, 5vw, 4rem) 0 0; }
-.yeon-result-copy > p strong { display: block; color: #a9e2c0; font-size: clamp(4rem, 8vw, 7.6rem); line-height: .9; letter-spacing: -.085em; }
-.yeon-result-foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4rem; align-items: end; margin-top: 2.5rem; }
-.yeon-result-foot p { max-width: 780px; margin: 0; color: #b8c8be; font-size: 1.12rem; line-height: 1.7; }
-.yeon-result-foot p + p { margin-top: 1.35rem; padding-top: 1.35rem; border-top: 1px solid #496357; }
-.yeon-result-foot p strong { color: #d9eee2; }
+.yeon-result-copy > p strong { display: block; color: #a9e2c0; font-size: clamp(3.25rem, 6vw, 5.6rem); line-height: .95; letter-spacing: -.075em; }
+.yeon-result-foot { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: start; margin-top: 2.5rem; }
+.yeon-result-foot .yeon-description { max-width: none; margin: 0; color: #b8c8be; white-space: nowrap; }
+.yeon-result-foot .yeon-description + .yeon-description { margin-top: 1.35rem; padding-top: 1.35rem; border-top: 1px solid #496357; }
+.yeon-result-foot .yeon-description strong { color: #d9eee2; }
 .yeon-result-foot a { padding-bottom: .25rem; border-bottom: 1px solid #9ab8a6; color: #f4f7f4; font-size: 1.15rem; font-weight: 800; white-space: nowrap; }
 .yeon-reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); }
 .yeon-reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes yeon-hero-image { from { opacity: .25; transform: scale(1.04); } to { opacity: 1; transform: scale(1); } }
 @keyframes yeon-hero-copy { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .yeon-hero-media, .yeon-hero-copy { animation: none; }.yeon-reveal { opacity: 1; transform: none; transition: none; }.yeon-graph .graph-edges line { stroke-dashoffset: 0; transition: none; }.yeon-graph .graph-nodes circle { transform: scale(1); transition: none; } }
-@media (min-width: 1060px) { .yeon-row-list article > div > p { white-space: nowrap; } }
-@media (max-width: 1059px) { .yeon-section-head > p { white-space: normal; } }
+@media (max-width: 1179px) { .yeon-description { white-space: normal; } }
 
 /* Fixed page navigation */
 .floating-navigation { position: fixed; right: clamp(2rem, 5vw, 4.5rem); bottom: 2.25rem; z-index: 10; }
@@ -287,16 +287,16 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
   .yeon-hero-shade { background: linear-gradient(0deg, rgba(8, 18, 13, .94) 0%, rgba(8, 18, 13, .7) 45%, rgba(8, 18, 13, .28) 100%); }
   .yeon-hero-inner { padding-top: 1.25rem; padding-bottom: 2.5rem; }
   .yeon-back { font-size: 1.1rem; }
-  .yeon-hero h1 { font-size: clamp(4.7rem, 25vw, 7rem); }
+  .yeon-hero h1 { font-size: clamp(4rem, 21vw, 5.7rem); }
   .yeon-hero-copy > p { max-width: 100%; font-size: 1.28rem; overflow-wrap: anywhere; }
   .yeon-hero-copy > p br { display: none; }
   .yeon-hero-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem 1rem; font-size: 1.1rem; }
   .yeon-hero-meta span + span, .yeon-hero-meta strong { margin-left: 0; padding-left: 0; border-left: 0; }
   .yeon-hero-meta strong { font-size: 1.1rem; }
-  .yeon-section { padding: 4rem 0; }
-  .yeon-section-head h2 { font-size: clamp(2.55rem, 12vw, 3.4rem); }
+  .yeon-section { padding: 3.5rem 0; }
+  .yeon-section-head h2 { font-size: clamp(2.2rem, 10vw, 2.8rem); }
   .yeon-section-head h2 br { display: none; }
-  .yeon-section-head > p { margin-top: 1rem; font-size: 1.12rem; line-height: 1.65; white-space: normal; }
+  .yeon-description { margin-top: 1rem; font-size: 1.12rem; line-height: 1.65; white-space: normal; }
   .yeon-row-list { margin-top: 2.5rem; }
   .yeon-row-list article { grid-template-columns: 72px minmax(0, 1fr); gap: 1rem; padding: 1.5rem 0; }
   .yeon-row-list h3 { font-size: 1.5rem; }
@@ -311,8 +311,8 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
   .yeon-graph-label { min-height: 0; }
   .yeon-ai-evidence { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1rem; }
   .yeon-ai-evidence p { grid-column: 1 / -1; padding-top: 1.5rem; border-top: 1px solid var(--yeon-line); }
-  .yeon-result h2 { font-size: clamp(2.55rem, 12vw, 3.4rem); }
-  .yeon-result-copy > p strong { font-size: clamp(3.25rem, 15vw, 4.8rem); }
+  .yeon-result h2 { font-size: clamp(2.2rem, 10vw, 2.8rem); }
+  .yeon-result-copy > p strong { font-size: clamp(3rem, 13vw, 4.2rem); }
   .yeon-result-foot { grid-template-columns: 1fr; gap: 2rem; }
   .yeon-result-foot a { justify-self: start; }
   .floating-navigation { right: 1rem; bottom: 1rem; }
