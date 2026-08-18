@@ -73,7 +73,7 @@ export default function HangshaPage() {
               <article>
                 <span>02</span>
                 <h3>정규화</h3>
-                <p>모집 기간, 행사 기간, 회차와 상태를 캘린더에서 사용할 데이터로 변환</p>
+                <p>AI parser와 서비스 규칙으로 기간·회차와 상태를 캘린더 데이터로 변환</p>
               </article>
               <article>
                 <span>03</span>
@@ -92,6 +92,8 @@ export default function HangshaPage() {
               <p>
                 원본 공고에는 날짜가 적혀 있어도, 그것이 모집 기간인지 실제 행사 기간인지,
                 하나의 기간인지 여러 회차인지에 따라 캘린더에 보여줘야 하는 형태가 달랐습니다.
+                표현이 일정하지 않은 주최기관·분류·기간·회차는 AI parser로 구조화하고,
+                모집 상태처럼 명확한 규칙으로 결정할 수 있는 값은 백엔드에서 계산했습니다.
               </p>
             </div>
 
@@ -115,13 +117,13 @@ export default function HangshaPage() {
               <FlowArrow />
               <div>
                 <small>INTERPRET</small>
-                <strong>기간·회차 해석</strong>
-                <span>신청 / 행사 / 세션 구분</span>
+                <strong>AI 의미 추출</strong>
+                <span>주최기관 / 분류 / 기간·회차</span>
               </div>
               <FlowArrow />
               <div>
                 <small>NORMALIZE</small>
-                <strong>서비스 규칙 적용</strong>
+                <strong>Backend 규칙 적용</strong>
                 <span>상태와 노출 날짜 결정</span>
               </div>
               <FlowArrow />
@@ -167,10 +169,10 @@ export default function HangshaPage() {
           <div className="container">
             <div className="hangsha-section-head">
               <p className="hangsha-kicker">OPERABLE SYSTEM</p>
-              <h2>자동화가 틀려도,<br />사람의 수정이 사라지지 않게</h2>
+              <h2>자동화 뒤에도,<br />사람이 마지막 결정을 하도록</h2>
               <p>
-                크롤러가 계속 같은 원본을 읽는 구조에서는 운영자가 잘못된 값을 고쳐도 다음 동기화에서
-                다시 덮어쓸 수 있습니다. 수정한 필드를 잠그고 이후 자동 동기화에서도 보존하도록 만들었습니다.
+                운영자가 잘못된 값을 고치면 수정한 필드를 잠가 다음 자동 동기화에서도 보존했습니다.
+                직접 등록에서는 행사 포스터를 AI로 읽어 입력 초안을 만들고, 사람이 확인·수정한 뒤 저장하도록 구성했습니다.
               </p>
             </div>
 
@@ -200,8 +202,9 @@ export default function HangshaPage() {
                 <h2>일회성 크롤러가 아니라,<br />계속 운영할 수 있는 데이터 흐름으로.</h2>
               </div>
               <p>
-                외부 공고를 읽는 것에서 끝내지 않고, 행사마다 다른 기간과 회차를 서비스 규칙으로 정규화하고
-                운영자가 예외를 교정할 수 있는 흐름까지 연결했습니다. 덕분에 데이터 소스가 달라져도 같은 캘린더 경험으로 제공할 수 있는 기반을 만들었습니다.
+                외부 공고를 읽는 것에서 끝내지 않고, 의미 해석이 필요한 정보는 AI로 구조화하고
+                결정 가능한 상태는 서비스 규칙으로 계산했습니다. 운영자가 예외를 교정하고 그 값을 보존할 수 있는 흐름까지 연결해,
+                데이터 소스가 달라져도 같은 캘린더 경험으로 제공할 수 있는 기반을 만들었습니다.
               </p>
             </div>
 
