@@ -5,6 +5,7 @@ import "../assets/css/areucoming.css";
 import projectDetails from "./data/projects";
 import { projects } from "./data/home";
 import HomePage from "./pages/HomePage";
+import HangshaPage from "./pages/HangshaPage";
 import ProjectPage from "./pages/ProjectPage";
 import LocationSharingPage from "./pages/LocationSharingPage";
 
@@ -20,6 +21,10 @@ function App() {
   }, [route]);
   const slug = route.match(/^#\/projects\/([^/]+)$/)?.[1];
   const isFeaturedProject = projects.some((project) => project.slug === slug);
+
+  if (slug === "campus-event-calendar" && isFeaturedProject) {
+    return <HangshaPage />;
+  }
 
   if (!slug || !isFeaturedProject || !projectDetails[slug]) return <HomePage />;
   if (slug === "location-sharing-service") return <LocationSharingPage />;
