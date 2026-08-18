@@ -4,6 +4,7 @@ import "../assets/css/style.css";
 import projectDetails from "./data/projects";
 import { projects } from "./data/home";
 import HomePage from "./pages/HomePage";
+import HangshaPage from "./pages/HangshaPage";
 import ProjectPage from "./pages/ProjectPage";
 
 function App() {
@@ -18,6 +19,11 @@ function App() {
   }, [route]);
   const slug = route.match(/^#\/projects\/([^/]+)$/)?.[1];
   const isFeaturedProject = projects.some((project) => project.slug === slug);
+
+  if (slug === "campus-event-calendar" && isFeaturedProject) {
+    return <HangshaPage />;
+  }
+
   return slug && isFeaturedProject && projectDetails[slug] ? (
     <ProjectPage project={projectDetails[slug]} />
   ) : (
