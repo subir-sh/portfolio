@@ -1,9 +1,11 @@
 import { createRoot } from "react-dom/client";
 import { useEffect, useState } from "react";
 import "../assets/css/style.css";
+import "../assets/css/chronos.css";
 import projectDetails from "./data/projects";
 import { projects } from "./data/home";
 import HomePage from "./pages/HomePage";
+import ChronosPage from "./pages/ChronosPage";
 import ProjectPage from "./pages/ProjectPage";
 
 function App() {
@@ -18,11 +20,16 @@ function App() {
   }, [route]);
   const slug = route.match(/^#\/projects\/([^/]+)$/)?.[1];
   const isFeaturedProject = projects.some((project) => project.slug === slug);
-  return slug && isFeaturedProject && projectDetails[slug] ? (
-    <ProjectPage project={projectDetails[slug]} />
-  ) : (
-    <HomePage />
-  );
+
+  if (!slug || !isFeaturedProject || !projectDetails[slug]) {
+    return <HomePage />;
+  }
+
+  if (slug === "turn-based-puzzle-game") {
+    return <ChronosPage />;
+  }
+
+  return <ProjectPage project={projectDetails[slug]} />;
 }
 
 createRoot(document.getElementById("root")).render(<App />);
