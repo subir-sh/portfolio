@@ -114,16 +114,16 @@ export default function ChronosPage() {
 
           <div className="chronos-outcomes chronos-reveal">
             <div>
-              <strong>16</strong>
-              <span>완성한 플레이 레벨</span>
+              <strong>16개</strong>
+              <span>처음부터 끝까지 플레이 가능한 레벨</span>
             </div>
             <div>
-              <strong>상위 20%</strong>
-              <span>수업 프로젝트 평가</span>
+              <strong>WebGL</strong>
+              <span>브라우저에서 실행되는 공개 빌드</span>
             </div>
             <div>
-              <strong>22%</strong>
-              <span>5인 팀 익명 동료평가 기여도</span>
+              <strong>3개</strong>
+              <span>직접 설계하고 구현한 퍼즐 레벨</span>
             </div>
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function ChronosPage() {
           <div className="chronos-container">
             <SectionHeading
               eyebrow="MY OWNERSHIP"
-              title="기능을 만드는 데서 끝내지 않고, 한 게임으로 연결했습니다"
+              title="흩어진 기능을 같은 규칙으로 묶어, 한 게임으로 연결했습니다"
             >
               아래 범위는 코드와 PR 기록으로 확인되는 직접 기여입니다. 게임
               기획, 전체 레벨, 아트·애니메이션·사운드와 최종 빌드는 5인 팀의
@@ -233,6 +233,9 @@ export default function ChronosPage() {
                 </ul>
               </article>
             </div>
+            <p className="chronos-ownership-note chronos-reveal">
+              5인 팀 프로젝트 · 익명 동료평가 기여도 22% (팀 평균 20%)
+            </p>
           </div>
         </section>
 
@@ -297,12 +300,13 @@ export default function ChronosPage() {
         <section className="chronos-section chronos-problem-section">
           <div className="chronos-container">
             <SectionHeading
-              eyebrow="PROBLEM 01 · SHARED TIMELINE"
-              title="플레이어만 과거로 가면, 퍼즐의 세계는 모순됩니다"
+              eyebrow="CORE CASE · CONSISTENT WORLD STATE"
+              title="되감기를 캐릭터 기능이 아니라, 월드 전체의 상태 전환으로"
             >
-              상자 위치, 버튼 점유, 레버 방향, 장애물 경로가 서로 다른 턴을
-              가리키면 같은 입력도 다른 결과를 만듭니다. 따라서 되감기는
-              캐릭터 기능이 아니라 월드 전체의 상태 전환이어야 했습니다.
+              팀원이 만든 캐릭터와 퍼즐 오브젝트는 각각 동작했지만, 되감기
+              이후에도 같은 결과를 내려면 모두가 정확히 같은 턴을 가리켜야
+              했습니다. 이 통합이 Chronos를 데모가 아닌 완성된 게임으로 만드는
+              핵심 문제였습니다.
             </SectionHeading>
 
             <div className="chronos-timeline chronos-reveal">
@@ -340,19 +344,16 @@ export default function ChronosPage() {
                 저장·불러오기에서 같은 상태 기준을 사용할 수 있었습니다.
               </span>
             </div>
-          </div>
-        </section>
 
-        <section className="chronos-section chronos-turn-section">
-          <div className="chronos-container">
-            <SectionHeading
-              eyebrow="PROBLEM 02 · TURN COMPLETION"
-              title="한 턴은 입력할 때가 아니라, 모든 결과가 끝날 때 완료됩니다"
-            >
-              플레이어가 한 칸 움직인 뒤에도 분신 이동, 상자 밀기, 버튼 변화,
-              장애물 충돌이 연쇄적으로 이어집니다. 중간 상태를 기록하면 되감은
-              뒤 오브젝트가 겹치거나, 밀린 캐릭터가 잘못된 칸으로 돌아갔습니다.
-            </SectionHeading>
+            <div className="chronos-turn-subheading chronos-reveal">
+              <p className="chronos-eyebrow">THE TURN BOUNDARY</p>
+              <h3>같은 시점의 상태만 남기려면, 언제 한 턴이 끝나는지도 같아야 했습니다</h3>
+              <p>
+                플레이어 입력 뒤에도 분신 이동, 상자 밀기, 버튼 변화와 장애물
+                충돌이 연쇄적으로 이어집니다. 중간 상태를 기록하지 않도록 모든
+                결과가 끝난 순간을 공통 턴 경계로 만들었습니다.
+              </p>
+            </div>
 
             <div className="chronos-turn-flow chronos-reveal">
               <article>
@@ -395,39 +396,6 @@ export default function ChronosPage() {
           </div>
         </section>
 
-        <section className="chronos-section chronos-level-section">
-          <div className="chronos-container chronos-level-grid">
-            <div>
-              <SectionHeading
-                eyebrow="CONTENT & INTEGRATION"
-                title="세 레벨을 직접 만들고, 열여섯 레벨을 하나의 흐름으로"
-              >
-                L-003-1·2·3은 기믹 조합과 동선을 직접 설계하고 구현했습니다.
-                이후 팀원이 만든 레벨과 흩어진 기능을 통합해 저장, 전환,
-                클리어가 끊기지 않는 전체 진행 흐름을 완성했습니다.
-              </SectionHeading>
-              <div className="chronos-level-links chronos-reveal">
-                <a href="https://www.youtube.com/watch?v=wissR8x8_jk" target="_blank" rel="noreferrer">
-                  L-003-1 <Play aria-hidden="true" />
-                </a>
-                <a href="https://www.youtube.com/watch?v=QmiCr-Hd9h8" target="_blank" rel="noreferrer">
-                  L-003-2 <Play aria-hidden="true" />
-                </a>
-                <a href="https://www.youtube.com/watch?v=Z_wlj37ozIM" target="_blank" rel="noreferrer">
-                  L-003-3 <Play aria-hidden="true" />
-                </a>
-              </div>
-            </div>
-            <figure className="chronos-manual chronos-reveal">
-              <img
-                src={imageUrl("chronos-manual.png")}
-                alt="Chronos의 이야기, 시간 되돌리기 규칙, 조작법과 퍼즐 오브젝트를 정리한 게임 매뉴얼"
-              />
-              <figcaption>팀이 실제 플레이를 위해 제작한 게임 매뉴얼</figcaption>
-            </figure>
-          </div>
-        </section>
-
         <section className="chronos-result">
           <div className="chronos-container">
             <div className="chronos-result-heading chronos-reveal">
@@ -441,21 +409,24 @@ export default function ChronosPage() {
                 <p>시간 되돌리기와 분신 기믹을 활용하는 완성 레벨</p>
               </article>
               <article>
-                <strong>상위 20%</strong>
-                <p>수업 내 최종 프로젝트 평가</p>
+                <strong>공개 빌드</strong>
+                <p>설치 없이 브라우저에서 끝까지 플레이 가능한 WebGL 게임</p>
               </article>
               <article>
-                <strong>22%</strong>
-                <p>5인 팀 익명 동료평가 기여도 · 팀 평균 20%</p>
+                <strong>3개 레벨</strong>
+                <p>L-003-1·2·3의 기믹 조합과 동선을 직접 설계·구현</p>
               </article>
             </div>
+            <p className="chronos-result-note chronos-reveal">
+              수업 내 최종 프로젝트 평가 상위 20%
+            </p>
 
             <div className="chronos-result-footer chronos-reveal">
               <p>
-                가장 오래 고민한 것은 복잡한 턴 상태와 충돌 순서였습니다. 하지만
-                이 프로젝트에서 더 중요한 결과는 그 설계를 UI, 저장, 레벨 진행과
-                연결해 다른 사람이 처음부터 끝까지 플레이할 수 있는 제품으로
-                완성한 것입니다.
+                캐릭터와 퍼즐 오브젝트가 서로 다른 시점을 가리키던 문제를 하나의
+                턴·시간축으로 통합했습니다. 여기에 되감기 UI, 저장·복원, 레벨
+                전환을 연결해 다른 사람이 처음부터 끝까지 플레이할 수 있는
+                게임으로 완성했습니다.
               </p>
               <div>
                 <ExternalLink href={links.play} icon={Play} className="is-primary">
