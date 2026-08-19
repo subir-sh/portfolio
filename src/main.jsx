@@ -1,8 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { useEffect, useState } from "react";
 import "../assets/css/style.css";
-import "../assets/css/chronos.css";
-import "../assets/css/areucoming.css";
+import "./pages/case-study.css";
 import projectDetails from "./data/projects";
 import { projects } from "./data/home";
 import HomePage from "./pages/HomePage";
