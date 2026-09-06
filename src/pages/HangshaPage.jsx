@@ -1,9 +1,14 @@
 import { CaseHero, CaseResult, CaseSection } from "../components/CaseStudy";
+import { useTranslation } from "react-i18next";
+import localizePage from "../locales/localizePage";
+import { hangshaEn, hangshaJa } from "../locales/hangsha";
 
 const imageUrl = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
 
 export default function HangshaPage() {
-  return (
+  const { i18n } = useTranslation();
+
+  return localizePage((
     <div className="case-page case-hangsha">
       <CaseHero
         title="행샤"
@@ -156,5 +161,5 @@ export default function HangshaPage() {
         132개 주최기관의 공고를 하나의 캘린더 데이터로 제공하고 있습니다. 실제 사용자를 확보했으며, 수집과 정규화부터 자동 갱신 이후의 예외 수정까지 운영 흐름으로 연결했습니다.
       </CaseResult>
     </div>
-  );
+  ), i18n.resolvedLanguage, { en: hangshaEn, ja: hangshaJa });
 }

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 function CaseCopy({ children, className = "" }) {
   if (typeof children !== "string" && typeof children !== "number") {
@@ -19,12 +20,13 @@ function CaseCopy({ children, className = "" }) {
 }
 
 export function CaseHero({ title, lead, image, imageAlt, facts, links }) {
+  const { t } = useTranslation("common");
   return (
     <header className="case-hero">
       <img className="case-hero-media" src={image} alt={imageAlt} />
       <div className="case-hero-shade" aria-hidden="true" />
       <div className="case-container">
-        <a className="case-back" href="#/">← 프로젝트 목록</a>
+        <a className="case-back" href="#/">{t("caseStudy.back")}</a>
         <div className="case-hero-grid">
           <div className="case-hero-copy">
             <h1>{title}</h1>
@@ -81,16 +83,17 @@ export function CaseSection({ title, intro, children, className = "" }) {
 }
 
 export function CaseResult({ result, children }) {
+  const { t } = useTranslation("common");
   return (
     <section className="case-result">
       <div className="case-container">
         <div className="case-result-copy">
-          <h2>결과</h2>
+          <h2>{t("caseStudy.result")}</h2>
           <p><strong>{result}</strong></p>
         </div>
         <div className="case-result-foot">
           {children && <CaseCopy>{children}</CaseCopy>}
-          <a href="#/">다른 프로젝트 보기 →</a>
+          <a href="#/">{t("caseStudy.more")}</a>
         </div>
       </div>
     </section>

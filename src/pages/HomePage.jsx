@@ -1,14 +1,6 @@
 import githubIcon from "../../assets/icons/github.svg";
 import emailIcon from "../../assets/icons/email.svg";
-import {
-  profile,
-  projects,
-  otherProjects,
-  experiences,
-  education,
-  skills,
-  navigation,
-} from "../data/home";
+import { useTranslation } from "react-i18next";
 import {
   Card,
   FloatingNavigation,
@@ -16,8 +8,23 @@ import {
   SectionTitle,
 } from "../components/ui";
 import ProjectLinkIcon from "../components/ProjectLinkIcon";
+import LanguageSwitcher from "../components/LanguageSwitcher";
+import getHomeContent from "../locales/home";
 
 export default function HomePage() {
+  const { i18n } = useTranslation();
+  const {
+    profile,
+    projects,
+    otherProjects,
+    experiences,
+    education,
+    skills,
+    navigation,
+    labels,
+    languages,
+  } = getHomeContent(i18n.resolvedLanguage);
+
   return (
     <>
       <header className="profile-header" id="top">
@@ -60,13 +67,14 @@ export default function HomePage() {
                 Gmail <span>↗</span>
               </a>
             </div>
+            <LanguageSwitcher className="profile-language" />
             <img className="profile-mark" src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" aria-hidden="true" />
           </div>
         </div>
       </header>
       <main className="container">
         <section className="section" id="projects">
-          <SectionTitle>주요 프로젝트</SectionTitle>
+          <SectionTitle>{labels.mainProjects}</SectionTitle>
           <div className="project-grid">
             {projects.map((project) => (
               <a
@@ -86,7 +94,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="other-projects">
-            <h3>기타 프로젝트</h3>
+            <h3>{labels.otherProjects}</h3>
             <div className="other-project-grid">
               {otherProjects.map((project) => (
                 <article className="other-project card" key={project.name}>
@@ -110,7 +118,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className="section" id="experience">
-          <SectionTitle>경험</SectionTitle>
+            <SectionTitle>{labels.experience}</SectionTitle>
           <div className="experience-list">
             {experiences.map((item) => (
               <Card className="experience-card" key={item.company}>
@@ -135,7 +143,7 @@ export default function HomePage() {
         </section>
         <section className="section two-column" id="education">
           <div>
-            <SectionTitle>학력</SectionTitle>
+            <SectionTitle>{labels.education}</SectionTitle>
           </div>
           <div className="education-list">
             {education.map((item) => (
@@ -158,7 +166,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className="section" id="skills">
-          <SectionTitle>기술</SectionTitle>
+          <SectionTitle>{labels.skills}</SectionTitle>
           <div className="skill-grid">
             {Object.entries(skills).map(([category, items]) => (
               <Card key={category}>
@@ -179,18 +187,9 @@ export default function HomePage() {
             lsh09130@gmail.com ↗
           </a>
           <div className="footer-languages">
-            <p>
-              한국어 <b>Native</b>
-            </p>
-            <p>
-              영어 <b>Advanced, TOEIC 990</b>
-            </p>
-            <p>
-              일본어 <b>Advanced, JLPT N1 170 / JPT 910</b>
-            </p>
-            <p>
-              스페인어 <b>Intermediate, DELE B1</b>
-            </p>
+            {languages.map(([language, level]) => (
+              <p key={language}>{language} <b>{level}</b></p>
+            ))}
           </div>
           <div className="footer-bottom">
             <span>© 2026 SEUNGHYEON LEE</span>

@@ -1,9 +1,14 @@
 import { CaseHero, CaseResult, CaseSection } from "../components/CaseStudy";
+import { useTranslation } from "react-i18next";
+import localizePage from "../locales/localizePage";
+import { areUComingEn, areUComingJa } from "../locales/areucoming";
 
 const imageUrl = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
 
 export default function LocationSharingPage() {
-  return (
+  const { i18n } = useTranslation();
+
+  return localizePage((
     <div className="case-page case-areucoming">
       <CaseHero
         title="오고있니"
@@ -154,5 +159,5 @@ export default function LocationSharingPage() {
         {"온라인 요청과 위치 공유가 실제 만남에서 끝나고 이동 경로는 회고로 남는 PWA를 완성했습니다.\n세션 상태, 인증과 새로고침 복구를 하나의 사용자 흐름으로 구현했습니다."}
       </CaseResult>
     </div>
-  );
+  ), i18n.resolvedLanguage, { en: areUComingEn, ja: areUComingJa });
 }

@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { CaseHero, CaseResult, CaseSection } from "../components/CaseStudy";
+import localizePage from "../locales/localizePage";
+import { chronosEn, chronosJa } from "../locales/chronos";
 
 const imageUrl = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
 
@@ -58,6 +61,7 @@ function ExampleSequence({ label, inputs, tone }) {
 }
 
 function ExampleBoard({ step }) {
+  const { i18n } = useTranslation();
   const recordedTrail = buildTrail(initialRecordedInputs);
   const playerTrail = buildTrail(exampleNewInputs);
   const origin = { x: 84 + rewindStart.x * 72 + 36, y: 50 + rewindStart.y * 72 + 36 };
@@ -69,7 +73,7 @@ function ExampleBoard({ step }) {
   const recordedEnd = point(recordedTrail.at(-1));
   const playerEnd = point(playerTrail.at(-1));
 
-  return (
+  return localizePage((
     <svg viewBox="0 0 528 388" aria-hidden="true">
       <rect className="chronos-board-bg" x="0" y="0" width="528" height="388" rx="20" />
       <g className="chronos-board-grid">
@@ -111,11 +115,12 @@ function ExampleBoard({ step }) {
         </>
       )}
     </svg>
-  );
+  ), i18n.resolvedLanguage, { en: chronosEn, ja: chronosJa });
 }
 
 function ChronosExample() {
-  return (
+  const { i18n } = useTranslation();
+  return localizePage((
     <div className="chronos-example" role="img" aria-label="먼저 위, 오른쪽, 오른쪽으로 움직인 뒤 시간을 되돌리면 분신은 그 움직임을 반복하고 플레이어는 새로운 경로로 이동하는 예시">
       <article>
         <span>1</span>
@@ -139,10 +144,11 @@ function ChronosExample() {
         </p>
       </article>
     </div>
-  );
+  ), i18n.resolvedLanguage, { en: chronosEn, ja: chronosJa });
 }
 
 function ChronosRewind() {
+  const { i18n } = useTranslation();
   const [phase, setPhase] = useState("ready");
   const [newInputs, setNewInputs] = useState([]);
   const recordedTrail = buildTrail(initialRecordedInputs);
@@ -179,7 +185,7 @@ function ChronosRewind() {
     addInput(direction);
   };
 
-  return (
+  return localizePage((
     <div className="chronos-rewind">
       <div className="chronos-sim-toolbar">
         <div>
@@ -266,13 +272,14 @@ function ChronosRewind() {
         </div>
       </div>
     </div>
-  );
+  ), i18n.resolvedLanguage, { en: chronosEn, ja: chronosJa });
 }
 
 function ChronosVideo() {
   const [playing, setPlaying] = useState(false);
+  const { i18n } = useTranslation();
 
-  return (
+  return localizePage((
     <div className={`case-video${playing ? " is-playing" : ""}`}>
       {playing ? (
         <iframe
@@ -288,11 +295,12 @@ function ChronosVideo() {
         </button>
       )}
     </div>
-  );
+  ), i18n.resolvedLanguage, { en: chronosEn, ja: chronosJa });
 }
 
 export default function ChronosPage() {
-  return (
+  const { i18n } = useTranslation();
+  return localizePage((
     <div className="case-page case-chronos">
       <CaseHero
         title="Chronos"
@@ -414,5 +422,5 @@ export default function ChronosPage() {
         시간 되돌리기 아이디어를 16개 레벨의 WebGL 게임으로 완성하고, 브라우저에서 처음부터 엔딩까지 플레이할 수 있는 결과물로 제출했습니다.
       </CaseResult>
     </div>
-  );
+  ), i18n.resolvedLanguage, { en: chronosEn, ja: chronosJa });
 }

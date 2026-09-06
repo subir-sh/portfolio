@@ -1,5 +1,8 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import ProjectLinkIcon from "../components/ProjectLinkIcon";
+import localizePage from "../locales/localizePage";
+import { wordLinkEn, wordLinkJa } from "../locales/wordlink";
 
 const imageUrl = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
 
@@ -30,6 +33,7 @@ function CaseDescription({ children, className = "" }) {
 }
 
 function WordConnectionPage() {
+  const { i18n } = useTranslation();
   useEffect(() => {
     const targets = document.querySelectorAll(".yeon-reveal");
     const observer = new IntersectionObserver(
@@ -45,7 +49,7 @@ function WordConnectionPage() {
     return () => observer.disconnect();
   }, []);
 
-  return <div className="yeon-case">
+  return localizePage(<div className="yeon-case">
     <header className="yeon-hero">
       <img className="yeon-hero-media" src={imageUrl("yeonieum-long-path.png")} alt="물고기에서 위험까지 단어를 이어가는 연이음 플레이 화면" />
       <div className="yeon-hero-shade" aria-hidden="true" />
@@ -224,7 +228,7 @@ function WordConnectionPage() {
         </div>
       </section>
     </main>
-  </div>;
+  </div>, i18n.resolvedLanguage, { en: wordLinkEn, ja: wordLinkJa });
 }
 
 export default function ProjectPage({ project }) {

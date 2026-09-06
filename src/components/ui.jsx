@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Card({ children, className = "" }) {
   return <article className={`card ${className}`}>{children}</article>;
@@ -20,6 +21,7 @@ export function Period({ value }) {
   );
 }
 export function FloatingNavigation({ items }) {
+  const { t } = useTranslation("common");
   const [open, setOpen] = useState(false);
   const navigationRef = useRef(null);
 
@@ -45,7 +47,7 @@ export function FloatingNavigation({ items }) {
     <aside
       ref={navigationRef}
       className="floating-navigation"
-      aria-label="빠른 탐색"
+      aria-label={t("navigation.quick")}
     >
       {open && (
         <nav className="floating-menu" id="floating-section-menu">
@@ -64,9 +66,9 @@ export function FloatingNavigation({ items }) {
           aria-controls="floating-section-menu"
           onClick={() => setOpen((isOpen) => !isOpen)}
         >
-          {open ? "닫기" : "목차"}
+          {open ? t("navigation.close") : t("navigation.contents")}
         </button>
-        <a className="floating-top" href="#top" onClick={() => setOpen(false)}>
+        <a className="floating-top" href="#top" aria-label={t("navigation.top")} onClick={() => setOpen(false)}>
           ↑
         </a>
       </div>
