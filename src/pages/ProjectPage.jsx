@@ -55,7 +55,10 @@ function WordConnectionPage() {
           <h1>연이음</h1>
           <p>손패로 단어 사이의 '맥락'을 탐색하는 퍼즐 게임</p>
           <div className="yeon-hero-path" aria-label="연결 예시: 물고기, 물, 요리, 불, 위험"><span>(시작) 물고기</span><span>물</span><span>요리</span><span>불</span><span>(끝) 위험</span></div>
-          <div className="yeon-hero-meta"><span>넥슨 게임잼 "재밌넥"</span><span>4인 팀</span><span>2박 3일</span><strong>14개 팀 중 3위(우수상)</strong></div>
+          <div className="yeon-hero-meta"><span>넥슨 게임잼 "재밌넥"</span><span>주제 "맥락"</span><span>4인 팀, 2박 3일</span><strong>14개 팀 중 3위(우수상)</strong></div>
+          <div className="yeon-hero-links">
+            <a href="https://subir-sh.github.io/WordLink-WebGL/" target="_blank" rel="noreferrer">플레이 ↗</a>
+          </div>
         </div>
       </div>
     </header>
@@ -65,12 +68,28 @@ function WordConnectionPage() {
         <div className="container">
           <div className="yeon-section-head yeon-reveal">
             <h2>게임 방법</h2>
-            <CaseDescription>시작과 끝 단어 사이에 카드를 놓아, 인접한 단어 쌍의 관계가 이어지는 체인을 제출하는 퍼즐입니다.<br />더 긴 경로로 점수를 쌓고, 제한된 생명 안에서 더 높은 스테이지에 도전합니다.</CaseDescription>
+            <CaseDescription>시작과 끝 단어 사이에 손패를 놓아 하나의 연결 체인을 완성하는 퍼즐입니다.</CaseDescription>
           </div>
-          <div className="yeon-feature-grid yeon-reveal">
-            <article><h3>연결 체인</h3><CaseDescription>인접 단어 쌍의 관계, 경로 완성, 제출</CaseDescription></article>
+          <div className="yeon-feature-grid yeon-feature-grid--two yeon-reveal">
             <article><h3>생명과 점수</h3><CaseDescription>무리한 연결 시 생명 소모, 긴 경로 보상</CaseDescription></article>
             <article><h3>단어 풀 확장</h3><CaseDescription>스테이지마다 단어 풀을 10개씩 확장<br />30개에서 시작해 최대 80개</CaseDescription></article>
+          </div>
+          <div className="yeon-game-example yeon-reveal">
+            <figure>
+              <img src={imageUrl("yeonieum-draw.png")} alt="시작 단어 물고기와 끝 단어 위험 사이를 이을 카드는 남기고 나머지를 다시 뽑는 화면" />
+              <figcaption>
+                <h3>필요한 카드를 남기고 다시 뽑습니다</h3>
+                <CaseDescription>시작어와 끝말을 확인한 뒤, 연결에 쓸 카드는 남기고 불필요한 카드는 교체합니다.</CaseDescription>
+              </figcaption>
+            </figure>
+            <div className="yeon-game-example-arrow" aria-hidden="true">→</div>
+            <figure>
+              <img src={imageUrl("yeonieum-success.png")} alt="물고기, 물, 위험을 차례로 연결해 퍼즐을 완성한 화면" />
+              <figcaption>
+                <h3>물고기 → 물 → 위험</h3>
+                <CaseDescription>‘물고기는 물에 산다’, ‘물은 위험할 수 있다’처럼 인접한 두 관계가 모두 성립하면 체인이 완성됩니다.</CaseDescription>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -83,7 +102,7 @@ function WordConnectionPage() {
           </div>
           <div className="yeon-feature-grid yeon-reveal">
             <article><h3>단어 풀 설계</h3><CaseDescription>이모지 표현 가능성, 주제군, 브리지/허브 개념</CaseDescription></article>
-            <article><h3>단어 간 관계 데이터</h3><CaseDescription>임베딩 검증, LLM 후보 생성, 사람 검수, CSV</CaseDescription></article>
+            <article><h3>단어 간 관계 데이터</h3><CaseDescription>CSV 구축, 그래프 구성, 판정 로직 연동</CaseDescription></article>
             <article><h3>게임 적용</h3><CaseDescription>연결 판정, 나레이터, 튜토리얼, 난이도 조정</CaseDescription></article>
           </div>
         </div>
@@ -93,7 +112,7 @@ function WordConnectionPage() {
         <div className="container">
           <div className="yeon-section-head yeon-reveal">
             <h2>맥락을 관계로 모델링</h2>
-            <CaseDescription>게임잼 주제인 '맥락'을 단어 사이의 관계 그래프로 표현했습니다.<br />단어 카드를 정점, 직접 연결 가능한 관계를 간선으로 고정하여, 연결 판정에 사용했습니다.</CaseDescription>
+            <CaseDescription>게임잼 주제인 '맥락'을 단어 사이의 관계 그래프로 표현했습니다.</CaseDescription>
           </div>
 
           <div className="yeon-row-list yeon-reveal">
@@ -102,7 +121,12 @@ function WordConnectionPage() {
               <div>
                 <h3>이모지로 표현되는 개념</h3>
                 <CaseDescription>에셋 제작 시간을 줄이기 위해, 이모지로 자연스럽게 표현되는 개념을 노드로 삼았습니다.</CaseDescription>
-                <CaseDescription>200개에서 시작해 30–50개로 좁혔습니다.<br />고립된 구체어는 빼고, 과일, 요리, 성장처럼 여러 경로를 잇는 중간 단어를 넣었습니다.</CaseDescription>
+                <CaseDescription>200개 후보에서 고립된 구체어를 제외하고, 여러 경로를 잇는 단어를 중심으로 최종 풀을 구성했습니다.</CaseDescription>
+                <div className="yeon-node-example" aria-label="노드 예시: 과일, 요리, 성장">
+                  <span><b aria-hidden="true">🍎</b>과일</span>
+                  <span><b aria-hidden="true">🍳</b>요리</span>
+                  <span><b aria-hidden="true">🌱</b>성장</span>
+                </div>
               </div>
             </article>
 
@@ -110,8 +134,12 @@ function WordConnectionPage() {
               <strong>EDGE</strong>
               <div>
                 <h3>설명 없이 납득되는 관계</h3>
-                <CaseDescription>토끼와 당근, 열쇠와 문처럼 즉시 떠올릴 수 있는 관계만 남겼습니다.<br />맥락이 더 필요한 관계는 제거했습니다.</CaseDescription>
+                <CaseDescription>두 단어만 보고 즉시 떠올릴 수 있는 관계만 남기고, 별도의 맥락이 필요한 관계는 제거했습니다.</CaseDescription>
                 <CaseDescription>같은 종류, 사용과 역할, 장소, 재료와 생산물, 문화 연상으로 관계 유형을 정했습니다.<br />단순 공존이나 특수 상황이 필요한 연결은 제외했습니다.</CaseDescription>
+                <div className="yeon-edge-example" aria-label="관계 예시: 토끼와 당근, 열쇠와 문">
+                  <div><span>🐇 토끼</span><b aria-hidden="true">—</b><span>🥕 당근</span></div>
+                  <div><span>🔑 열쇠</span><b aria-hidden="true">—</b><span>🚪 문</span></div>
+                </div>
               </div>
             </article>
           </div>
@@ -121,28 +149,23 @@ function WordConnectionPage() {
       <section className="yeon-section yeon-problem">
         <div className="container">
           <div className="yeon-section-head yeon-reveal">
-            <h2>그래프 검증</h2>
-            <CaseDescription>초기 그래프는 <strong>100개 노드와 236–257개 엣지</strong>, 평균 최단거리 <strong>3.39</strong>으로 어느정도 연결성이 있어 보였습니다.<br />하지만 전체 그래프의 경로와 실제 드로우에서 만들 수 있는 경로는 달랐습니다.</CaseDescription>
+            <h2>관계 그래프 구축과 보정</h2>
+            <CaseDescription>자동으로 만든 관계만으로는 퍼즐이 안정적으로 성립하지 않았습니다.</CaseDescription>
           </div>
-          <div className="yeon-probability yeon-reveal">
-            <div className="yeon-probability-steps" aria-label="100개 노드 중 시작과 끝 2개를 제외한 98개 카드 후보에서 10장을 뽑아 거리 6 경로의 중간 카드 5장을 모두 얻는 조건">
-              <div><strong>98장</strong><span>시작과 끝을 뺀 카드 후보</span></div>
-              <b>→</b>
-              <div><strong>10장</strong><span>한 번에 보는 손패</span></div>
-              <b>→</b>
-              <div><strong>5장</strong><span>거리 6의 중간 카드</span></div>
-            </div>
-            <div className="yeon-probability-result"><strong>0.0004%</strong><span>필요한 5장이 함께 잡힐 확률</span></div>
+          <div className="yeon-feature-grid yeon-feature-grid--two yeon-reveal">
+            <article><h3>후보 탐색</h3><CaseDescription>Word2Vec은 ‘사자–호랑이’ 같은 유사 단어에는 강했지만, 사용과 역할 관계는 놓쳤습니다. 이 빈틈만 LLM 후보로 확장했습니다.</CaseDescription></article>
+            <article><h3>관계 확정</h3><CaseDescription>사람이 후보를 검수해 고정 그래프를 만들고 BFS 판정에 사용했습니다.</CaseDescription></article>
           </div>
-          <CaseDescription className="yeon-reveal">그래프에는 경로가 있어도, 플레이어가 뽑은 카드로 만든 부분 그래프에는 경로가 없었습니다.<br />그래서 평균 최단거리만이 아니라 실제 드로우에서 경로가 생기는지를 함께 검증했습니다.</CaseDescription>
-        </div>
-      </section>
-
-      <section className="yeon-section yeon-redesign">
-        <div className="container">
-          <div className="yeon-section-head yeon-reveal">
-            <h2>그래프 보정</h2>
-            <CaseDescription>연결 수가 아니라 실제 손패에서 만들어지는 경로와 그 관계의 납득감을 기준으로 보정했습니다.</CaseDescription>
+          <div className="yeon-draw-check yeon-reveal">
+            <article>
+              <strong>전체 그래프</strong>
+              <CaseDescription>단어가 연결돼 있어도 필요한 중간 카드가 손에 없으면 경로를 만들 수 없었습니다.</CaseDescription>
+            </article>
+            <b aria-hidden="true">≠</b>
+            <article className="is-playable">
+              <strong>실제 손패</strong>
+              <CaseDescription>각 스테이지에서 무작위로 뽑은 손패만으로 경로가 성립하는지 검증하고, 그 결과를 기준으로 노드와 관계를 다시 조정했습니다.</CaseDescription>
+            </article>
           </div>
           <div className="yeon-graph-compare yeon-reveal">
             <article>
@@ -163,26 +186,7 @@ function WordConnectionPage() {
               </figcaption>
             </figure>
           </div>
-          <CaseDescription className="yeon-reveal">저차수 단어(예: 온도계, 소포 등)와 고립된 주제군(예: 병원-의사-약)을 먼저 제거했습니다.<br />다른 단어와 연관성이 많은 허브(예: 물, 위험, 정보 등)는 경로를 늘리되 억지 관계가 생기지 않도록 반복 검수했습니다.</CaseDescription>
-        </div>
-      </section>
-
-      <section className="yeon-section yeon-system">
-        <div className="container">
-          <div className="yeon-section-head yeon-reveal">
-            <h2>데이터 구축</h2>
-            <CaseDescription>임베딩으로 관계를 자동 생성하려 했지만, 게임에 필요한 연결을 만들지 못했습니다.<br />그래서 후보 생성과 최종 판정을 분리했습니다.</CaseDescription>
-          </div>
-          <div className="yeon-feature-grid yeon-reveal">
-            <article><h3>임베딩 검증</h3><CaseDescription>Word2Vec, 코사인 유사도 상위 5개</CaseDescription></article>
-            <article><h3>후보 확장</h3><CaseDescription>LLM, 관계 유형, 넓은 후보 생성</CaseDescription></article>
-            <article><h3>관계 고정</h3><CaseDescription>사람 검수, 그래프, BFS</CaseDescription></article>
-          </div>
-          <div className="yeon-ai-evidence yeon-reveal">
-            <div><strong>1.5%</strong><span>유사도 0.7 이상 후보</span></div>
-            <div><strong>5.5%</strong><span>유사도 0.6 이상 후보</span></div>
-            <CaseDescription>Word2Vec은 사자와 호랑이처럼 비슷한 종류는 찾았지만, <br />토끼와 당근처럼 게임에 필요한 사용과 역할 관계는 놓쳤습니다.<br />플레이 중에는 LLM이 생성하고 사람이 검수한 고정 그래프와 BFS만 사용해, <br />같은 입력에 같은 판정이 즉시 나오게 했습니다.</CaseDescription>
-          </div>
+          <CaseDescription className="yeon-reveal">연결이 적은 ‘온도계’, ‘소포’와 고립된 주제군인 ‘병원–의사–약’은 제거했습니다. 여러 경로를 잇는 ‘물’, ‘위험’, ‘정보’는 억지 관계가 생기지 않도록 반복 검수했습니다.</CaseDescription>
         </div>
       </section>
 
@@ -194,12 +198,12 @@ function WordConnectionPage() {
           </div>
           <div className="yeon-feature-grid yeon-feature-grid--two yeon-reveal">
             <article>
-              <h3>예외 관계 피드백</h3>
-              <CaseDescription>사랑–불, 씨앗–돈처럼 한 단계 이상의 사고가 필요한 맥락은 실패로 판정<br />나레이터의 특수 대사를 통해 해석 가능성은 인정</CaseDescription>
+              <h3>예외 관계 처리</h3>
+              <CaseDescription>‘사랑–불’, ‘씨앗–돈’처럼 한 단계 이상의 해석이 필요한 관계는 실패로 판정하되, 나레이터의 특수 대사로 해석 가능성을 인정했습니다.</CaseDescription>
             </article>
             <article>
-              <h3>게임 진행 설명 튜토리얼</h3>
-              <CaseDescription>조작법, 카드 배치, 버리기, 점수, 생명<br />최초 1회만 노출하고 설정에서 다시보기 제공</CaseDescription>
+              <h3>게임 진행 튜토리얼</h3>
+              <CaseDescription>조작과 점수 규칙은 최초 1회 안내하고, 설정에서 다시 볼 수 있게 했습니다.</CaseDescription>
             </article>
           </div>
         </div>
@@ -213,7 +217,7 @@ function WordConnectionPage() {
           </div>
           <div className="yeon-result-foot yeon-reveal">
             <div>
-              <CaseDescription>반복 플레이 가능한 빌드를 현장에 제출하였고, 종료 후에는 넥슨 사내에 공유되어 좋은 반응을 얻었습니다.<br />차후에는 예외 조합에 대한 보상이나 실패 근거를 보강해, 고정 규칙과 창의적 해석의 간극을 줄일 수 있습니다.</CaseDescription>
+              <CaseDescription>반복 플레이 가능한 빌드를 현장에 제출하였고, 종료 후에는 넥슨 사내에 공유되어 좋은 반응을 얻었습니다.<br />차후에는 예외 조합에 대한 보상이나 실패 근거를 보강해, 고정 규칙과 창의적 해석의 간극을 줄이려고 합니다.</CaseDescription>
             </div>
             <a href="#/">다른 프로젝트 보기 →</a>
           </div>

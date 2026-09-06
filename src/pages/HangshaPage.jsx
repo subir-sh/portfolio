@@ -1,22 +1,16 @@
-import { CaseFooter, CaseHero, CaseSection } from "../components/CaseStudy";
+import { CaseHero, CaseResult, CaseSection } from "../components/CaseStudy";
 
 const imageUrl = (filename) => `${import.meta.env.BASE_URL}assets/images/${filename}`;
-
-const sources = [
-  ["하루 행사", "행사일 6월 18일", "하나의 캘린더 일정으로 저장"],
-  ["모집형 프로그램", "신청 6월 1일에서 10일, 활동 6월 15일에서 30일", "신청 기간과 행사 기간을 분리"],
-  ["다회차 프로그램", "1회차 6월 20일, 2회차 6월 27일", "공고 하나에서 회차별 일정을 생성"],
-];
 
 export default function HangshaPage() {
   return (
     <div className="case-page case-hangsha">
       <CaseHero
         title="행샤"
-        lead="여러 기관에 흩어진 행사 정보를 수집하고 정규화해, 매일 갱신되는 교내 캘린더로 연결했습니다."
+        lead={"여러 교내 사이트의 공고를\n매일 갱신되는 하나의 행사 캘린더로"}
         image={imageUrl("hangsha-image-1.png")}
         imageAlt="월별 교내 행사를 탐색하는 행샤 캘린더 화면"
-        facts={["5인 팀", "백엔드와 크롤러 담당", "실제 서비스 운영"]}
+        facts={["와플스튜디오 5인 팀", "백엔드 데이터 파이프라인", "가입자 200명+", "행사 700개+"]}
         links={[
           { label: "서비스 보기", href: "https://hangsha.wafflestudio.com/main", primary: true },
           { label: "Backend GitHub", href: "https://github.com/wafflestudio/hangsha-server" },
@@ -25,114 +19,142 @@ export default function HangshaPage() {
 
       <main>
         <CaseSection
-          title="행사 데이터가 실제 탐색 화면까지 이어지게 만들었습니다"
-          intro="팀이 만든 월간 캘린더, 검색, 필터가 지속적으로 사용할 수 있는 데이터를 공급했습니다. 외부 공고를 한 번 가져오는 데서 끝내지 않고 자동 갱신과 운영자 교정까지 연결했습니다."
-          className="is-surface"
+          title="서비스 흐름"
+          intro={"여러 교내 사이트에 흩어진 행사를 하나의 캘린더에서 탐색하는 서비스입니다.\n사용자는 월간 일정을 비교하고, 검색과 필터로 원하는 행사를 찾은 뒤 상세 정보에서 신청 페이지로 이동합니다."}
         >
           <div className="case-proof">
             <div className="case-proof-image">
               <img src={imageUrl("hangsha-image-2.png")} alt="검색과 필터로 교내 행사를 탐색하는 행샤 화면" />
             </div>
             <ul className="case-proof-list">
-              <li><strong>매일 자동 갱신</strong><span>외부 공고의 신규 등록과 변경 사항을 캘린더 데이터에 반영했습니다.</span></li>
-              <li><strong>서로 다른 공고를 통합</strong><span>기관과 형식이 달라도 같은 검색과 필터에서 조회할 수 있게 정규화했습니다.</span></li>
-              <li><strong>운영 중 예외 수정</strong><span>자동 수집이 틀린 값을 운영자가 고치고 다음 동기화에서도 보존할 수 있게 했습니다.</span></li>
+              <li><strong>캘린더 탐색</strong><span>월간, 주간, 일간 화면에서 행사 일정을 비교합니다.</span></li>
+              <li><strong>검색과 필터</strong><span>제목, 행사 유형, 모집 상태와 주최기관으로 대상을 좁힙니다.</span></li>
+              <li><strong>상세 정보와 신청</strong><span>일정과 장소를 확인하고 원본 신청 페이지로 이동합니다.</span></li>
             </ul>
           </div>
         </CaseSection>
 
         <CaseSection
-          title="수집부터 운영까지 백엔드 흐름을 맡았습니다"
-          intro="화면에 필요한 데이터를 정의하고, 외부 공고 수집, 의미 해석, 서비스 규칙 적용, 조회 API, 관리자 수정까지 하나의 운영 흐름으로 구현했습니다."
-          className="is-dark"
+          title="담당 범위"
+          intro="외부 공고의 수집부터 구조화, 조회와 운영 중 교정까지 백엔드 데이터 흐름을 맡았습니다."
         >
-          <div className="case-role-grid">
+          <div className="case-role-grid is-detailed">
             <article>
-              <h3>행사 수집</h3>
+              <h3>수집 배치와 이미지</h3>
               <ul>
-                <li>목록과 상세 페이지 크롤러 구현</li>
-                <li>이미지 수집과 자동 동기화</li>
-                <li>수집 실패를 구분해 재실행 가능한 구조로 정리</li>
+                <li>목록과 상세 페이지 크롤러를 별도 배치와 Docker 이미지로 분리</li>
+                <li>페이지 단위 동기화와 스트리밍 업로드로 메모리 사용량 제어</li>
+                <li>목록과 상세 이미지 수집, 저장소 업로드와 자동 갱신 구현</li>
               </ul>
             </article>
             <article>
-              <h3>데이터 정규화</h3>
+              <h3>행사 도메인과 조회 API</h3>
               <ul>
-                <li>주최기관, 분류, 기간, 회차 구조화</li>
-                <li>모집 상태와 노출 날짜 계산</li>
-                <li>검색과 필터에 필요한 조회 형태 설계</li>
+                <li>주최기관, 분류, 모집 기간, 행사 기간과 다회차 일정 모델링</li>
+                <li>월간, 일간, 상세와 제목 검색 API 구현</li>
+                <li>기간 행사 노출, 모집 상태와 정렬 규칙을 조회 방식마다 일치</li>
               </ul>
             </article>
             <article>
-              <h3>운영 기능</h3>
+              <h3>규칙 기반 정규화와 예외 처리</h3>
               <ul>
-                <li>행사 조회 API와 관리자 수정 API 구현</li>
-                <li>운영자 수정 필드 잠금과 보존</li>
-                <li>포스터 기반 직접 등록 초안 생성</li>
+                <li>기간, 회차와 모집 상태를 결정론적 규칙으로 우선 계산</li>
+                <li>빈 행사 차단, 날짜 검증과 중복 행사 건너뛰기 구현</li>
+                <li>규칙으로 해석하지 못한 예외만 AI parser로 보완</li>
+              </ul>
+            </article>
+            <article>
+              <h3>운영 자동화와 검수</h3>
+              <ul>
+                <li>신규 행사와 수집 누락을 Discord 검수 대기열로 자동 요약</li>
+                <li>날짜 역전, 빈 본문과 비정상 링크 등 이상 징후 자동 표시</li>
+                <li>Discord 행사 CRUD와 수정 필드 잠금으로 QA와 유지보수 지원</li>
               </ul>
             </article>
           </div>
         </CaseSection>
 
         <CaseSection
-          title="행사마다 날짜의 의미가 달랐습니다"
-          intro="원본 공고에 날짜가 있어도 모집 기간인지 실제 행사 기간인지, 하나의 기간인지 여러 회차인지에 따라 캘린더에 보여줄 형태가 달라집니다. 같은 문자열을 저장하는 대신 서비스에서 필요한 일정으로 해석했습니다."
+          title="일정 정규화"
+          intro={"원본 공고는 모집 기간, 행사 기간과 여러 회차를 서로 다른 형식으로 표현합니다.\n결정론적 규칙으로 먼저 판별하고, 규칙으로 해석하지 못한 예외만 AI fallback으로 보완했습니다."}
         >
-          <div className="case-table">
-            {sources.map(([type, raw, result]) => (
-              <div className="case-table-row" key={type}>
-                <strong>{type}</strong>
-                <span>{raw}</span>
-                <span>{result}</span>
+          <div className="hangsha-normalizer" role="img" aria-label="형식이 다른 외부 공고를 해석하고 서비스 규칙을 적용해 하나의 캘린더 일정으로 만드는 과정">
+            <div className="hangsha-source-stack">
+              <strong>제각각인 원본 공고</strong>
+              <span>신청: 6월 1일에서 10일</span>
+              <span>활동: 6월 15일에서 30일</span>
+              <span>1회차 6월 20일, 2회차 6월 27일</span>
+            </div>
+            <div className="hangsha-transform">
+              <div className="hangsha-rule-path">
+                <span>기본 경로</span>
+                <b>규칙 기반 파싱</b>
+                <i aria-hidden="true">↓ 검증</i>
+                <strong>날짜와 회차 계산</strong>
               </div>
-            ))}
-          </div>
-          <div className="case-flow">
-            <article><strong>외부 공고 수집</strong><p>기관마다 다른 형식의 목록, 상세 내용, 이미지를 가져옵니다.</p></article>
-            <article><strong>의미가 필요한 값 추출</strong><p>주최기관, 분류, 기간, 회차처럼 표현이 일정하지 않은 값은 AI parser로 구조화합니다.</p></article>
-            <article><strong>서비스 규칙 적용</strong><p>모집 상태와 노출 날짜처럼 결정 가능한 값은 백엔드 규칙으로 계산합니다.</p></article>
-            <article><strong>캘린더 데이터 제공</strong><p>정규화한 데이터를 같은 조회 API와 검색 조건으로 제공합니다.</p></article>
+              <div className="hangsha-fallback-branch">
+                <i aria-hidden="true">↳ 검증 실패 시에만</i>
+                <b>AI fallback</b>
+                <span>추출 후 규칙으로 재검증</span>
+              </div>
+            </div>
+            <div className="hangsha-calendar-card">
+              <strong>행샤 일정</strong>
+              <div className="hangsha-calendar-days"><i>15</i><i>20</i><i>27</i><i>30</i></div>
+              <span>신청 기간과 활동 기간 분리</span>
+              <span>회차별 일정 생성</span>
+              <span>같은 검색 조건으로 제공</span>
+            </div>
           </div>
         </CaseSection>
 
         <CaseSection
-          title="수집 대상에 따라 실행 비용을 나눴습니다"
-          intro="모든 페이지를 브라우저로 여는 방식은 느리고 불안정했습니다. 정적 응답으로 충분한 목록과 JavaScript 대기열을 통과해야 하는 상세 페이지를 구분했습니다."
+          title="자동 수집을 운영 가능한 시스템으로"
+          intro={"수집 성공만으로 데이터 품질을 보장할 수는 없습니다.\n새 행사와 누락 건을 Discord에서 검수하고 바로 교정한 뒤, 사람이 확정한 값은 다음 동기화에서도 보존했습니다."}
           className="is-accent"
         >
-          <div className="case-split">
-            <article className="case-panel">
-              <h3>목록은 OkHttp로 수집</h3>
-              <p>정적 응답에서 필요한 링크와 기본 정보를 빠르게 읽었습니다. 브라우저 실행 비용을 목록 전체에 지불하지 않았습니다.</p>
+          <div className="hangsha-ops" role="img" aria-label="자동 수집 결과를 Discord 검수 대기열에서 확인하고 행사 데이터를 교정한 뒤 수정 필드를 다음 동기화에서도 보존하는 운영 흐름">
+            <article className="hangsha-ops-source">
+              <span>자동 수집</span>
+              <strong>새 행사와 변경 값</strong>
+              <p>배치가 공고를 구조화해 서비스 데이터로 동기화합니다.</p>
             </article>
-            <article className="case-panel">
-              <h3>상세는 Playwright로 확인</h3>
-              <p>NetFunnel 대기열을 통과한 뒤 실제로 필요한 행사 필드가 채워졌는지를 완료 조건으로 삼았습니다. 화면 전체가 로드됐다는 신호만 믿지 않았습니다.</p>
-            </article>
-          </div>
-        </CaseSection>
 
-        <CaseSection
-          title="자동화가 운영자의 판단을 덮어쓰지 않게 했습니다"
-          intro="크롤러와 AI가 대부분의 입력을 만들더라도 예외는 남습니다. 운영자가 고친 값을 잠가 다음 자동 동기화에서 보존하고, 직접 등록은 AI가 만든 초안을 사람이 확인한 뒤 저장하도록 구성했습니다."
-          className="is-surface"
-        >
-          <div className="case-flow">
-            <article><strong>자동 동기화</strong><p>원본 공고의 신규 등록과 변경 사항을 가져옵니다.</p></article>
-            <article><strong>운영자 교정</strong><p>잘못 추출된 필드를 사람이 확인하고 수정합니다.</p></article>
-            <article><strong>수정 필드 잠금</strong><p>사람이 결정한 값과 자동 생성 값을 구분해 저장합니다.</p></article>
-            <article><strong>다음 갱신에서도 보존</strong><p>잠긴 필드는 크롤러가 다시 실행되어도 덮어쓰지 않습니다.</p></article>
+            <div className="hangsha-ops-arrow" aria-hidden="true"><span>배치 종료</span><b>→</b></div>
+
+            <article className="hangsha-discord-card">
+              <header><span>#</span><strong>crawl-review</strong><i>Discord</i></header>
+              <div className="hangsha-discord-summary">
+                <strong>행사 크롤링 검수</strong>
+                <div><span>신규 행사</span><span>확인 필요</span><span>수집 누락</span></div>
+              </div>
+              <ul>
+                <li><b>확인</b><span>행사 시작일이 종료일보다 늦음</span></li>
+                <li><b>확인</b><span>신청 기간의 한쪽 날짜가 비어 있음</span></li>
+                <li><b>누락</b><span>지원하지 않는 원문 링크 형식</span></li>
+              </ul>
+            </article>
+
+            <div className="hangsha-ops-arrow" aria-hidden="true"><span>바로 교정</span><b>→</b></div>
+
+            <article className="hangsha-ops-actions">
+              <span>Discord 명령</span>
+              <strong>행사 CRUD</strong>
+              <div><b>조회</b><b>생성</b><b>수정</b><b>삭제</b></div>
+              <p>검수 메시지에서 바로 행사 데이터를 관리해 QA와 유지보수 동선을 줄입니다.</p>
+            </article>
           </div>
-          <div className="case-note">
-            <strong>검증된 역량</strong>
-            <p>비정형 외부 데이터를 제품에서 사용할 수 있는 형태로 바꾸고, 자동화 이후의 예외와 운영까지 포함한 백엔드 흐름을 구현했습니다.</p>
+          <div className="hangsha-preserve-loop">
+            <span>사람이 수정한 필드만 잠금</span>
+            <b aria-hidden="true">→</b>
+            <strong>다음 자동 동기화에서도 교정 값 유지</strong>
           </div>
         </CaseSection>
       </main>
 
-      <CaseFooter>
-        행샤는 일회성 크롤러가 아니라, 외부 데이터가 실제 서비스 화면과 운영 과정까지 이어지는 시스템을 만든 프로젝트입니다.
-      </CaseFooter>
+      <CaseResult result="가입자 200명+, 행사 700개+">
+        132개 주최기관의 공고를 하나의 캘린더 데이터로 제공하고 있습니다. 실제 사용자를 확보했으며, 수집과 정규화부터 자동 갱신 이후의 예외 수정까지 운영 흐름으로 연결했습니다.
+      </CaseResult>
     </div>
   );
 }

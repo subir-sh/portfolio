@@ -18,10 +18,26 @@ function App() {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    if (!route || route.startsWith("#/")) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      return;
+    }
+
+    const sectionId = decodeURIComponent(route.slice(1));
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView();
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [route]);
   const slug = route.match(/^#\/projects\/([^/]+)$/)?.[1];
   const isFeaturedProject = projects.some((project) => project.slug === slug);
+  const projectTitle = isFeaturedProject ? projectDetails[slug]?.title : null;
+
+  useEffect(() => {
+    document.title = projectTitle
+      ? `${projectTitle} | 이승현 포트폴리오`
+      : "이승현 | Product Engineer";
+  }, [projectTitle]);
 
   if (slug === "campus-event-calendar" && isFeaturedProject) {
     return <HangshaPage />;

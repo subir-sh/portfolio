@@ -1,15 +1,16 @@
 export const profile = {
   name: "이승현",
   englishName: "Seunghyeon Lee",
-  intro: "풀스택 / 모바일 / 인터랙티브 시스템",
+  hanjaName: "李承炫",
+  intro: "인터랙티브 시스템 / 풀스택 / 모바일",
 };
 
 export const projects = [
   {
     name: "행샤",
-    subtitle: "교내 행사 캘린더",
+    subtitle: "교내 행사 캘린더 서비스",
     stack: "Spring Boot / MySQL / Docker / React",
-    type: "동아리 팀 프로젝트",
+    type: "동아리 팀 프로젝트 / 가입자 200명+ / 행사 700개+",
     description:
       "여러 기관의 비정형 행사 데이터를 정규화하고, 크롤링부터 저장, 검색, 활용까지 이어지는 서비스 데이터 흐름을 구축했습니다.",
     slug: "campus-event-calendar",
@@ -36,7 +37,7 @@ export const projects = [
     name: "Chronos",
     subtitle: "턴제 3D 퍼즐 게임",
     stack: "Unity / C#",
-    type: "수업 팀 프로젝트",
+    type: "수업 팀 프로젝트 / 16개 레벨 / 최종 평가 상위 20%",
     description:
       "턴 루프와 상태 로그를 중심으로 시간 되돌리기, 분신 재생, 퍼즐 오브젝트가 일관되게 동작하는 핵심 시스템을 구현했습니다.",
     slug: "turn-based-puzzle-game",
@@ -87,7 +88,7 @@ export const experiences = [
     period: "26. 06. — 현재",
     company: "이루리랩스",
     role: "프로덕트 엔지니어",
-    stack: "Next.js / NestJS / React Native",
+    stack: "Next.js / NestJS / Expo / React Native",
     description:
       "교육 AI SaaS에서 과제 배포부터 학생 제출, 문서 처리, AI 채점, 결과 피드백까지 이어지는 학습 워크플로우를 프론트/백/앱 전반에서 개발하고 있습니다.",
     link: "https://ai.passdream.app/",
@@ -98,7 +99,7 @@ export const experiences = [
     role: "학부 연구 인턴",
     stack: "HCI / XR / AI Applications",
     description:
-      "Galaxy XR을 사용한 XR Agent 시스템 연구에서 HMD 카메라 입력의 2D-3D 정렬, 객체 기반 world-space 오버레이 구현과 AI 생성 결과 품질 평가를 담당했습니다.",
+      "Galaxy XR을 사용한 XR AI Agent 시스템 연구에서 HMD 카메라 입력의 2D-3D 정렬, 객체 기반 world-space 오버레이 구현과 AI 생성 결과 품질 평가를 담당했습니다.",
     link: "https://hcs.snu.ac.kr",
   },
   {

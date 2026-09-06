@@ -15,7 +15,7 @@ const projectDetails = {
     ],
     links: [
       ["GitHub", "https://github.com/wafflestudio/hangsha-server"],
-      ["서비스", "https://hangsha.site/main"],
+      ["서비스", "https://hangsha.wafflestudio.com/main"],
     ],
     sections: [
       [
@@ -90,7 +90,7 @@ const projectDetails = {
       ["기술", "Java, Spring Boot, React, WebSocket, MySQL, Docker"],
     ],
     links: [
-      ["백엔드", "https://github.com/subir-sh/wackathon-server"],
+      ["백엔드", "https://github.com/mjy926/wackathon-server"],
       ["프론트엔드", "https://github.com/h-seo-n/wackathon-front"],
     ],
     sections: [

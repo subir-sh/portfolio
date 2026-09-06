@@ -24,7 +24,7 @@ export default function HomePage() {
         <div className="container">
           <div className="profile">
             <h1>
-              {profile.name} <span>{profile.englishName}</span>
+              {profile.name} <span>{profile.englishName} / {profile.hanjaName}</span>
             </h1>
             <p className="profile-role">
               Product Engineer{" "}
@@ -60,6 +60,7 @@ export default function HomePage() {
                 Gmail <span>↗</span>
               </a>
             </div>
+            <img className="profile-mark" src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" aria-hidden="true" />
           </div>
         </div>
       </header>
@@ -185,7 +186,7 @@ export default function HomePage() {
               영어 <b>Advanced, TOEIC 990</b>
             </p>
             <p>
-              일본어 <b>Advanced, JLPT N1 / JPT 910</b>
+              일본어 <b>Advanced, JLPT N1 170 / JPT 910</b>
             </p>
             <p>
               스페인어 <b>Intermediate, DELE B1</b>

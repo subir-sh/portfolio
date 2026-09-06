@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function Card({ children, className = "" }) {
   return <article className={`card ${className}`}>{children}</article>;
@@ -21,15 +21,34 @@ export function Period({ value }) {
 }
 export function FloatingNavigation({ items }) {
   const [open, setOpen] = useState(false);
+  const navigationRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const closeOnOutsideClick = (event) => {
+      if (!navigationRef.current?.contains(event.target)) setOpen(false);
+    };
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
   return (
     <aside
+      ref={navigationRef}
       className="floating-navigation"
       aria-label="빠른 탐색"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
     >
       {open && (
-        <nav className="floating-menu">
+        <nav className="floating-menu" id="floating-section-menu">
           {items.map(([id, label]) => (
             <a href={`#${id}`} key={id} onClick={() => setOpen(false)}>
               {label}
@@ -41,7 +60,9 @@ export function FloatingNavigation({ items }) {
         <button
           type="button"
           className="section-toggle"
-          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls="floating-section-menu"
+          onClick={() => setOpen((isOpen) => !isOpen)}
         >
           {open ? "닫기" : "목차"}
         </button>

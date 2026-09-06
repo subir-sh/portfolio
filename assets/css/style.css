@@ -18,7 +18,8 @@ a { color: inherit; text-decoration: none; }
 
 /* Intro */
 .profile-header { background: var(--surface); border-bottom: 1px solid var(--line); }
-.profile { padding: clamp(2.75rem, 6vw, 5.25rem) 0 clamp(2rem, 4vw, 3rem); }
+.profile { position: relative; padding: clamp(2.75rem, 6vw, 5.25rem) clamp(9rem, 14vw, 11rem) clamp(2rem, 4vw, 3rem) 0; }
+.profile-mark { position: absolute; top: 50%; right: 0; display: block; width: clamp(7rem, 10vw, 8.5rem); height: auto; transform: translateY(-50%); }
 .availability, .project-index { display: none; }
 .profile h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: .95; letter-spacing: -.075em; }
 .profile h1 span { display: inline-block; margin-left: .35em; color: var(--muted); font-size: .32em; font-weight: 500; letter-spacing: -.045em; vertical-align: .2em; }
@@ -152,6 +153,9 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
 .yeon-hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 0; margin-top: 1.7rem; font-size: 1.1rem; font-weight: 700; }
 .yeon-hero-meta span + span, .yeon-hero-meta strong { margin-left: 1rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,.42); }
 .yeon-hero-meta strong { color: #b8f0cf; font-size: 1.2rem; }
+.yeon-hero-links { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+.yeon-hero-links a { display: inline-flex; min-height: 44px; align-items: center; padding: .62rem .9rem; border: 1px solid #b8f0cf; background: #b8f0cf; color: #173c2b; font-size: .95rem; font-weight: 800; }
+.yeon-hero-links a:hover { border-color: #fff; background: #fff; color: #173c2b; }
 .yeon-section { padding: clamp(3.5rem, 6vw, 5.5rem) 0; border-bottom: 1px solid var(--yeon-line); }
 .yeon-section-head { max-width: none; }
 .yeon-section-head h2 { margin: 0; font-size: clamp(2.35rem, 3.8vw, 3.5rem); line-height: 1.08; letter-spacing: -.065em; }
@@ -168,19 +172,31 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
 .yeon-feature-grid article:hover { background: rgba(255,255,255,.58); }
 .yeon-feature-grid h3 { margin: 0; font-size: clamp(1.35rem, 1.9vw, 1.65rem); line-height: 1.3; letter-spacing: -.045em; }
 .yeon-feature-grid .yeon-description { margin: .7rem 0 0; white-space: normal; }
+.yeon-game-example { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: clamp(1rem, 2.5vw, 2.2rem); align-items: center; margin-top: clamp(2.5rem, 4vw, 3.75rem); }
+.yeon-game-example figure { min-width: 0; margin: 0; border-top: 2px solid var(--yeon-green); background: rgba(255,255,255,.38); }
+.yeon-game-example img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.yeon-game-example figcaption { padding: 1.3rem 1.4rem 1.45rem; border-bottom: 1px solid var(--yeon-line); }
+.yeon-game-example h3 { margin: 0; font-size: clamp(1.4rem, 2vw, 1.7rem); line-height: 1.3; letter-spacing: -.045em; }
+.yeon-game-example .yeon-description { margin: .65rem 0 0; white-space: normal; }
+.yeon-game-example-arrow { color: var(--yeon-green); font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1; }
+.yeon-node-example { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; max-width: 620px; margin-top: 1.35rem; }
+.yeon-node-example span { display: grid; grid-template-columns: auto 1fr; gap: .7rem; align-items: center; padding: .9rem 1rem; border: 1px solid var(--yeon-line); background: rgba(255,255,255,.45); color: var(--yeon-ink); font-size: 1.12rem; font-weight: 750; }
+.yeon-node-example b { font-size: 1.65rem; line-height: 1; }
+.yeon-edge-example { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; max-width: 760px; margin-top: 1.35rem; }
+.yeon-edge-example > div { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; border: 1px solid var(--yeon-line); background: rgba(255,255,255,.45); }
+.yeon-edge-example span { padding: .9rem 1rem; color: var(--yeon-ink); font-size: 1.12rem; font-weight: 750; text-align: center; }
+.yeon-edge-example b { color: var(--yeon-green); font-size: 1.5rem; }
 .yeon-row-detail { margin-top: 1.4rem; }
 .yeon-row-detail p { margin: 0; color: #4b5b52; font-size: 1.12rem; line-height: 1.68; }
 .yeon-row-detail p + p { margin-top: 1.05rem; padding-top: 1.05rem; border-top: 1px solid var(--yeon-line); }
 .yeon-row-detail p strong { color: var(--yeon-green); }
 .yeon-problem { background: #e8eee9; }
-.yeon-probability { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(350px, .8fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: end; margin-top: clamp(2.5rem, 4vw, 3.75rem); padding: 1.8rem 0; border-top: 2px solid var(--yeon-green); border-bottom: 1px solid #bdcbc1; }
-.yeon-probability-steps { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: clamp(.7rem, 2vw, 1.5rem); align-items: center; }
-.yeon-probability-steps div strong, .yeon-probability-steps div span { display: block; }
-.yeon-probability-steps div strong { color: var(--yeon-green); font-size: clamp(2.6rem, 4vw, 4rem); line-height: .95; letter-spacing: -.07em; }
-.yeon-probability-steps div span, .yeon-probability-result span { margin-top: .55rem; color: #415249; font-size: 1.1rem; font-weight: 750; }
-.yeon-probability-steps b { color: #779484; font-size: 1.8rem; }
-.yeon-probability-result strong, .yeon-probability-result span { display: block; }
-.yeon-probability-result strong { color: #235f43; font-size: clamp(4.1rem, 7vw, 6.5rem); line-height: .82; letter-spacing: -.09em; }
+.yeon-draw-check { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.5rem); align-items: stretch; margin-top: 1.5rem; border-top: 1px solid #bdcbc1; border-bottom: 1px solid #bdcbc1; }
+.yeon-draw-check article { display: flex; min-height: 150px; flex-direction: column; justify-content: center; padding: 1.5rem; background: rgba(255,255,255,.42); }
+.yeon-draw-check article.is-playable { border: 2px solid var(--yeon-green); background: #e0f4e8; }
+.yeon-draw-check article > strong { color: var(--yeon-green); font-size: clamp(1.5rem, 2.2vw, 1.9rem); line-height: 1.2; letter-spacing: -.045em; }
+.yeon-draw-check .yeon-description { margin: .7rem 0 0; white-space: normal; }
+.yeon-draw-check > b { align-self: center; color: var(--yeon-green); font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1; }
 .yeon-graph-compare { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; margin-top: clamp(2.5rem, 4vw, 3.75rem); padding: 1.6rem 0; border-top: 2px solid var(--yeon-green); border-bottom: 1px solid var(--yeon-line); }
 .yeon-graph-compare > article, .yeon-graph-capture { min-width: 0; }
 .yeon-graph-label { min-height: 82px; }
@@ -198,11 +214,6 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
 .yeon-graph-capture img { display: block; width: 100%; aspect-ratio: 1.954; object-fit: contain; }
 .yeon-graph-capture figcaption { padding: 1.25rem 1.5rem 1.4rem; background: var(--yeon-paper); }
 .yeon-graph-arrow { color: var(--yeon-green); font-size: clamp(2.5rem, 4vw, 4rem); }
-.yeon-ai-evidence { display: grid; grid-template-columns: 190px 190px minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; margin-top: clamp(2.5rem, 4vw, 3.75rem); padding: 1.6rem 0; border-top: 1px solid var(--yeon-line); border-bottom: 1px solid var(--yeon-line); }
-.yeon-ai-evidence > div strong, .yeon-ai-evidence > div span { display: block; }
-.yeon-ai-evidence > div strong { color: var(--yeon-green); font-size: clamp(3rem, 5vw, 4.6rem); line-height: .9; letter-spacing: -.075em; }
-.yeon-ai-evidence > div span { margin-top: .7rem; color: #526158; font-size: 1.08rem; font-weight: 750; }
-.yeon-ai-evidence .yeon-description { margin: 0; white-space: normal; }
 .yeon-result { padding: clamp(3rem, 4.5vw, 4rem) 0 clamp(4rem, 6vw, 5.5rem); background: #182b22; color: #f4f7f4; }
 .yeon-result h2 { margin: 0; font-size: clamp(2.35rem, 3.8vw, 3.5rem); line-height: 1.08; letter-spacing: -.065em; }
 .yeon-result-copy > p { margin: clamp(2.5rem, 5vw, 4rem) 0 0; }
@@ -236,7 +247,8 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
 
 @media (max-width: 760px) {
   .container { width: min(var(--max), calc(100% - 2rem)); }
-  .profile { padding-top: 2.25rem; }
+  .profile { padding: 2.25rem 0 2rem; }
+  .profile-mark { display: none; }
   .subtitle br { display: none; }
   .project-grid { grid-template-columns: 1fr; }
   .project-card { min-height: 0; }
@@ -307,18 +319,18 @@ footer { padding: 2.5rem 0 1.1rem; background: var(--deep); color: #f5f8f5; }
   .yeon-row-list h3 { font-size: 1.5rem; }
   .yeon-feature-grid, .yeon-feature-grid--two { grid-template-columns: 1fr; margin-top: 2.5rem; }
   .yeon-feature-grid article { min-height: 0; padding: 1.25rem; }
-  .yeon-probability { grid-template-columns: 1fr; gap: 2.5rem; margin-top: 3rem; }
-  .yeon-probability-steps { grid-template-columns: 1fr; gap: .65rem; text-align: center; }
-  .yeon-probability-steps b { transform: rotate(90deg); line-height: 1; }
-  .yeon-probability-result { padding-top: 2rem; border-top: 1px solid #bdcbc1; }
+  .yeon-game-example { grid-template-columns: 1fr; gap: 1.2rem; }
+  .yeon-game-example-arrow { transform: rotate(90deg); text-align: center; }
+  .yeon-node-example, .yeon-edge-example { grid-template-columns: 1fr; }
+  .yeon-draw-check { grid-template-columns: 1fr; gap: 0; }
+  .yeon-draw-check > b { padding: .65rem 0; transform: rotate(90deg); justify-self: center; }
   .yeon-graph-compare { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3rem; }
   .yeon-graph-arrow { transform: rotate(90deg); text-align: center; line-height: 1; }
   .yeon-graph-label { min-height: 0; }
-  .yeon-ai-evidence { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1rem; }
-  .yeon-ai-evidence p { grid-column: 1 / -1; padding-top: 1.5rem; border-top: 1px solid var(--yeon-line); }
   .yeon-result h2 { font-size: clamp(2.2rem, 10vw, 2.8rem); }
   .yeon-result-copy > p strong { font-size: clamp(3rem, 13vw, 4.2rem); }
   .yeon-result-foot { grid-template-columns: 1fr; gap: 2rem; }
+  .yeon-result-foot .yeon-description { white-space: normal; overflow-wrap: anywhere; }
   .yeon-result-foot a { justify-self: start; }
   .floating-navigation { right: 1rem; bottom: 1rem; }
 }
