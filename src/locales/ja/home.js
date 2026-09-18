@@ -75,7 +75,7 @@ export default {
       role: "プロダクトエンジニア",
       stack: "Next.js / NestJS / Expo / React Native",
       description: "教育AI SaaSにおいて、課題の配布、学生の提出、文書処理、AIによる採点、フィードバックまで続く学習ワークフローを、フロントエンド・バックエンド・モバイルアプリにまたがって開発しています。",
-      link: "https://ai.passdream.app/",
+      link: "https://iruri-labs.com/",
     },
     {
       period: "2026年1月 — 2026年4月",
