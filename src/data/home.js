@@ -91,7 +91,7 @@ export const experiences = [
     stack: "Next.js / NestJS / Expo / React Native",
     description:
       "교육 AI SaaS에서 과제 배포부터 학생 제출, 문서 처리, AI 채점, 결과 피드백까지 이어지는 학습 워크플로우를 프론트/백/앱 전반에서 개발하고 있습니다.",
-    link: "https://ai.passdream.app/",
+    link: "https://iruri-labs.com/",
   },
   {
     period: "26. 01. — 26. 04.",
