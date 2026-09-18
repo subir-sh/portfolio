@@ -37,7 +37,7 @@ export default function HomePage() {
               Product Engineer{" "}
               <span className="profile-company">
                 @{" "}
-                <a href="https://ai.passdream.app/" target="_blank" rel="noreferrer">
+                <a href="https://iruri-labs.com/" target="_blank" rel="noreferrer">
                   irurilabs
                 </a>
               </span>
